@@ -1,0 +1,12 @@
+<<<Analysis>>>
+The function `remove_vowels` is designed to take a string `text` as input and return a new string with all vowels removed. The vowels considered are "a", "e", "i", "o", "u" in both uppercase and lowercase.
+1. The input string 'fedcba' is passed to the function.
+2. The function uses a list comprehension to iterate over each character `s` in the string.
+3. For each character, it checks if `s.lower()` is not in the list of vowels ["a", "e", "i", "o", "u"]. This ensures that both uppercase and lowercase vowels are removed.
+4. The characters that are not vowels are 'f', 'd', 'c', 'b'.
+5. These characters are joined together to form the resultant string "fdcb".
+6. The function returns this new string "fdcb".
+
+<<<Output>>>
+fdcb
+[END-OF-RESPONSE]

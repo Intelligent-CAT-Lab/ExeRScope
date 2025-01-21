@@ -1,0 +1,12 @@
+
+<<<Analysis>>>
+The function get_closest_vowel takes a string "yogurt" as input.
+The function first checks if the length of the string is less than 3. If it is, it returns an empty string.
+The function then defines a set of vowels.
+The function then iterates over the string from the end to the beginning, skipping the first and the last character.
+For each character, it checks if it is a vowel and if the characters before and after it are not vowels. If both conditions are met, it returns the current character.
+In the given string "yogurt", the function checks the characters 'u', 'o', 'g', 'r', 't' in that order.
+The first character that meets the conditions is 'o'.
+<<<Output>>>
+o
+[END-OF-RESPONSE]

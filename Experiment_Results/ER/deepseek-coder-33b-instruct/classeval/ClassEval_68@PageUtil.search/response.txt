@@ -1,0 +1,14 @@
+
+In the `test()` method, a PageUtil object is created with a list of integers from 1 to 10 and a page size of 3. The `search()` method is then called with the keyword "2".
+
+The `search()` method first creates a list of items in the data that contain the keyword. In this case, it will only contain the number 2. The number of results is then calculated as the length of this list. The total number of pages is calculated as the ceiling division of the number of results by the page size.
+
+The search_info dictionary is then created with the keyword, total number of results, total number of pages, and the list of results. This dictionary is then returned by the `search()` method.
+
+The expected_results dictionary is also created with the same information.
+
+Finally, the actual_results and expected_results are returned by the `test()` method.
+
+<<<Output>>>
+({'keyword': '2', 'total_results': 1, 'total_pages': 1, 'results': [2]}, {'keyword': '2', 'total_results': 1, 'total_pages': 1, 'results': [2]})
+[END-OF-RESPONSE]

@@ -1,0 +1,13 @@
+
+<<<Analysis>>>
+In the `test()` method, the MovieTicketDB class is instantiated with a database name 'test_database.db'. The `create_table()` method is called to create a table named 'tickets' if it doesn't already exist.
+
+The `insert_ticket()` method is then called to insert a new ticket into the 'tickets' table. The details of the ticket are passed as parameters to this method.
+
+The `search_tickets_by_customer()` method is then called to search for all tickets for a customer named 'John Doe'. This method returns a list of all tickets for the customer.
+
+The `len()` function is used to get the number of tickets for 'John Doe'. The `ticket[1]`, `ticket[2]`, `ticket[3]`, and `ticket[4]` are used to get the movie name, theater name, seat number, and customer name of the first ticket in the list.
+
+<<<Output>>>
+(1, 'Avengers: Endgame', 'Cinema 1', 'A1', 'John Doe')
+[END-OF-RESPONSE]

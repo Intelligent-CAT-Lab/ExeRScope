@@ -1,0 +1,11 @@
+<<<Analysis>>>
+1. Inside the `test()` method, a `RegexUtils` object `ru` is created.
+2. The code then calls the `ru.extract_email()` method with the input string "abcdefg@.com ygusyfysy@126.com wljduyuv@qq.com".
+3. Inside the `extract_email()` method:
+    - It calls `self.generate_email_pattern()` to get the regular expression pattern for matching email addresses. The pattern is `r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'`.
+    - Then it calls `self.findall(pattern, text)` which uses the `re.findall()` method to find all occurrences of the email pattern in the input string.
+4. The `re.findall()` function returns a list containing all the matched email addresses.
+5. The `extract_email()` method returns the list of matched email addresses.
+<<<Output>>>
+['ygusyfysy@126.com', 'wljduyuv@qq.com']
+[END-OF-RESPONSE]

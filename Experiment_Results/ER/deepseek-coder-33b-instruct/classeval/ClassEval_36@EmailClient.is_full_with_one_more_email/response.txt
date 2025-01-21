@@ -1,0 +1,10 @@
+
+In the `test()` method, an instance of `EmailClient` is created for both the sender and the receiver. The `is_full_with_one_more_email()` method is then called on the receiver with an argument of 20.
+
+The `is_full_with_one_more_email()` method calculates the total size of all emails in the receiver's inbox by calling the `get_occupied_size()` method. It then checks if the total size plus the size of the email to be sent (20 in this case) is greater than the receiver's capacity (20 in this case).
+
+In this case, the total size of all emails in the receiver's inbox is 0 (since the inbox is empty), and the receiver's capacity is 20. Therefore, the total size plus the size of the email to be sent is 20, which is not greater than the receiver's capacity. Therefore, the method returns False.
+
+<<<Output>>>
+False
+[END-OF-RESPONSE]

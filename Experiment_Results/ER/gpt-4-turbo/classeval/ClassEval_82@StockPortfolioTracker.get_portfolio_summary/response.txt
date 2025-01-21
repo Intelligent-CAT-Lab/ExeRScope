@@ -1,0 +1,15 @@
+<<<Analysis>>>
+In the `test()` method of the `Test` class, an instance of `StockPortfolioTracker` is created with an initial cash balance of 10000.0. The portfolio of this instance is then manually set to contain one stock entry for 'AAPL' with a price of 150.0 per share and a quantity of 10 shares.
+
+The `get_portfolio_summary()` method of the `StockPortfolioTracker` class is then called on this instance. This method performs the following steps:
+1. Initializes an empty list `summary`.
+2. Iterates over each stock in the portfolio. For each stock, it calculates the total value of that stock by calling `get_stock_value(stock)`, which multiplies the stock's price by its quantity. In this case, the value for 'AAPL' is 150.0 * 10 = 1500.0.
+3. Appends a dictionary containing the stock's name and its calculated value to the `summary` list.
+4. Calls `calculate_portfolio_value()` to get the total value of the portfolio, which includes the cash balance and the total value of all stocks. The total value of the 'AAPL' stock is 1500.0, and the cash balance is 10000.0, so the total portfolio value is 10000.0 + 1500.0 = 11500.0.
+5. Returns a tuple containing the total portfolio value and the `summary` list.
+
+The expected output from the `get_portfolio_summary()` method call is therefore a tuple with the total portfolio value of 11500.0 and a summary list containing one dictionary with the stock 'AAPL' and its value of 1500.0.
+
+<<<Output>>>
+(11500.0, [{'name': 'AAPL', 'value': 1500.0}])
+[END-OF-RESPONSE]

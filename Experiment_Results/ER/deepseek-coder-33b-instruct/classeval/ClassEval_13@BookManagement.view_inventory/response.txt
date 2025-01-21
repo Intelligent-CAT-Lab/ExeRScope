@@ -1,0 +1,11 @@
+
+<<<Analysis>>>
+In the test() method, an instance of the BookManagement class is created.
+The add_book() method is called twice. The first time, it adds a book titled "book1" with a quantity of 2. The second time, it adds a book titled "book2" with a default quantity of 1.
+The expected inventory is a dictionary with "book1" and "book2" as keys and their respective quantities as values.
+The view_inventory() method is called to return the current inventory.
+The return value of the test() method is a tuple containing the expected inventory and the actual inventory.
+
+<<<Output>>>
+({"book1": 2, "book2": 1}, {"book1": 2, "book2": 1})
+[END-OF-RESPONSE]

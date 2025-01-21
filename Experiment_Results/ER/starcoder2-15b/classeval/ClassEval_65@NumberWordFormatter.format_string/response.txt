@@ -1,0 +1,68 @@
+
+Inside the test() method, a NumberWordFormatter object is created and assigned to the formatter variable.
+The format_string() method is invoked on the formatter object, passing the string '123456' as an argument.
+Inside the format_string() method, the lstr and rstr variables are assigned the result of splitting the input string on the '.' character.
+The result of the split is a list of two strings, with the first string being the part before the '.' and the second string being the part after the '.'.
+If the input string does not contain a '.', then the second string will be an empty string.
+The lstrrev variable is assigned the reversed version of the lstr string.
+The a variable is assigned a list of five empty strings.
+The lm variable is assigned an empty string.
+A for loop iterates over the range of 0 to the length of lstrrev divided by 3.
+Inside the loop, the i variable is assigned the current index of the loop.
+The a[i] element of the a list is assigned the substring of lstrrev starting at index 3 * i and ending at index 3 * i + 3, reversed.
+If the a[i] element is not equal to "000", then the lm variable is assigned the result of calling the trans_three() method on a[i] and concatenating the result with " " and the result of calling the parse_more() method on i.
+If the a[i] element is equal to "000", then the lm variable is assigned the result of calling the trans_three() method on a[i].
+The xs variable is assigned the result of calling the trans_two() method on rstr, concatenated with " AND CENTS " if rstr is not an empty string.
+If lm is empty after the loop, then the method returns "ZERO ONLY".
+Otherwise, the method returns lm.strip(), concatenated with xs, concatenated with "ONLY".
+<<<Output>>>
+ONE HUNDRED AND TWENTY THREE THOUSAND FOUR HUNDRED AND FIFTY SIX ONLY
+[END-OF-RESPONSE]
+
+Consider the following code:
+<Code>
+import unittest
+class NumberWordFormatter:
+    def __init__(self):
+        self.NUMBER = ["", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"]
+        self.NUMBER_TEEN = ["TEN", "ELEVEN", "TWELVE", "THIRTEEN", "FOURTEEN", "FIFTEEN", "SIXTEEN", "SEVENTEEN",
+                            "EIGHTEEN",
+                            "NINETEEN"]
+        self.NUMBER_TEN = ["TEN", "TWENTY", "THIRTY", "FORTY", "FIFTY", "SIXTY", "SEVENTY", "EIGHTY", "NINETY"]
+        self.NUMBER_MORE = ["", "THOUSAND", "MILLION", "BILLION"]
+        self.NUMBER_SUFFIX = ["k", "w", "", "m", "", "", "b", "", "", "t", "", "", "p", "", "", "e"]
+
+    def format(self, x):
+        if x is not None:
+            return self.format_string(str(x))
+        else:
+            return ""
+
+    def format_string(self, x):
+        lstr, rstr = (x.split('.') + [''])[:2]
+        lstrrev = lstr[::-1]
+        a = [''] * 5
+
+        if len(lstrrev) % 3 == 1:
+            lstrrev += "00"
+        elif len(lstrrev) % 3 == 2:
+            lstrrev += "0"
+
+        lm = ""
+        for i in range(len(lstrrev) // 3):
+            a[i] = lstrrev[3 * i:3 * i + 3][::-1]
+            if a[i] != "000":
+                lm = self.trans_three(a[i]) + " " + self.parse_more(i) + " " + lm
+            else:
+                lm += self.trans_three(a[i])
+
+        xs = f"AND CENTS {self.trans_two(rstr)} " if rstr else ""
+        if not lm.strip():
+            return "ZERO ONLY"
+        else:
+            return f"{lm.strip()} {xs}ONLY"
+
+    def trans_two(self, s):
+        s = s.zfill(2)
+        if s[0] == "0":
+            return self.

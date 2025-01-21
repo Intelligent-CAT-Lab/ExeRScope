@@ -1,0 +1,11 @@
+<<<Analysis>>>
+1. Inside the `test()` method, a `Server` object is created.
+2. `server.add_white_list(88)` is called, adding 88 to the white_list.
+3. `server.add_white_list(11)` is called, adding 11 to the white_list.
+4. `server.add_white_list(22)` is called, adding 22 to the white_list.
+5. `server.add_white_list(22)` is called again. Since 22 is already in the white_list, the `if addr in self.white_list` condition within the `add_white_list` method evaluates to True.
+6. As a result, the method returns `False`.
+
+<<<Output>>>
+False
+[END-OF-RESPONSE]

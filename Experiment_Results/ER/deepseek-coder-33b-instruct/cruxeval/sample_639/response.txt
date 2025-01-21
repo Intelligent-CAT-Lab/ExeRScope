@@ -1,0 +1,42 @@
+
+The function f takes two strings as input: perc and full. It initializes an empty string reply and an integer i to 0. Then it enters a while loop that continues until either i is equal to the length of either perc or full, or perc[i] is not equal to full[i].
+
+Inside the while loop, it checks if perc[i] is equal to full[i]. If they are, it appends "yes " to reply. If they are not, it appends "no ". It then increments i by 1.
+
+When the while loop finishes, it returns reply.
+
+To determine the output of executing the function f on the input "xabxfiwoexahxaxbxs" and "xbabcabccb", we need to compare the characters of the two strings one by one.
+
+The first character of perc is 'x', and the first character of full is also 'x'. Since they are equal, "yes " is appended to reply.
+
+The second character of perc is 'a', and the second character of full is 'b'. Since they are not equal, "no " is appended to reply.
+
+The third character of perc is 'b', and the third character of full is 'a'. Since they are not equal, "no " is appended to reply.
+
+The fourth character of perc is 'x', and the fourth character of full is 'b'. Since they are not equal, "no " is appended to reply.
+
+The fifth character of perc is 'f', and the fifth character of full is 'a'. Since they are not equal, "no " is appended to reply.
+
+The sixth character of perc is 'i', and the sixth character of full is 'b'. Since they are not equal, "no " is appended to reply.
+
+The seventh character of perc is 'w', and the seventh character of full is 'a'. Since they are not equal, "no " is appended to reply.
+
+The eighth character of perc is 'o', and the eighth character of full is 'b'. Since they are not equal, "no " is appended to reply.
+
+The ninth character of perc is 'e', and the ninth character of full is 'a'. Since they are not equal, "no " is appended to reply.
+
+The tenth character of perc is 'x', and the tenth character of full is 'b'. Since they are not equal, "no " is appended to reply.
+
+The eleventh character of perc is 'a', and the eleventh character of full is 'b'. Since they are not equal, "no " is appended to reply.
+
+The twelfth character of perc is 'h', and the twelfth character of full is 'a'. Since they are not equal, "no " is appended to reply.
+
+The thirteenth character of perc is 'x', and the thirteenth character of full is 'b'. Since they are not equal, "no " is appended to reply.
+
+The fourteenth character of perc is 'a', and the fourteenth character of full is 'b'. Since they are not equal, "no " is appended to reply.
+
+The fifteenth character of perc is 'x', and the fifteenth character of full is 'b'. Since they are not equal, "no " is appended to reply.
+
+The sixteenth character of perc is 's', and the sixteenth character of full is not present. Since the length of full is less than the length of perc, the while loop terminates.
+
+Therefore, the output of executing the function f on the input "xabxfiwoexahxaxbxs" and "xbabcabccb" is "yes no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no

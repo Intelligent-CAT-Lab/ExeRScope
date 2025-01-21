@@ -1,0 +1,37 @@
+
+Inside the test() method, the prepare() method is invoked with the argument "2-3*4".
+Inside the prepare() method, the expression "2-3*4" is passed to the transform() method, which returns the transformed expression "2~3*4".
+The transformed expression is then assigned to the arr variable.
+The for loop iterates over the characters in arr.
+Inside the for loop, if the current character is '-', the if statement checks if the current character is the first character in the expression.
+If it is, the current character is replaced with '~' in arr.
+If the current character is not the first character, the previous character is checked. If the previous character is in the set {'+', '-', '*', '/', '(', 'E', 'e'}, the current character is replaced with '~' in arr.
+After the for loop, the expression is checked to see if it starts with '~' and has a '(' after it. If it does, the first character is replaced with '-' and the expression is returned as "0" + the expression.
+If the expression does not start with '~' or does not have a '(' after it, the expression is returned as is.
+In this case, the transformed expression is "2~3*4", and the expression is returned as "02~3*4".
+The prepare() method then calls the _calculate() method with the arguments "02~3*4", "2~3", and "*".
+Inside the _calculate() method, the current_op is checked to see if it is one of '+', '-', '*', '/', or '%'.
+If it is not, a ValueError is raised with the message "Unexpected operator: {}".format(current_op).
+In this case, the current_op is '*', so the Decimal(first_value) * Decimal(second_value) expression is evaluated and returned.
+The prepare() method then calls the _calculate() method with the arguments "02~3*4", "02~3", and "2".
+Inside the _calculate() method, the current_op is checked to see if it is one of '+', '-', '*', '/', or '%'.
+If it is not, a ValueError is raised with the message "Unexpected operator: {}".format(current_op).
+In this case, the current_op is '2', so the Decimal(first_value) * Decimal(second_value) expression is evaluated and returned.
+The prepare() method then calls the _calculate() method with the arguments "02~3*4", "02", and "~3".
+Inside the _calculate() method, the current_op is checked to see if it is one of '+', '-', '*', '/', or '%'.
+If it is not, a ValueError is raised with the message "Unexpected operator: {}".format(current_op).
+In this case, the current_op is '~3', so the Decimal(first_value) * Decimal(second_value) expression is evaluated and returned.
+The prepare() method then calls the _calculate() method with the arguments "02~3*4", "0", and "2".
+Inside the _calculate() method, the current_op is checked to see if it is one of '+', '-', '*', '/', or '%'.
+If it is not, a ValueError is raised with the message "Unexpected operator: {}".format(current_op).
+In this case, the current_op is '2', so the Decimal(first_value) * Decimal(second_value) expression is evaluated and returned.
+The prepare() method then calls the _calculate() method with the arguments "02~3*4", "0", and "2".
+Inside the _calculate() method, the current_op is checked to see if it is one of '+', '-', '*', '/', or '%'.
+If it is not, a ValueError is raised with the message "Unexpected operator: {}".format(current_op).
+In this case, the current_op is '2', so the Decimal(first_value) * Decimal(second_value) expression is evaluated and returned.
+The prepare() method then calls the _calculate() method with the arguments "02~3*4", "0", and "2".
+Inside the _calculate() method, the current_op is checked to see if it is one of '+', '-', '*', '/', or '%'.
+If it is not, a ValueError is raised with the message "Unexpected operator: {}".format(current_op).
+In this case, the current_op is '2', so the Decimal(first_value) * Decimal(second_value) expression is evaluated and returned.
+The prepare() method then calls the _calculate() method with the arguments "02~3*4", "0", and "2".
+Inside the _calculate() method, the current_op is checked

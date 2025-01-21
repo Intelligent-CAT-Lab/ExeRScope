@@ -1,0 +1,10 @@
+<<<Analysis>>>
+The `Test.test()` method initializes a `Hotel` object with the name 'Test Hotel' and a dictionary of available rooms: {'single': 3, 'double': 2}. It then manually sets the `booked_rooms` attribute of the hotel to {'single': {'guest 1': 2}, 'double': {'guest 2': 1}}.
+
+The method then calls `check_in` on the hotel object with the parameters ('double', 1, 'guest 1'). The `check_in` method first checks if the room type 'double' exists in the `booked_rooms` dictionary, which it does. However, it then checks if 'guest 1' is in the 'double' room type bookings. 'guest 1' is not found in the 'double' bookings (only 'guest 2' is booked under 'double'), so the method returns `False`.
+
+The method returns a tuple containing the result of the `check_in` method (`False`) and the current state of `booked_rooms` (which remains unchanged as {'single': {'guest 1': 2}, 'double': {'guest 2': 1}}).
+
+<<<Output>>>
+(False, {'single': {'guest 1': 2}, 'double': {'guest 2': 1}})
+[END-OF-RESPONSE]

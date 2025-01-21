@@ -1,0 +1,10 @@
+<<<Analysis>>>
+The function f takes a string 'doc' as input and iterates through each character 'x' in the string. It checks if the character is an alphabetic character using the isalpha() method. If the character is alphabetic, it capitalizes the character using the capitalize() method and returns it immediately. If no alphabetic character is found after iterating through the entire string, it returns '-'.
+
+In the given input 'raruwa', the function starts iterating from the first character:
+1. 'r' is alphabetic, so it is capitalized to 'R' and returned immediately.
+
+Therefore, the function does not proceed to check the other characters after 'r' since it returns on the first true condition.
+<<<Output>>>
+'R'
+[END-OF-RESPONSE]

@@ -1,0 +1,15 @@
+
+<<<Analysis>>>
+In the `Test.test()` method, an instance of the `RegexUtils` class is created and stored in the variable `ru`. Then, the `split_sentences` method of the `ru` object is called with the string "Aaa. Bbbb? Ccc!" as the argument.
+
+The `split_sentences` method generates a regex pattern using the `generate_split_sentences_pattern` method. This pattern matches any character that is a period, exclamation mark, or question mark, followed by one or two spaces, and then a capital letter.
+
+The `split` method of the `RegexUtils` class is then called with the generated pattern and the input string as arguments. This method splits the input string into a list of substrings at each point where the pattern matches.
+
+In this case, the pattern matches at the periods, question marks, and exclamation marks, and the substrings are "Aaa", " Bbbb", and " Ccc", respectively.
+
+So, the return value of `ru.split_sentences("Aaa. Bbbb? Ccc!")` is `['Aaa', ' Bbbb', ' Ccc']`.
+
+<<<Output>>>
+['Aaa', ' Bbbb', ' Ccc']
+[END-OF-RESPONSE]

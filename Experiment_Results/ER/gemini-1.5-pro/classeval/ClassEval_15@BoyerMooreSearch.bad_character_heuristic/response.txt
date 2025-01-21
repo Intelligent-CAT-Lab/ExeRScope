@@ -1,0 +1,40 @@
+<<<Analysis>>>
+We will go through the `bad_character_heuristic` function step-by-step:
+
+1. **Initialization:**
+   - `positions = []`: An empty list to store the starting positions of potential matches.
+   - `self.textLen = 6`: Length of the text "ABAABA".
+   - `self.patLen = 2`: Length of the pattern "AB".
+
+2. **Looping through the text:**
+   - The `for` loop iterates through the text with possible starting positions of the pattern: `i = 0, 1, 2, 3, 4`.
+
+3. **For each `i`:**
+   - `mismatch_index = self.mismatch_in_text(i)`:  Finds the index of the first mismatch between the pattern and the text starting at position `i`.
+   - **If `mismatch_index == -1`**: It means the pattern matches the text starting at position `i`. So, `i` is appended to the `positions` list.
+   - **If `mismatch_index != -1`**: It means there's a mismatch. 
+     - `match_index = self.match_in_pattern(self.text[mismatch_index])`: Finds the index of the mismatched character in the pattern.
+     - `i = (mismatch_index - match_index)`: Calculates the shift using the bad character heuristic and updates `i`. This step essentially tries to align the mismatched character in the text with its last occurrence in the pattern.
+
+4. **Iterations:**
+   - **i = 0:**
+     - `mismatch_index = -1` (full match) -> `positions = [0]`
+   - **i = 1:**
+     - `mismatch_index = 2` (mismatch at index 2 in "ABAABA")
+     - `match_index = 0` ('A' in pattern)
+     - `i = 2 - 0 = 2`
+   - **i = 2:**
+     - `mismatch_index = -1` (full match) -> `positions = [0, 2]`
+   - **i = 3:**
+     - `mismatch_index = 4` (mismatch at index 4 in "ABAABA")
+     - `match_index = 0` ('A' in pattern)
+     - `i = 4 - 0 = 4`
+   - **i = 4:**
+     - `mismatch_index = -1` (full match) -> `positions = [0, 2, 4]`
+
+5. **Return:**
+   - The function returns `positions = [0, 2, 4]`.
+
+<<<Output>>>
+[0, 2, 4]
+[END-OF-RESPONSE] 

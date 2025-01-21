@@ -1,0 +1,19 @@
+
+<<<Analysis>>>
+In the `test()` method of the `Test` class, an instance of `ExpressionCalculator` is created and the `prepare()` method is called with the argument "2-3*4".
+
+The `prepare()` method first transforms the expression "2-3*4" into "2~34*-" using the `transform()` method. The '~' character is used to represent negative numbers.
+
+Then, the `prepare()` method prepares the expression for calculation. It uses a stack to store operators and operands. It iterates over the transformed expression, and for each character, it checks if it is an operator or an operand.
+
+If it is an operator, it checks the operator stack for operators with higher or equal priority. If it finds any, it pops them and appends them to the postfix stack. Then, it pushes the current operator to the operator stack.
+
+If it is an operand, it appends it to the postfix stack.
+
+After the loop, it pops all remaining operators from the operator stack and appends them to the postfix stack.
+
+Finally, it returns the postfix stack and a deque with the expected result ['2', '3', '4', '*', '-'].
+
+<<<Output>>>
+(deque(['2', '3', '4', '*', '-']), deque(['2', '3', '4', '*', '-']))
+[END-OF-RESPONSE]

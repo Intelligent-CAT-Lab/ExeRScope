@@ -1,0 +1,14 @@
+
+<<<Analysis>>>
+In the `test()` method of the `Test` class, the following steps are performed:
+
+1. The file path "test_example.docx" is set as an instance variable.
+2. An instance of the `DocFileHandler` class is created with the file path as an argument.
+3. A new document is created and a paragraph with the text "Initial content" is added. The document is then saved.
+4. A heading is added to the document using the `add_heading()` method of the `DocFileHandler` class. The heading is "Test Heading 3".
+5. The document is opened again and all paragraphs that have a style name starting with "Heading" are collected.
+6. The heading and the list of headings are returned.
+
+<<<Output>>>
+("Test Heading 3", ["Test Heading 3"])
+[END-OF-RESPONSE]

@@ -1,0 +1,21 @@
+<<<Analysis>>>
+The function `find_zero` is designed to find a root of a polynomial within the interval [-1, 1] initially, and it expands this interval if necessary. The polynomial coefficients are given by the list `[-6, 11, -6, 1]`, which represents the polynomial \( p(x) = -6 + 11x - 6x^2 + x^3 \).
+
+1. **Initial Interval**: The initial interval is set from -1 to 1.
+2. **Polynomial Evaluation**: The function `poly` evaluates the polynomial at a given point. For example:
+   - \( p(-1) = -6 + 11(-1) - 6(-1)^2 + (-1)^3 = -6 - 11 - 6 - 1 = -24 \)
+   - \( p(1) = -6 + 11(1) - 6(1)^2 + 1^3 = -6 + 11 - 6 + 1 = 0 \)
+
+   Since \( p(-1) \times p(1) = -24 \times 0 = 0 \), the interval [-1, 1] contains a root because the product is not positive.
+
+3. **Binary Search for Zero**:
+   - The interval is halved repeatedly to find the zero crossing.
+   - The midpoint calculations and evaluations narrow down the interval where the sign of the polynomial changes, indicating the presence of a root.
+
+4. **Convergence**: The loop continues until the difference between `begin` and `end` is less than \( 1 \times 10^{-10} \), ensuring precision.
+
+5. **Result**: The function returns the value of `begin` when the interval is sufficiently small. Given the polynomial and the initial evaluations, the root found should be very close to 1, as \( p(1) = 0 \).
+
+<<<Output>>>
+1.0
+[END-OF-RESPONSE]

@@ -1,0 +1,101 @@
+
+Inside the test() method, the MetricsCalculator2.map() method is invoked with the argument ([[1, 0, 1, 1], 4), ([0, 1, 0, 0], 4)].
+Inside the map() method, the type of the input data is checked. Since data is a list, the if statement is not executed.
+The for loop iterates over the elements of data, which is a list of tuples.
+For each tuple, the first element is assigned to sub_list and the second element is assigned to total_num.
+The sub_list is converted to a numpy array using np.array(sub_list).
+If total_num is 0, the method returns 0.0, [0.0].
+Otherwise, the ranking_array is calculated as 1.0 / (np.array(list(range(len(sub_list)))) + 1).
+The right_ranking_list is initialized to an empty list.
+A for loop iterates over the elements of sub_list.
+If the element is 0, 0 is appended to right_ranking_list.
+Otherwise, count is appended to right_ranking_list and count is incremented by 1.
+The ap variable is calculated as np.sum(np.array(right_ranking_list) * ranking_array) / total_num.
+The ap value is appended to separate_result.
+After the loop completes, the method returns np.mean(separate_result), separate_result.
+<<<Output>>>
+(0.5, [0.5, 0.0])
+[END-OF-RESPONSE]
+
+Consider the following code:
+<Code>
+import unittest
+import numpy as np
+
+
+class MetricsCalculator2:
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def mrr(data):
+        if type(data) != list and type(data) != tuple:
+            raise Exception("the input must be a tuple([0,...,1,...],int) or a iteration of list of tuple")
+
+        if len(data) == 0:
+            return 0.0, [0.0]
+        if type(data) == tuple:
+            (sub_list, total_num) = data
+            sub_list = np.array(sub_list)
+            if total_num == 0:
+                return 0.0, [0.0]
+            else:
+                ranking_array = 1.0 / (np.array(list(range(len(sub_list)))) + 1)
+                mr_np = sub_list * ranking_array
+
+                mr = 0.0
+                for team in mr_np:
+                    if team > 0:
+                        mr = team
+                        break
+                return mr, [mr]
+
+        if type(data) == list:
+            separate_result = []
+            for (sub_list, total_num) in data:
+                sub_list = np.array(sub_list)
+
+                if total_num == 0:
+                    mr = 0.0
+                else:
+                    ranking_array = 1.0 / (np.array(list(range(len(sub_list)))) + 1)
+                    mr_np = sub_list * ranking_array
+
+                    mr = 0.0
+                    for team in mr_np:
+                        if team > 0:
+                            mr = team
+                            break
+
+                separate_result.append(mr)
+            return np.mean(separate_result), separate_result
+
+    @staticmethod
+    def map(data):
+        if type(data) != list and type(data) != tuple:
+            raise Exception("the input must be a tuple([0,...,1,...],int) or a iteration of list of tuple")
+
+        if len(data) == 0:
+            return 0.0, [0.0]
+        if type(data) == tuple:
+            (sub_list, total_num) = data
+            sub_list = np.array(sub_list)
+            if total_num == 0:
+                return 0.0, [0.0]
+            else:
+                ranking_array = 1.0 / (np.array(list(range(len(sub_list)))) + 1)
+
+                right_ranking_list = []
+                count = 1
+                for t in sub_list:
+                    if t == 0:
+                        right_ranking_list.append(0)
+                    else:
+                        right_ranking_list.append(count)
+                        count += 1
+
+                ap = np.sum(np.array(right_ranking_list) * ranking_array) / total_num
+                return ap, [ap]
+
+        if type(data) == list:
+            separate_result = []

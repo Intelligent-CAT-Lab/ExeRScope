@@ -1,0 +1,12 @@
+
+In the test() method, a Classroom object is created with id 1. A course dictionary is defined with 'name', 'start_time', and 'end_time' keys. The course dictionary is then added to the classroom using the add_course() method.
+
+The add_course() method checks if the course is not already in the classroom's courses list. If it's not, it adds the course to the list.
+
+In this case, the course is not in the list, so it gets added. The courses list becomes [{'name': 'Art', 'start_time': '14:00', 'end_time': '15:00'}].
+
+The test() method then returns the course dictionary and the classroom's courses list.
+
+<<<Output>>>
+({'name': 'Art', 'start_time': '14:00', 'end_time': '15:00'}, [{'name': 'Art', 'start_time': '14:00', 'end_time': '15:00'}])
+[END-OF-RESPONSE]

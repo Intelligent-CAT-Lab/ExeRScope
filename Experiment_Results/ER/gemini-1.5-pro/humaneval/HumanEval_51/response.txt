@@ -1,0 +1,9 @@
+<<<Analysis>>>
+1. The function `remove_vowels` takes a string `text` as input. In this case,  `text = 'fedcba'`.
+2. Inside the function, a list comprehension is used to iterate through each character `s` in the input `text`.
+3. For each character `s`, it checks if its lowercase version (`s.lower()`) is not present in the list of vowels `["a", "e", "i", "o", "u"]`. 
+4. If the character is not a vowel, it is added to a new list.
+5. Finally the code uses the `join` method to concatenate all the characters in the new list and returns the resulting string, which will be 'fdcba'.
+<<<Output>>>
+fdcba
+[END-OF-RESPONSE] 

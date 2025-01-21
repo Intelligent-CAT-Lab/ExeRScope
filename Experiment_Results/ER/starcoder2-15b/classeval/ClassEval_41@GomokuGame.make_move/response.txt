@@ -1,0 +1,28 @@
+
+Inside the test() method, the GomokuGame class is instantiated with a board_size of 10.
+The board_size is used to initialize the board, which is a 2D list of size board_size x board_size.
+The current_player is initialized to 'X'.
+The make_move() method is called twice with the arguments (0, 0) and (0, 1).
+Inside the make_move() method, the board[row][col] is checked to see if it is empty.
+Since the board is initialized to all empty spaces, the board[0][0] is empty.
+Therefore, the board[0][0] is set to 'X', and the current_player is set to 'O'.
+The make_move() method returns True.
+The make_move() method is called again with the arguments (0, 1).
+Since the board[0][1] is already occupied by 'O', the make_move() method returns False.
+The check_winner() method is called.
+Inside the check_winner() method, the directions list is defined, which contains four tuples representing the four directions: (0, 1) (1, 0), (1, 1), and (1, -1).
+A nested for loop iterates over each cell in the board.
+For each cell, the _check_five_in_a_row() method is called with the current row, column, and each direction in the directions list.
+Inside the _check_five_in_a_row() method, the dx and dy variables are assigned the values from the direction tuple.
+The count variable is initialized to 1, and the symbol variable is assigned the value of the current cell.
+A for loop iterates from 1 to 4, incrementing i each time.
+Inside the for loop, the new_row and new_col variables are calculated based on the current row, column, dx, and dy.
+If the new_row or new_col is out of bounds, the _check_five_in_a_row() method returns False.
+If the cell at board[new_row][new_col] does not match the symbol, the _check_five_in_a_row() method returns False.
+Otherwise, the count variable is incremented by 1.
+After the for loop, if count is equal to 5, the _check_five_in_a_row() method returns True. Otherwise, it returns False.
+Since the board is initialized to all empty spaces, the _check_five_in_a_row() method will return False for all directions.
+Therefore, the check_winner() method will return None.
+<<<Output>>>
+(True, False, [[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']], [[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']])
+[

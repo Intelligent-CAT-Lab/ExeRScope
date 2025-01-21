@@ -1,0 +1,13 @@
+
+<<<Analysis>>>
+The function `rolling_max` takes a list of integers as input.
+The variable `running_max` is initialized to `None`, which will be used to keep track of the maximum number seen so far.
+The variable `result` is initialized to an empty list, which will be used to store the maximum numbers seen so far.
+The code then enters a loop that iterates over each number in the input list.
+For each number `n` in the list, it checks if `running_max` is `None`. If it is, it sets `running_max` to `n`. If it's not `None`, it updates `running_max` to be the maximum of `running_max` and `n`.
+After updating `running_max`, the code appends `running_max` to the `result` list.
+After the loop finishes, the code returns the `result` list, which contains the maximum numbers seen so far at each position in the input list.
+For the input `[3,2,3,100,3]`, the maximum numbers seen so far are `[3,3,3,100,100]`.
+<<<Output>>>
+[3, 3, 3, 100, 100]
+[END-OF-RESPONSE]

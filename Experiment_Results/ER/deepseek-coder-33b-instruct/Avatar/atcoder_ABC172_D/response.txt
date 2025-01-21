@@ -1,0 +1,15 @@
+
+<<<Analysis>>>
+The code first imports several modules including defaultdict, deque, heappush, heappop, bisect_left, bisect_right, sys, random, itertools, math, and sets. It also sets the recursion limit to 10**5 and replaces the input function with a faster version.
+
+The code then defines several helper functions to read input in different formats. These functions include LI for reading a list of integers, LF for reading a list of floats, LI_ for reading a list of integers where each integer is decreased by 1, II for reading a single integer, IF for reading a single float, S for reading a string, LS for reading a list of strings, IR for reading a list of integers of size n, LIR for reading a list of lists of integers, FR for reading a list of floats, LFR for reading a list of lists of floats, LIR_ for reading a list of lists of integers where each integer is decreased by 1, SR for reading a list of strings, and LSR for reading a list of lists of strings.
+
+The code then defines two constants, mod and inf, which are 1000000007 and float("INF") respectively.
+
+The main function solve reads an integer n from input. It initializes ans to 0. Then it enters a loop that iterates from 1 to n (inclusive). For each i, it calculates x as the integer division of n by i. Then it adds i times the sum of the arithmetic series from 1 to x to ans. Finally, it prints ans.
+
+Given the input 9995083, the code calculates the sum of the arithmetic series from 1 to 9995083 for each i from 1 to 9995083, and adds these sums to ans. The final value of ans is printed as the output.
+
+<<<Output>>>
+499756180012535
+[END-OF-RESPONSE]

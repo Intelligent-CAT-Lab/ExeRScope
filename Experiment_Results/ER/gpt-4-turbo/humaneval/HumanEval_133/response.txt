@@ -1,0 +1,12 @@
+<<<Analysis>>>
+The function `sum_squares` takes a list of numbers as input and calculates the sum of the squares of the ceiling values of these numbers. The `math.ceil` function is used to round each number up to the nearest integer before squaring it.
+1. The input list is `[1, 2, 3]`.
+2. The variable `squared` is initialized to 0.
+3. The function iterates over each element in the list:
+   - For `i = 1`, `math.ceil(1)` is 1. Then, `1^2 = 1`. `squared` becomes 1.
+   - For `i = 2`, `math.ceil(2)` is 2. Then, `2^2 = 4`. `squared` becomes 1 + 4 = 5.
+   - For `i = 3`, `math.ceil(3)` is 3. Then, `3^2 = 9`. `squared` becomes 5 + 9 = 14.
+4. The function returns the final value of `squared`, which is 14.
+<<<Output>>>
+14
+[END-OF-RESPONSE]

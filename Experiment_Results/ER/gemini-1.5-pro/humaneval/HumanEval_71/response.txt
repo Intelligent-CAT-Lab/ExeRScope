@@ -1,0 +1,21 @@
+<<<Analysis>>>
+The function `triangle_area` takes three arguments: `a`, `b`, and `c`, which represent the lengths of the sides of a triangle. 
+
+1. **Check for valid triangle inequality:** The code first checks if the sum of any two sides is less than or equal to the third side. This is based on the triangle inequality theorem, which states that the sum of any two sides of a triangle must be greater than the third side. If any of these conditions are true, it means a triangle cannot be formed, and the function returns -1.
+
+2. **Calculate semi-perimeter (s):** If the triangle inequality holds true, the code calculates the semi-perimeter (`s`) of the triangle, which is half the sum of its sides: `s = (a + b + c) / 2`
+
+3. **Calculate area:** Next, the code calculates the area of the triangle using Heron's formula: `area = (s * (s - a) * (s - b) * (s - c)) ** 0.5`
+
+4. **Round area:** Finally, the calculated area is rounded to two decimal places using `round(area, 2)` and returned.
+
+In this specific case, `a = 3`, `b = 4`, and `c = 5`:
+
+1. The triangle inequality holds true, so the code proceeds to calculate the semi-perimeter.
+2. `s = (3 + 4 + 5) / 2 = 6`
+3. `area = (6 * (6-3) * (6-4) * (6-5)) ** 0.5 = 6.0`
+4. The area is rounded to 6.00
+
+<<<Output>>>
+6.00
+[END-OF-RESPONSE] 

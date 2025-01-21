@@ -1,0 +1,60 @@
+<｜begin▁of▁sentence｜><Instruction> I want you to act as a Python code executor. I will give you a piece of Python code and its input. You need to think step by step and then print the output of code execution.
+</Instruction>
+Below is an example:
+<Example>
+Consider the following code
+
+def f(s):
+    return s + "a"
+
+[Question]
+What would be the return value of ```f("hi")```?
+First analyze step by step about how the code processes the input to generate the output. 
+Then print the output of the code based on your analysis.
+
+Follow the following format:
+<<<Analysis>>>
+{YOUR ANALYSIS}
+<<<Output>>>
+{OUTPUT}
+[END-OF-RESPONSE]
+[Answer]
+
+The function f takes a string s as input and returns the concatenation of s with the string "a".
+To determine the output of executing the function f on the input "hi", we need to concatenate "hi" with "a".
+Therefore, the output of executing the function f on the input "hi" is "hia".
+<<<Output>>>
+'hia'
+[END-OF-RESPONSE]
+
+</Example>
+Consider the following code
+def f(text, pref):
+    if isinstance(pref, list):
+        return ', '.join(text.startswith(x) for x in pref)
+    else:
+        return text.startswith(pref)
+[Question]
+What would be the return value of ```f('Hello World', 'W')```?
+
+First analyze step by step about how the code processes the input to generate the output. 
+Then print the output of the code based on your analysis.
+
+Follow the following format:
+<<<Analysis>>>
+{YOUR ANALYSIS}
+<<<Output>>>
+{OUTPUT}
+[END-OF-RESPONSE]
+
+[Answer]
+The function f takes two arguments: text and pref. If pref is a list, it checks if each word in the list starts with the prefix and returns a string with True or False for each word. If pref is not a list, it checks if the text starts with the prefix and returns a boolean value.
+
+To determine the output of executing the function f on the input ('Hello World', 'W'), we need to check if the text 'Hello World' starts with the prefix 'W'.
+Therefore, the output of executing the function f on the input ('Hello World', 'W') is True.
+<<<Output>>>
+True
+[END-OF-RESPONSE]
+
+</Example>
+<｜end▁of▁sentence｜>

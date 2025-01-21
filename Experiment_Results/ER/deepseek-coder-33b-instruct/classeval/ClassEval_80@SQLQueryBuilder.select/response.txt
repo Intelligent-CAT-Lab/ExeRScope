@@ -1,0 +1,16 @@
+
+<<<Analysis>>>
+In the test() method, the SQLQueryBuilder.select() method is invoked. The purpose of this method is to generate a SQL SELECT query.
+The method takes three parameters: table, columns, and where.
+- table: The name of the table to select from. In this case, 'students'.
+- columns: The columns to select. In this case, ['id', 'name']. The method joins these into a string with ', ' as the separator.
+- where: The conditions for the WHERE clause. In this case, {'age': 18}. The method generates a string with ' AND ' as the separator, where each key-value pair is formatted as 'key=value'.
+
+The method starts by checking if columns is not equal to '*'. If it is not, it joins the columns into a string with ', ' as the separator.
+Then, it constructs the SELECT query by concatenating the SELECT clause, the columns, the FROM clause, and the table name.
+If where is not None, it adds the WHERE clause to the query, joining the conditions with ' AND '.
+Finally, it returns the query.
+
+<<<Output>>>
+SELECT id, name FROM students WHERE age='18'
+[END-OF-RESPONSE]

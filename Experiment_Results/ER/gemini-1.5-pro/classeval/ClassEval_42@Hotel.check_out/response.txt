@@ -1,0 +1,11 @@
+<<<Analysis>>>
+Inside the test() method, a Hotel object is created with the name 'Test Hotel' and a dictionary of available rooms: {'single': 3, 'double': 2}.
+Then, the booked_rooms attribute of the hotel object is set to {'single': {'guest 1': 2}, 'double': {'guest 2': 1}}.
+Next, the check_out() method is called with room_type 'triple' and room_number 2.
+Inside the check_out() method:
+    Since 'triple' is not in available_rooms, the else block is executed.
+    A new key 'triple' with value 2 is added to the available_rooms dictionary.
+Finally, the test() method returns the available_rooms and booked_rooms attributes of the hotel object.
+<<<Output>>>
+({'single': 3, 'double': 2, 'triple': 2}, {'single': {'guest 1': 2}, 'double': {'guest 2': 1}})
+[END-OF-RESPONSE]

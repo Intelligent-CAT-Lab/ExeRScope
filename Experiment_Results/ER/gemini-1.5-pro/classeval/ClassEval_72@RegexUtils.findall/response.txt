@@ -1,0 +1,13 @@
+<<<Analysis>>>
+Inside the test() method:
+1. An instance of the 'RegexUtils' class is created as 'ru'.
+2. The 'ru.findall()' method is called with the pattern r'\b\d{3}-\d{3}-\d{4}\b' and the text "abiguygusu  111-111-1111 kjgufwycs 987-762-9767".
+3. Inside the findall() method:
+    - It uses the 're.findall()' function with the provided pattern and text.
+    - The pattern r'\b\d{3}-\d{3}-\d{4}\b' searches for phone numbers in the format of three digits, a hyphen, three digits, a hyphen, and four digits, ensuring that the numbers are not embedded within other characters.
+    - The 're.findall()' function returns a list containing all non-overlapping matches found in the text.
+4. The findall() method returns the list of matched phone numbers.
+Therefore, the 'test()' method will return a list containing the two phone numbers found in the text.
+<<<Output>>>
+['111-111-1111', '987-762-9767']
+[END-OF-RESPONSE]

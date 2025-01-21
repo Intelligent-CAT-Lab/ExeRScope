@@ -1,0 +1,20 @@
+<<<Analysis>>>
+The `Test.test()` method creates an instance of `NumberWordFormatter` and calls the `format_string` method with the string '123456'.
+
+1. The `format_string` method splits '123456' into `lstr` ('123456') and `rstr` ('') since there's no decimal point.
+2. `lstrrev` is the reverse of `lstr`, which is '654321'.
+3. Since the length of `lstrrev` is 6, which is divisible by 3, no additional zeros are added.
+4. The method then processes each group of three digits from `lstrrev`:
+   - First group: '654' (reversed from the last three digits of `lstrrev`)
+   - Second group: '321' (reversed from the first three digits of `lstrrev`)
+5. For each group, the `trans_three` method is called:
+   - For '654', `trans_three` returns "SIX HUNDRED AND FIFTY FOUR".
+   - For '321', `trans_three` returns "THREE HUNDRED AND TWENTY ONE".
+6. The `parse_more` method is used to append the scale (THOUSAND, MILLION, etc.) based on the group's position:
+   - For '654', it's the first group, so "THOUSAND" is appended.
+   - For '321', it's the second group, so no scale is appended (it's the last group).
+7. The results are combined and formatted, resulting in "THREE HUNDRED AND TWENTY ONE THOUSAND SIX HUNDRED AND FIFTY FOUR ONLY" since there are no cents (`rstr` is empty).
+
+<<<Output>>>
+THREE HUNDRED AND TWENTY ONE THOUSAND SIX HUNDRED AND FIFTY FOUR ONLY
+[END-OF-RESPONSE]

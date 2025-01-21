@@ -1,0 +1,26 @@
+<<<Analysis>>>
+The function `order_by_points` takes a list of integers `nums` as input and is supposed to sort it based on the sum of their digits. 
+
+1. **`digits_sum(n)` function:**
+   - This function calculates the sum of digits of a number `n`, considering the sign of the first digit. 
+   - If `n` is negative, it converts it to positive and stores the negative sign to apply later.
+   - It converts `n` into a list of its digits.
+   - It applies the stored sign to the first digit.
+   - It returns the sum of all digits in the list.
+
+2. **`order_by_points(nums)` function:**
+   - It uses the `sorted` function with a custom key `digits_sum`. This means the list `nums` will be sorted based on the return value of `digits_sum` for each element.
+
+**Processing the input:**
+- The input list is `[1, 11, -1, -11, -12]`. 
+- Let's see how `digits_sum` would process each element:
+    - `1`:  `digits_sum(1)` -> `1` 
+    - `11`: `digits_sum(11)` -> `2` 
+    - `-1`: `digits_sum(-1)` -> `-1`
+    - `-11`: `digits_sum(-11)` -> `-2`
+    - `-12`: `digits_sum(-12)` -> `-3` 
+- Now, `sorted` will use these calculated values to order the original list.
+
+<<<Output>>>
+[-12, -11, -1, 1, 11]
+[END-OF-RESPONSE] 

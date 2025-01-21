@@ -1,0 +1,12 @@
+
+In the `test()` method, a new instance of `CamelCaseMap` is created and assigned to the variable `camelize_map`.
+
+Then, the `__setitem__` method is called on `camelize_map` with the arguments `'age'` and `30`. This method calls `_convert_key` on `'age'`, which returns `'age'`. Then it sets the value `30` in the `_data` dictionary of `camelize_map` with the key `'age'`.
+
+Finally, the `__getitem__` method is called on `camelize_map` with the argument `'age'`. This method calls `_convert_key` on `'age'`, which returns `'age'`. Then it retrieves the value from the `_data` dictionary of `camelize_map` with the key `'age'`, which is `30`.
+
+So, the return value of `Test.test()` is `30`.
+
+<<<Output>>>
+30
+[END-OF-RESPONSE]

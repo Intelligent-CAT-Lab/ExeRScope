@@ -1,0 +1,14 @@
+
+In the `Test.test()` method, an instance of the `EncryptionUtils` class is created with the key "longkey". Then, the `rail_fence_cipher` method is called with the input string 'AbCdEfG' and the number of rails 2.
+
+The `rail_fence_cipher` method creates a 2D list (fence) with the same number of rows as the number of rails and the same number of columns as the length of the input string. It then iterates over the input string, adding each character to the fence in a zigzag pattern.
+
+The first character is added to the first row, the second character to the second row, and so on. When it reaches the last row, it starts moving upwards. When it reaches the first row again, it starts moving downwards.
+
+The encrypted text is then created by iterating over the fence and adding each character to the encrypted text.
+
+In this case, the input string 'AbCdEfG' is encrypted with a rail fence cipher with 2 rails. The encrypted text will be 'AbfdEcG'.
+
+<<<Output>>>
+'AbfdEcG'
+[END-OF-RESPONSE]

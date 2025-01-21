@@ -1,0 +1,16 @@
+
+In the `test()` method, an instance of the `URLHandler` class is created with the URL "https://www.baidu.com/s?wd=aaa&rsv_spt=1#page". The `get_query_params()` method is then called on this instance.
+
+The `get_query_params()` method first finds the position of the "?" character in the URL, which indicates the start of the query string. It then finds the position of the "#" character, which indicates the start of the fragment.
+
+If a "?" character is found, the method extracts the query string from the URL. It then splits the query string into a list of parameter pairs, where each pair is separated by an "&" character.
+
+For each parameter pair, the method splits the pair into a key and a value, where the key and value are separated by an "=" character. If the pair is split into exactly two parts, the method adds the key and value to a dictionary.
+
+In this case, the query string is "wd=aaa&rsv_spt=1", which is split into two parameter pairs: "wd=aaa" and "rsv_spt=1". Each of these pairs is split into a key and a value, resulting in the dictionary {"wd": "aaa", "rsv_spt": "1"}.
+
+Therefore, the return value of `Test.test()` is the dictionary {"wd": "aaa", "rsv_spt": "1"}.
+
+<<<Output>>>
+{'wd': 'aaa', 'rsv_spt': '1'}
+[END-OF-RESPONSE]

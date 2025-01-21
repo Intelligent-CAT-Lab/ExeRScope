@@ -1,0 +1,90 @@
+
+Inside the test() method, the z_score() method is invoked with the argument [1].
+Inside the z_score() method, the mean() method is invoked with the argument [1].
+Inside the mean() method, the len() function is invoked with the argument [1].
+The len() function returns the length of the list, which is 1.
+The mean() method returns the sum of the list divided by the length, which is 1 / 1 = 1.
+The standard_deviation() method is invoked with the argument [1].
+Inside the standard_deviation() method, the len() function is invoked with the argument [1].
+The len() function returns the length of the list, which is 1.
+The standard_deviation() method returns None if the length is less than 2, which is not the case here.
+The mean() method is invoked again with the argument [1].
+Inside the mean() method, the sum() function is invoked with the argument [1].
+The sum() function returns the sum of the list, which is 1.
+The mean() method returns the sum of the list divided by the length, which is 1 / 1 = 1.
+The standard_deviation() method is invoked again with the argument [1].
+Inside the standard_deviation() method, the mean() method is invoked with the argument [1].
+Inside the mean() method, the sum() function is invoked with the argument [1].
+The sum() function returns the sum of the list, which is 1.
+The mean() method returns the sum of the list divided by the length, which is 1 / 1 = 1.
+The standard_deviation() method returns the square root of the sum of the squared differences between each element and the mean divided by the length minus 1, which is sqrt((1 - 1) ** 2 / (1 - 1)) = sqrt(0 / 0) = sqrt(0) = 0.
+The z_score() method returns a list of z-scores, which is [(1 - 1) / 0] = [0 / 0] = [None].
+<<<Output>>>
+[None]
+[END-OF-RESPONSE]
+
+Consider the following code:
+<Code>
+import unittest
+class Statistics:
+    @staticmethod
+    def mean(data):
+        if len(data) == 0:
+            return None
+        return sum(data) / len(data)
+
+    @staticmethod
+    def median(data):
+        sorted_data = sorted(data)
+        n = len(sorted_data)
+        if n % 2 == 1:
+            return sorted_data[n // 2]
+        else:
+            return (sorted_data[n // 2 - 1] + sorted_data[n // 2]) / 2
+
+    @staticmethod
+    def mode(data):
+        counts = {}
+        for value in data:
+            counts[value] = counts.get(value, 0) + 1
+        max_count = max(counts.values())
+        mode_values = [value for value, count in counts.items() if count == max_count]
+        return mode_values
+
+    @staticmethod
+    def correlation(x, y):
+        n = len(x)
+        mean_x = sum(x) / n
+        mean_y = sum(y) / n
+        numerator = sum((xi - mean_x) * (yi - mean_y) for xi, yi in zip(x, y))
+        denominator = (sum((xi - mean_x) ** 2 for xi in x) * sum((yi - mean_y) ** 2 for yi in y)) ** 0.5
+        if denominator == 0:
+            return None
+        return numerator / denominator
+
+    @staticmethod
+    def correlation_matrix(data):
+        matrix = []
+        for i in range(len(data[0])):
+            row = []
+            for j in range(len(data[0])):
+                column1 = [row[i] for row in data]
+                column2 = [row[j] for row in data]
+                correlation = Statistics.correlation(column1, column2)
+                row.append(correlation)
+            matrix.append(row)
+        return matrix
+
+    @staticmethod
+    def standard_deviation(data):
+        n = len(data)
+        if n < 2:
+            return None
+        mean_value = Statistics.mean(data)
+        variance = sum((x - mean_value) ** 2 for x in data) / (n - 1)
+        return variance ** 0.5
+
+    @staticmethod
+    def z_score(data):
+        mean = Statistics.mean(data)
+        std

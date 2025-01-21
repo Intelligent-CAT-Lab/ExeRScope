@@ -1,0 +1,12 @@
+
+<<<Analysis>>>
+In the `Test.test()` method, the following steps are performed:
+1. A database connection is established with the name 'test_database.db'.
+2. A new ticket is inserted into the database for the movie 'Avengers: Endgame' in the theater 'Cinema 1' at seat 'A1' for the customer 'bbb'.
+3. The tickets for the customer 'bbb' are searched from the database.
+4. The first ticket of the search result is retrieved.
+5. The length of the search result, the movie name, theater name, seat number, and customer name of the ticket are returned.
+
+<<<Output>>>
+(1, 'Avengers: Endgame', 'Cinema 1', 'A1', 'bbb')
+[END-OF-RESPONSE]

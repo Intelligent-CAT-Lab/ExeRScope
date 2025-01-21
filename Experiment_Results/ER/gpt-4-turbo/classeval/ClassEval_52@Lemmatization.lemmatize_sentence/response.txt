@@ -1,0 +1,30 @@
+<<<Analysis>>>
+The `test()` method in the `Test` class creates an instance of the `Lemmatization` class and then calls the `lemmatize_sentence()` method with the sentence "Until the beating, Cantanco's eyesight had been weak, but adequate."
+
+1. **Remove Punctuation**: The `lemmatize_sentence()` method first calls `remove_punctuation()` to strip the sentence of punctuation. The input sentence "Until the beating, Cantanco's eyesight had been weak, but adequate." becomes "Until the beating Cantancos eyesight had been weak but adequate".
+
+2. **Tokenization**: The cleaned sentence is then tokenized into words using `word_tokenize()`, resulting in the list `['Until', 'the', 'beating', 'Cantancos', 'eyesight', 'had', 'been', 'weak', 'but', 'adequate']`.
+
+3. **POS Tagging**: Each word in the list is then tagged with a part of speech (POS) using `pos_tag()`. The tags would typically be:
+   - 'Until' -> IN (preposition)
+   - 'the' -> DT (determiner)
+   - 'beating' -> NN (noun)
+   - 'Cantancos' -> NNP (proper noun)
+   - 'eyesight' -> NN (noun)
+   - 'had' -> VBD (verb, past tense)
+   - 'been' -> VBN (verb, past participle)
+   - 'weak' -> JJ (adjective)
+   - 'but' -> CC (coordinating conjunction)
+   - 'adequate' -> JJ (adjective)
+
+4. **Lemmatization**: Each word is then lemmatized based on its POS tag:
+   - Verbs ('had', 'been') are lemmatized to 'have' and 'be' respectively.
+   - Adjectives ('weak', 'adequate') and other words retain their form as their lemmatized form does not change.
+
+5. **Result**: The final list of lemmatized words is `['Until', 'the', 'beating', 'Cantancos', 'eyesight', 'have', 'be', 'weak', 'but', 'adequate']`.
+
+The `test()` method returns this result along with the expected list for comparison.
+
+<<<Output>>>
+(['Until', 'the', 'beating', 'Cantancos', 'eyesight', 'have', 'be', 'weak', 'but', 'adequate'], ['Until', 'the', 'beating', 'Cantancos', 'eyesight', 'have', 'be', 'weak', 'but', 'adequate'])
+[END-OF-RESPONSE]

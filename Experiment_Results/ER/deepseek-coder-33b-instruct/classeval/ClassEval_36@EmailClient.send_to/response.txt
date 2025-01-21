@@ -1,0 +1,16 @@
+
+In the `test()` method, an instance of `EmailClient` is created for the sender and receiver. The sender sends an email to the receiver with the content 'Hello' and size 10.
+
+The `send_to()` method is called on the sender instance. This method checks if the receiver's inbox is full with one more email. If it is not, it creates an email dictionary with the sender's address, receiver's address, content, size, timestamp, and state (unread). It then appends this email to the receiver's inbox and returns True. If the receiver's inbox is full, it calls the `clear_inbox()` method to clear space in the receiver's inbox, and then returns False.
+
+The `is_full_with_one_more_email()` method is called to check if the receiver's inbox is full with one more email. This method calculates the occupied size of the receiver's inbox by summing the size of each email in the inbox. It then checks if the occupied size plus the size of the new email is greater than the receiver's capacity. If it is, it returns True, indicating that the receiver's inbox is full. If it is not, it returns False.
+
+The `clear_inbox()` method is called to clear space in the receiver's inbox. This method deletes emails from the receiver's inbox until the receiver's inbox is not full with one more email.
+
+In this case, the receiver's inbox capacity is 0, so the receiver's inbox is full with one more email. The `clear_inbox()` method is called to clear space in the receiver's inbox, but since the receiver's inbox is already empty, no emails are deleted.
+
+The `send_to()` method returns False, indicating that the email was not sent.
+
+<<<Output>>>
+False
+[END-OF-RESPONSE]

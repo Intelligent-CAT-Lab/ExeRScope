@@ -1,0 +1,11 @@
+
+<<<Analysis>>>
+In the test() method, an instance of the BookManagement class is created.
+The add_book() method is called twice. The first time, it adds a book titled "book1" with a quantity of 2. The second time, it adds another book titled "book1" with a default quantity of 1.
+The add_book() method checks if the book is already in the inventory. If it is, it adds the quantity to the existing quantity. If it's not, it adds the book with the specified quantity.
+In the first call, "book1" is not in the inventory, so it adds "book1" with a quantity of 2.
+In the second call, "book1" is already in the inventory, so it adds 1 to the existing quantity, resulting in a total of 3.
+Finally, the inventory is returned by the view_inventory() method.
+<<<Output>>>
+{'book1': 3}
+[END-OF-RESPONSE]

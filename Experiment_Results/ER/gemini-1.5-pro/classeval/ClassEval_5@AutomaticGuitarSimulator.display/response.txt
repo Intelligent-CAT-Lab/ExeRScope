@@ -1,0 +1,9 @@
+<<<Analysis>>>
+1. Inside the `test()` method, an instance of `AutomaticGuitarSimulator` is created with an empty string passed to the constructor. This initializes the `play_text` attribute of the instance to an empty string.
+2. The `display()` method of the `context` object is called with two empty strings as arguments.
+3. Inside the `display()` method, the input parameters 'key' and 'value' are formatted into the string "Normal Guitar Playing -- Chord: %s, Play Tune: %s". Since both 'key' and 'value' are empty strings, they are substituted into the string as is.
+4. The formatted string "Normal Guitar Playing -- Chord: , Play Tune: " is returned by the `display()` method.
+
+<<<Output>>>
+Normal Guitar Playing -- Chord: , Play Tune: 
+[END-OF-RESPONSE]

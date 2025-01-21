@@ -1,0 +1,16 @@
+<<<Analysis>>>
+The function `rolling_max` takes a list of integers as input and returns a list of integers where each element is the maximum value encountered so far in the list.
+
+1. The input list is `[3, 2, 3, 100, 3]`.
+2. The variable `running_max` is initialized to `None` and `result` is an empty list.
+3. The function iterates over each number in the input list:
+   - For the first number `3`, since `running_max` is `None`, `running_max` is set to `3`. The `result` list becomes `[3]`.
+   - For the second number `2`, `running_max` remains `3` because `max(3, 2)` is `3`. The `result` list becomes `[3, 3]`.
+   - For the third number `3`, `running_max` remains `3` as `max(3, 3)` is `3`. The `result` list becomes `[3, 3, 3]`.
+   - For the fourth number `100`, `running_max` updates to `100` because `max(3, 100)` is `100`. The `result` list becomes `[3, 3, 3, 100]`.
+   - For the fifth number `3`, `running_max` remains `100` as `max(100, 3)` is `100`. The `result` list becomes `[3, 3, 3, 100, 100]`.
+4. The function returns the `result` list.
+
+<<<Output>>>
+[3, 3, 3, 100, 100]
+[END-OF-RESPONSE]

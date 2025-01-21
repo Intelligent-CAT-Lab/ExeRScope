@@ -1,0 +1,34 @@
+<<<Analysis>>>
+The function `largest_prime_factor(n)` aims to find the largest prime factor of a given integer 'n'.  Here's how it works when n = 15:
+
+1. **Initialization**:
+   - `largest` is initialized to 1. This variable will keep track of the largest prime factor found so far.
+
+2. **Iterating through potential factors**:
+   - The `for` loop iterates through numbers from 2 to n (15 in this case). Each number `j` within this loop is checked as a potential factor of 15.
+
+3. **Checking for primality**:
+   - Inside the loop, for each `j`, the code calls the nested function `is_prime(j)` to determine if `j` is a prime number.
+   - `is_prime(k)`: 
+      - If `k` is less than 2, it's not prime, so it returns `False`.
+      - It iterates from 2 to `k-1`. If `k` is divisible by any number in this range, it's not prime and returns `False`.
+      - If the loop completes without finding any divisors, `k` is prime, and it returns `True`.
+
+4. **Finding the largest prime factor**:
+   - Back in the main loop:
+     - `if n % j == 0 and is_prime(j)`: This condition checks if `j` is a factor of `n` (15) and if `j` is a prime number. 
+     - If both conditions are true, `largest` is updated to the larger value between the current `largest` and `j`.
+
+5. **Returning the result**:
+   - After checking all numbers from 2 to 15, the loop finishes, and the function returns the final value of `largest`.
+
+Let's analyze the execution step-by-step for `largest_prime_factor(15)`:
+   - `j = 2`: Not a factor of 15.
+   - `j = 3`: Is a factor of 15 and is prime. `largest` is updated to 3.
+   - `j = 5`: Is a factor of 15 and is prime. `largest` is updated to 5.
+   - Numbers from 6 to 14 are not prime factors of 15.
+   - The loop ends, and the function returns `largest`, which is 5.
+
+<<<Output>>>
+5
+[END-OF-RESPONSE] 

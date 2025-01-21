@@ -1,0 +1,2 @@
+python extract_construct.py
+python construct_analysis.py

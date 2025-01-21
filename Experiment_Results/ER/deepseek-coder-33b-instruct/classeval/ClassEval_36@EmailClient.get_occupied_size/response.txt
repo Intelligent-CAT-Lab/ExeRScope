@@ -1,0 +1,14 @@
+
+In the `test()` method, an instance of `EmailClient` is created with the address 'sender@example.com' and a capacity of 100. Another instance of `EmailClient` is created with the address 'receiver@example.com' and a capacity of 50.
+
+The `sender` instance has two emails in its inbox. The `get_occupied_size()` method is then called on the `sender` instance.
+
+The `get_occupied_size()` method iterates over all the emails in the inbox of the `sender` instance, adding up the size of each email.
+
+The first email has a size of 20, and the second email has a size of 30. So, the total size of the emails in the inbox is 20 + 30 = 50.
+
+Therefore, the return value of `sender.get_occupied_size()` is 50.
+
+<<<Output>>>
+50
+[END-OF-RESPONSE]

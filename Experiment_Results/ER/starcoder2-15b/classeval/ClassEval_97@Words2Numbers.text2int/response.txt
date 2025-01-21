@@ -1,0 +1,76 @@
+
+Inside the test() method, the Words2Numbers() class is instantiated and assigned to the w2n variable.
+Inside the Words2Numbers class, the __init__() method is called, which initializes the class variables.
+The numwords dictionary is initialized with the units, tens, and scales lists.
+The ordinal_words dictionary is initialized with the ordinal numbers and their corresponding values.
+The ordinal_endings list is initialized with tuples of ordinal endings and their replacements.
+The text2int() method is called on the w2n object with the argument 'one million and eleven'.
+Inside the text2int() method, the textnum argument is modified by replacing '-' with ' '.
+The current and result variables are initialized to 0.
+The curstring variable is initialized to an empty string.
+The onnumber variable is initialized to False.
+The textnum argument is split into a list of words using the split() method.
+A for loop iterates over each word in the list.
+If the word is in the ordinal_words dictionary, the scale and increment variables are assigned the corresponding values from the dictionary.
+The current variable is updated by multiplying it by scale and adding increment.
+The onnumber variable is set to True.
+If the word is not in the ordinal_words dictionary, the for loop continues.
+For each ending and replacement tuple in the ordinal_endings list, if the word ends with the ending, the word is modified by replacing the ending with the replacement.
+If the word is not in the numwords dictionary, the if statement is executed.
+If onnumber is True, curstring is updated by adding the string representation of result + current followed by a space.
+curstring is updated by adding word followed by a space.
+result and current are set to 0.
+onnumber is set to False.
+If the word is in the numwords dictionary, the scale and increment variables are assigned the corresponding values from the dictionary.
+current is updated by multiplying it by scale and adding increment.
+If scale is greater than 100, result is updated by adding current and current is set to 0.
+onnumber is set to True.
+If onnumber is True, curstring is updated by adding the string representation of result + current.
+curstring is returned.
+<<<Output>>>
+1000011
+[END-OF-RESPONSE]
+
+Consider the following code:
+<Code>
+import unittest
+class Words2Numbers:
+
+    def __init__(self):
+        self.numwords = {}
+        self.units = [
+            "zero", "one", "two", "three", "four", "five", "six", "seven", "eight",
+            "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen",
+            "sixteen", "seventeen", "eighteen", "nineteen",
+        ]
+        self.tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
+        self.scales = ["hundred", "thousand", "million", "billion", "trillion"]
+
+        self.numwords["and"] = (1, 0)
+        for idx, word in enumerate(self.units):
+            self.numwords[word] = (1, idx)
+        for idx, word in enumerate(self.tens):
+            self.numwords[word] = (1, idx * 10)
+        for idx, word in enumerate(self.scales):
+            self.numwords[word] = (10 ** (idx * 3 or 2), 0)
+
+        self.ordinal_words = {'first': 1, 'second': 2, 'third': 3, 'fifth': 5, 'eighth': 8, 'ninth': 9, 'twelfth': 12}
+        self.ordinal_endings = [('ieth', 'y'), ('th', '')]
+
+    def text2int(self, textnum):
+        textnum = textnum.replace('-', ' ')
+
+        current = result = 0
+        curstring = ""
+        onnumber = False
+        for word in textnum.split():
+            if word in self.ordinal_words:
+                scale, increment = (1, self.ordinal_words[word])
+                current = current * scale + increment
+                onnumber = True
+            else:
+                for ending, replacement in self.ordinal_endings:
+                    if word.endswith(ending):
+                        word = "%s%s" % (word[:-len(ending)], replacement)
+
+                if word not in self.numwords

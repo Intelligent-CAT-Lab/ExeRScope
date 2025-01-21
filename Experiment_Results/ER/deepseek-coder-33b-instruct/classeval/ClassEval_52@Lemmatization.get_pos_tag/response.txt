@@ -1,0 +1,21 @@
+
+<<<Analysis>>>
+In the test() method, an instance of the Lemmatization class is created and stored in the variable lemmatization.
+The method lemmatization.get_pos_tag() is then called with the string "The dog's barked at the mailman." as an argument.
+The get_pos_tag() method tokenizes the input sentence into words using the word_tokenize() function from the nltk library.
+The pos_tag() function from the nltk library is then used to tag each word with its part of speech.
+The method then iterates over the tagged words, appending the part of speech tag to the list pos_tags.
+Finally, the method returns the list pos_tags.
+
+The expected output is a list of part of speech tags corresponding to the words in the input sentence.
+
+The pos_tags list will be ['DT', 'NNS', 'VBD', 'IN', 'DT', 'NN'], where:
+- 'DT' stands for determiner
+- 'NNS' stands for noun, plural
+- 'VBD' stands for verb, past tense
+- 'IN' stands for preposition
+- 'NN' stands for noun, singular
+
+<<<Output>>>
+(['DT', 'NNS', 'VBD', 'IN', 'DT', 'NN'], ['DT', 'NNS', 'VBD', 'IN', 'DT', 'NN'])
+[END-OF-RESPONSE]

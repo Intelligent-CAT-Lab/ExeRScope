@@ -1,0 +1,13 @@
+
+The function f takes a list of strings as input. It enters a while loop that continues until the list is empty. In each iteration, it removes the last element of the list and checks if it is the same as its title case version (i.e., the first letter is capitalized). If it is, it returns this element. If the while loop completes without finding such an element, it returns the last popped element.
+
+To determine the output of executing the function f on the input ['George', 'Michael', 'George', 'Costanza'], we need to follow the steps of the function.
+
+1. The first element 'Costanza' is removed from the list and checked. It is not the same as its title case version 'Costanza', so the loop continues.
+2. The next element 'George' is removed from the list and checked. It is the same as its title case version 'George', so the function returns 'George'.
+
+Therefore, the output of executing the function f on the input ['George', 'Michael', 'George', 'Costanza'] is 'George'.
+
+<<<Output>>>
+'George'
+[END-OF-RESPONSE]

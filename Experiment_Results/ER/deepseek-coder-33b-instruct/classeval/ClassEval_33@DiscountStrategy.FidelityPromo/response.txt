@@ -1,0 +1,15 @@
+
+<<<Analysis>>>
+In the test() method, a customer dictionary is created with a name and fidelity points. A cart is also created with two items, each having a product, quantity, and price.
+
+A DiscountStrategy object is created with the customer, cart, and FidelityPromo as the promotion. The FidelityPromo is a static method that applies a discount if the customer's fidelity points are 1000 or more.
+
+The expected discount is calculated as 10% of the total cost of the cart (10 * 20 + 5 * 10 = 200 + 50 = 250), which is 25.
+
+The actual discount is calculated by calling the promotion method of the order object with the order as the argument. The promotion method is FidelityPromo, which applies a discount if the customer's fidelity points are 1000 or more. In this case, the customer's fidelity points are 1800, so the discount is 1800 * 0.05 = 9, which is 9.
+
+So, the return value of the test() method is a tuple containing the actual discount and the expected discount.
+
+<<<Output>>>
+(9.0, 25)
+[END-OF-RESPONSE]

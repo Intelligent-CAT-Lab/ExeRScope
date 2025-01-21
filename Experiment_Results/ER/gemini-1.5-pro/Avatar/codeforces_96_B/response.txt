@@ -1,0 +1,40 @@
+<<<Analysis>>>
+This code generates lucky numbers consisting of digits '4' and '7' with an equal count of both digits and then finds the smallest lucky number greater than or equal to the input number.
+
+1. **Initialization:**
+   - `l = []`: An empty list `l` is created to store the generated lucky numbers.
+   - `limit = 10000000000`: Sets an upper limit to avoid generating extremely large numbers.
+
+2. **Function `gen(number, four, seven)`:**
+   - This recursive function generates lucky numbers.
+   - It takes three arguments:
+     - `number`: The current number being constructed.
+     - `four`: Count of digit '4' in the `number`.
+     - `seven`: Count of digit '7' in the `number`.
+   - **Base Cases:**
+     - `if (number > limit): return`: Stops recursion if the `number` exceeds the `limit`.
+     - `if (number > 0 and four == seven): l.append(number)`: If the `number` is formed with an equal count of '4' and '7', it's added to the list `l`.
+   - **Recursive Steps:**
+     - `gen(number * 10 + 4, four + 1, seven)`: Appends '4' to the `number` and recursively calls `gen` to explore further possibilities.
+     - `gen(number * 10 + 7, four, seven + 1)`: Appends '7' to the `number` and recursively calls `gen`.
+
+3. **Function `main()`:**
+   - `gen(0, 0, 0)`: Initiates the generation of lucky numbers starting from 0.
+   - `l.sort()`: Sorts the list `l` in ascending order.
+   - `n = int(input())`: Takes input from the user and converts it to an integer.
+   - **Finding the answer:**
+     - It iterates through the sorted list `l`.
+     - If it finds a number `val` in the list that is greater than or equal to the input `n`, it sets `ans` to `val` and breaks the loop.
+   - `print(ans)`: Prints the found lucky number.
+
+4. **Input:**
+   - The input is `77777777`.
+
+5. **Code Execution:**
+   - The code starts generating lucky numbers.
+   - Since the input is `77777777`, the code will search for the smallest lucky number greater than or equal to this value.
+   - The smallest such lucky number is `7777777744444444`.
+
+<<<Output>>>
+7777777744444444
+[END-OF-RESPONSE] 

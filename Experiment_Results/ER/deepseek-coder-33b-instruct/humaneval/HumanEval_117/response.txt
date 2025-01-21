@@ -1,0 +1,12 @@
+
+<<<Analysis>>>
+The function `select_words` takes two arguments: a string `s` and an integer `n`.
+The string `s` is split into words using the `split` method, which splits the string at each space character.
+For each word in the list of words, the function calculates the number of consonants in the word.
+A consonant is defined as any letter that is not a vowel (a, e, i, o, u).
+If the number of consonants in a word equals `n`, the word is added to the list `result`.
+The function returns the list `result`, which contains all words in `s` that have exactly `n` consonants.
+In the given example, the words "Mary", "had", "little", "lamb" have 4 consonants each, so they are all added to the result list.
+<<<Output>>>
+['Mary', 'had', 'little', 'lamb']
+[END-OF-RESPONSE]

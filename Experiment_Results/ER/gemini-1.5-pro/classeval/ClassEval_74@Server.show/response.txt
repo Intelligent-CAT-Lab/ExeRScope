@@ -1,0 +1,11 @@
+<<<Analysis>>>
+1. Inside the `test()` method, a `Server` object is created and assigned to the variable `server`.
+2. `server.add_white_list(66)` is called, adding the address 66 to the server's whitelist.
+3. `server.send({"addr": 22, "content": "abc"})` is called. This updates the `server.send_struct` dictionary to `{"addr": 22, "content": "abc"}`.
+4. `server.recv({"addr": 66, "content": "ABC"})` is called. This checks if the address 66 is in the whitelist (which it is), and updates the `server.receive_struct` dictionary to `{"addr": 66, "content": "ABC"}`. However, this update doesn't affect the `server.send_struct` dictionary.
+5. Finally, `server.show('send')` is called, which returns the `server.send_struct` dictionary.
+
+Therefore, the `test()` method will return the content of `server.send_struct`.
+<<<Output>>>
+{'addr': 22, 'content': 'abc'}
+[END-OF-RESPONSE]

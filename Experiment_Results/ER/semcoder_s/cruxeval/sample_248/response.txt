@@ -1,0 +1,60 @@
+<｜begin▁of▁sentence｜><Instruction> I want you to act as a Python code executor. I will give you a piece of Python code and its input. You need to think step by step and then print the output of code execution.
+</Instruction>
+Below is an example:
+<Example>
+Consider the following code
+
+def f(s):
+    return s + "a"
+
+[Question]
+What would be the return value of ```f("hi")```?
+First analyze step by step about how the code processes the input to generate the output. 
+Then print the output of the code based on your analysis.
+
+Follow the following format:
+<<<Analysis>>>
+{YOUR ANALYSIS}
+<<<Output>>>
+{OUTPUT}
+[END-OF-RESPONSE]
+[Answer]
+
+The function f takes a string s as input and returns the concatenation of s with the string "a".
+To determine the output of executing the function f on the input "hi", we need to concatenate "hi" with "a".
+Therefore, the output of executing the function f on the input "hi" is "hia".
+<<<Output>>>
+'hia'
+[END-OF-RESPONSE]
+
+</Example>
+Consider the following code
+def f(a, b):
+    a.sort()
+    b.sort(reverse=True)
+    return a + b
+[Question]
+What would be the return value of ```f([666], [])```?
+
+First analyze step by step about how the code processes the input to generate the output. 
+Then print the output of the code based on your analysis.
+
+Follow the following format:
+<<<Analysis>>>
+{YOUR ANALYSIS}
+<<<Output>>>
+{OUTPUT}
+[END-OF-RESPONSE]
+
+[Answer]
+The function f takes two lists a and b as input. The first list a is sorted in ascending order, while the second list b is sorted in descending order. Finally, the two lists are concatenated and returned.
+
+To determine the output of executing the function f on the input ([666], []), we need to sort the first list [666] in ascending order and the second list [] in descending order. Since the second list is empty, it remains empty after sorting. The concatenation of the sorted first list [666] with the empty second list [] results in [666].
+
+Therefore, the output of executing the function f on the input ([666], []) is [666].
+<<<Output>>>
+[666]
+[END-OF-RESPONSE]
+
+</Example>
+<｜end▁of▁sentence｜>

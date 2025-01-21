@@ -1,0 +1,8 @@
+
+The function f takes a string text as input. It checks if the string contains a comma. If it does, it partitions the string into three parts: the part before the comma, the comma itself, and the part after the comma. It then returns the part after the comma followed by a space and then the part before the comma. If the string does not contain a comma, it returns a comma followed by the last word in the string (obtained by partitioning the string by a space and taking the last part) and a space and the number 0.
+
+To determine the output of executing the function f on the input '244, 105, -90', the string contains a comma. It partitions the string into three parts: '244', ',', ' 105, -90'. It then returns the part after the comma (' 105, -90') followed by a space and then the part before the comma ('244').
+
+<<<Output>>>
+' 105, -90 244'
+[END-OF-RESPONSE]

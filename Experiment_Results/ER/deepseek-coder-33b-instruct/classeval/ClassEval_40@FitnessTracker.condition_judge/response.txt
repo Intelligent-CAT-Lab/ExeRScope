@@ -1,0 +1,12 @@
+
+In the `test()` method, a `FitnessTracker` object is created with the parameters (1.8, 45, 20, "female"). The `condition_judge()` method is then called on this object.
+
+The `condition_judge()` method calculates the Body Mass Index (BMI) of the person by dividing the weight by the square of the height. In this case, BMI = 45 / (1.8 ** 2) = 15.55.
+
+The `BMI_range` is then determined based on the sex of the person. Since the person is female, the `BMI_range` is [19, 24].
+
+Since the BMI (15.55) is less than the lower limit of the BMI range (19), the method returns -1, indicating that the person is underweight.
+
+<<<Output>>>
+-1
+[END-OF-RESPONSE]

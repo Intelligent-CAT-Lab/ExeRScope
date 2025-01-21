@@ -1,0 +1,43 @@
+<<<Analysis>>>
+1. **Initialization:**
+   - An instance of `ExpressionCalculator` is created. Inside the constructor:
+     - `postfix_stack` (a deque) is initialized, which will be used to store the expression in postfix notation.
+     - `operat_priority` (a list) is initialized, defining the precedence of operators.
+
+2. **Calculate Function Call:**
+   - The `calculate("2 * 3 * 4")` method is called with the input expression.
+
+3. **Transform Function:**
+   - The `transform` method preprocesses the expression:
+     - Removes whitespace: `"2 * 3 * 4"` becomes `"2*3*4"`.
+     - Removes trailing '=': (No effect in this case).
+     - Handles unary minus: (No effect in this case).
+     - Returns the modified expression: `"2*3*4"`.
+
+4. **Prepare Function:**
+   - The `prepare` method converts the infix expression to postfix:
+     - Initializes an empty operator stack (`op_stack`) and a counter (`count`).
+     - Iterates through each character in the expression:
+       - If it's an operand (number), it's appended directly to `postfix_stack`.
+       - If it's an operator:
+         - The operator is pushed onto `op_stack` based on its precedence.
+         - If an operator with higher or equal precedence is already on the stack, it's popped and added to `postfix_stack` before pushing the current operator.
+     - After processing all characters, any remaining operators in `op_stack` are popped and added to `postfix_stack`.
+   - For the input `"2*3*4"`, the `postfix_stack` would contain: `['2', '3', '*', '4', '*']`.
+
+5. **Calculation Loop:**
+   - The `calculate` method then proceeds with the calculation:
+     - It reverses the `postfix_stack` to: `['*', '4', '*', '3', '2']`.
+     - It iterates through the `postfix_stack`:
+       - If the element is an operand, it's pushed onto the `result_stack`.
+       - If the element is an operator:
+         - Two operands are popped from `result_stack`.
+         - The operation is performed using the `_calculate` method.
+         - The result is appended back to `result_stack`.
+
+6. **Result:**
+   - After processing the entire `postfix_stack`, the `result_stack` would contain a single element, which is the final result of the expression.
+   - The `calculate` method returns this result as a float.
+
+<<<Output>>>
+24.0

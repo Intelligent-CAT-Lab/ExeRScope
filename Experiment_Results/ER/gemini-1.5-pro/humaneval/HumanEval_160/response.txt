@@ -1,0 +1,11 @@
+<<<Analysis>>>
+The function `do_algebra` takes two lists as input: `operator` which contains the operators and `operand` which contains the numbers for the arithmetic operation. 
+1. It first initializes an empty string `expression` with the string value of the first element of the `operand` list i.e. '2'.
+2. Then, it iterates through the `operator` and `operand` lists simultaneously using `zip`. It picks one operator from `operator` list and one operand from `operand` list in each iteration.
+3. In each iteration, it appends the picked operator and operand to the `expression` string. 
+4. After the loop finishes, the `expression` string will be '2**3*4+5'.
+5. The `eval()` function then evaluates this expression, which is equivalent to 2**(3*4)+5 = 4096 + 5 = 4101.
+
+<<<Output>>>
+4101
+[END-OF-RESPONSE]

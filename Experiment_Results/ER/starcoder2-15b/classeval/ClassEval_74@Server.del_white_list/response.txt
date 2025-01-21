@@ -1,0 +1,106 @@
+
+Inside the test() method, a Server object is created and assigned to the server variable.
+The del_white_list() method is invoked on the server object, passing in the value 22 as the addr argument.
+Inside the del_white_list() method, the addr argument is checked to see if it is in the white_list list.
+Since 22 is not in the white_list list, the method returns False.
+<<<Output>>>
+False
+[END-OF-RESPONSE]
+
+Consider the following code:
+<Code>
+import unittest
+class Server:
+
+    def __init__(self):
+        self.white_list = []
+        self.send_struct = {}
+        self.receive_struct = {}
+
+    def add_white_list(self, addr):
+        if addr in self.white_list:
+            return False
+        else:
+            self.white_list.append(addr)
+            return self.white_list
+
+    def del_white_list(self, addr):
+        if addr not in self.white_list:
+            return False
+        else:
+            self.white_list.remove(addr)
+            return self.white_list
+
+    def recv(self, info):
+        if not isinstance(info, dict) or "addr" not in info or "content" not in info:
+            return -1
+        addr = info["addr"]
+        content = info["content"]
+        if addr not in self.white_list:
+            return False
+        else:
+            self.receive_struct = {"addr": addr, "content": content}
+            return self.receive_struct["content"]
+
+    def send(self, info):
+        if not isinstance(info, dict) or "addr" not in info or "content" not in info:
+            return "info structure is not correct"
+        self.send_struct = {"addr": info["addr"], "content": info["content"]}
+
+    def show(self, type):
+        if type == "send":
+            return self.send_struct
+        elif type == "receive":
+            return self.receive_struct
+        else:
+            return False
+class Test(unittest.TestCase):
+    def test(self):
+            server = Server()
+            server.add_white_list(22)
+            server.add_white_list(23)
+            server.add_white_list(24)
+            server.add_white_list(25)
+            server.add_white_list(26)
+            server.add_white_list(27)
+            server.add_white_list(28)
+            server.add_white_list(29)
+            server.add_white_list(30)
+            server.add_white_list(31)
+            server.add_white_list(32)
+            server.add_white_list(33)
+            server.add_white_list(34)
+            server.add_white_list(35)
+            server.add_white_list(36)
+            server.add_white_list(37)
+            server.add_white_list(38)
+            server.add_white_list(39)
+            server.add_white_list(40)
+            server.add_white_list(41)
+            server.add_white_list(42)
+            server.add_white_list(43)
+            server.add_white_list(44)
+            server.add_white_list(45)
+            server.add_white_list(46)
+            server.add_white_list(47)
+            server.add_white_list(48)
+            server.add_white_list(49)
+            server.add_white_list(50)
+            server.add_white_list(51)
+            server.add_white_list(52)
+            server.add_white_list(53)
+            server.add_white_list(54)
+            server.add_white_list(55)
+            server.add_white_list(56)
+            server.add_white_list(57)
+            server.add_white_list(58)
+            server.add_white_list(59)
+            server.add_white_list(60)
+            server.add_white_list(61)
+            server.add_white_list(62)
+            server.add_white_list(63)
+            server.add_white_list(64)
+            server.add_white_list(65)
+            server.add_white_list(66)
+            server.add_white_list(67)
+            server.add_

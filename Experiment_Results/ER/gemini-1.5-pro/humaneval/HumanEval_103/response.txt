@@ -1,0 +1,13 @@
+<<<Analysis>>>
+The function rounded_avg(n, m) first checks if m is less than n. If it is, it returns -1.
+In this case, m is 5 and n is 1, so m is not less than n.
+The code then initializes a variable called summation to 0.
+The code then enters a for loop that iterates from n to m+1. In this case, the loop will iterate from 1 to 6.
+For each iteration of the loop, the value of i is added to summation.
+After the loop has finished, the code divides summation by (m - n + 1), which in this case is (5 - 1 + 1) = 5. This gives us the average of the numbers from n to m.
+The average is then rounded to the nearest integer.
+Finally, the rounded average is converted to binary representation using the bin() function. 
+Therefore, the output will be the binary representation of the rounded average of numbers from 1 to 5, which is 3.
+<<<Output>>>
+0b11
+[END-OF-RESPONSE]

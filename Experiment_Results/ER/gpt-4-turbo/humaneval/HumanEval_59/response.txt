@@ -1,0 +1,18 @@
+<<<Analysis>>>
+The function `largest_prime_factor` is designed to find the largest prime factor of a given integer `n`. Here, `n` is initialized to 15.
+The function `is_prime` is a helper function used to determine if a number `k` is prime. It returns `False` if `k` is less than 2 or divisible by any number from 2 to `k-1`. Otherwise, it returns `True`.
+
+The variable `largest` is initialized to 1, which will store the largest prime factor found.
+
+The function then iterates over each integer `j` from 2 to `n` (inclusive). For each `j`, it checks if `j` is a divisor of `n` and if `j` is prime:
+- For `j = 2`, `15 % 2 != 0`, so it skips.
+- For `j = 3`, `15 % 3 == 0` and `is_prime(3)` returns `True` (3 is prime), so `largest` is updated to 3.
+- For `j = 4`, `15 % 4 != 0`, so it skips.
+- For `j = 5`, `15 % 5 == 0` and `is_prime(5)` returns `True` (5 is prime), so `largest` is updated to 5.
+- For `j = 6` to `15`, none are divisors of 15 or they are not prime.
+
+After completing the loop, the largest prime factor found is 5, which is returned by the function.
+
+<<<Output>>>
+5
+[END-OF-RESPONSE]

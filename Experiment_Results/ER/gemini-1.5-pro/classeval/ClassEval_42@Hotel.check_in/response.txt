@@ -1,0 +1,12 @@
+<<<Analysis>>>
+Inside the test() method, a Hotel object is created with the name 'Test Hotel' and a dictionary of available rooms: {'single': 3, 'double': 2}.
+Then, the booked_rooms attribute of the hotel object is set to {'single': {'guest 1': 2}, 'double': {'guest 2': 1}}.
+The check_in() method is called with the arguments 'double', 1, and 'guest 1'.
+Inside the check_in() method:
+- It checks if the room type ('double' in this case) exists in the booked_rooms dictionary. It does, so it continues.
+- It checks if the guest name ('guest 1') exists in the booked rooms of that type. It does not, so the method returns False.
+The return value of the check_in() method (which is False) and the current state of the booked_rooms dictionary are returned as a tuple.
+So the final returned value is (False, {'single': {'guest 1': 2}, 'double': {'guest 2': 1}}).
+<<<Output>>>
+(False, {'single': {'guest 1': 2}, 'double': {'guest 2': 1}})
+[END-OF-RESPONSE]

@@ -1,0 +1,12 @@
+
+<<<Analysis>>>
+In the `test()` method, an instance of the `Hotel` class is created with the name 'Test Hotel' and rooms available as {'single': 3, 'double': 2}.
+Then, some rooms are booked for some guests. The booked rooms are stored in the `booked_rooms` dictionary.
+After that, the `check_out()` method is called with 'triple' as the room type and 2 as the room number.
+The `check_out()` method checks if the room type is available in the `available_rooms` dictionary. If it is, it increases the number of available rooms of that type by the number of rooms checked out. If it is not, it adds the room type to the `available_rooms` dictionary and sets the number of available rooms to the number of rooms checked out.
+In this case, 'triple' is not a room type in the `available_rooms` dictionary, so it adds 'triple' to the `available_rooms` dictionary with the number of rooms checked out (2).
+Finally, the method returns the `available_rooms` and `booked_rooms` dictionaries.
+
+<<<Output>>>
+({'single': 3, 'double': 2, 'triple': 2}, {'single': {'guest 1': 2}, 'double': {'guest 2': 1}})
+[END-OF-RESPONSE]

@@ -1,0 +1,16 @@
+
+<<<Analysis>>>
+In the test() method, a new Warehouse object is created.
+The add_product() method is called with product_id=1, name='product 5', and quantity=100. This adds a new product to the inventory with the given product_id, name, and quantity.
+The create_order() method is then called with order_id=1, product_id=1, and quantity=10. This creates a new order for the given product_id and quantity.
+The track_order() method is then called with order_id=1. This returns the status of the order with the given order_id.
+
+In the add_product() method, if the product_id is not already in the inventory, a new product is added with the given name and quantity. If the product_id is already in the inventory, the quantity of the product is updated by the given quantity.
+
+In the create_order() method, if there is enough quantity of the product to fulfill the order, the quantity of the product is updated by the negative of the order quantity and a new order is added to the orders dictionary with the given order_id, product_id, quantity, and status 'Shipped'. If there is not enough quantity of the product to fulfill the order, False is returned.
+
+In the track_order() method, if the order_id is in the orders dictionary, the status of the order with the given order_id is returned. If the order_id is not in the orders dictionary, False is returned.
+
+<<<Output>>>
+'Shipped'
+[END-OF-RESPONSE]

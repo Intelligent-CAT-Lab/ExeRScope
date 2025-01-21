@@ -1,0 +1,79 @@
+
+Inside the test() method, the HtmlUtil() class is instantiated.
+The extract_code_from_html_text() method is called with a string as an argument.
+Inside the extract_code_from_html_text() method, the format_line_html_text() method is called with the same string as an argument.
+Inside the format_line_html_text() method, the BeautifulSoup() function is called with the string and 'lxml' as arguments.
+The BeautifulSoup() function parses the string and returns a BeautifulSoup object.
+The find_all() method is called on the BeautifulSoup object with the name argument set to ['pre', 'blockquote'].
+The find_all() method returns a list of pre and blockquote tags in the string.
+The for loop iterates over the list of tags.
+Inside the for loop, the string attribute of each tag is set to the CODE_MARK constant.
+The __format_line_feed() method is called with the string as an argument.
+Inside the __format_line_feed() method, the re.sub() function is called with the re.compile(r'\n+') regular expression, '\n', and the string as arguments.
+The re.sub() function replaces all occurrences of '\n+' with '\n' in the string.
+The gensim.utils.decode_htmlentities() function is called with the string as an argument.
+The gensim.utils.decode_htmlentities() function decodes HTML entities in the string.
+The __format_line_feed() method returns the formatted string.
+The format_line_html_text() method returns the formatted string.
+The extract_code_from_html_text() method calls the format_line_html_text() method again with the same string as an argument.
+Inside the extract_code_from_html_text() method, the format_line_html_text() method returns the formatted string.
+The extract_code_from_html_text() method calls the find_all() method on the BeautifulSoup object with the name argument set to ['pre', 'blockquote'].
+The find_all() method returns a list of pre and blockquote tags in the string.
+The for loop iterates over the list of tags.
+Inside the for loop, the get_text() method is called on each tag.
+The get_text() method returns the text content of the tag.
+The text content of each tag is appended to the code_list list.
+The extract_code_from_html_text() method returns the code_list list.
+The test() method returns the code_list list.
+<<<Output>>>
+['print(\'Hello, world!\')', 'for i in range(2):\n    print(i)']
+[END-OF-RESPONSE]
+
+Consider the following code:
+<Code>
+import unittest
+import re
+import string
+import gensim
+from bs4 import BeautifulSoup
+
+
+class HtmlUtil:
+
+    def __init__(self):
+        self.SPACE_MARK = '-SPACE-'
+        self.JSON_MARK = '-JSON-'
+        self.MARKUP_LANGUAGE_MARK = '-MARKUP_LANGUAGE-'
+        self.URL_MARK = '-URL-'
+        self.NUMBER_MARK = '-NUMBER-'
+        self.TRACE_MARK = '-TRACE-'
+        self.COMMAND_MARK = '-COMMAND-'
+        self.COMMENT_MARK = '-COMMENT-'
+        self.CODE_MARK = '-CODE-'
+
+    @staticmethod
+    def __format_line_feed(text):
+        return re.sub(re.compile(r'\n+'), '\n', text)
+
+    def format_line_html_text(self, html_text):
+        if html_text is None or len(html_text) == 0:
+            return ''
+        soup = BeautifulSoup(html_text, 'lxml')
+
+        code_tag = soup.find_all(name=['pre', 'blockquote'])
+        for tag in code_tag:
+            tag.string = self.CODE_MARK
+
+        ul_ol_group = soup.find_all(name=['ul', 'ol'])
+        for ul_ol_item in ul_ol_group:
+            li_group = ul_ol_item.find_all('li')
+            for li_item in li_group:
+                li_item_text = li_item.get_text().strip()
+                if len(li_item_text) == 0:
+                    continue
+                if li_item_text[-1] in string.punctuation:
+                    li_item.string = '[{0}]{1}'.format('-', li_item_text)
+                    continue
+                li_item.string = '[{0}]{1}.'.format('-', li_item_text)
+
+        p_

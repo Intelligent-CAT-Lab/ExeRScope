@@ -1,0 +1,27 @@
+<<<Analysis>>>
+The function `order_by_points` takes a list of integers and sorts them based on the sum of their digits, with a special consideration for negative numbers. The inner function `digits_sum` calculates the sum of the digits of a number, adjusting the first digit by the sign of the number if it is negative.
+
+1. The input list is `[1, 11, -1, -11, -12]`.
+2. The `digits_sum` function processes each number as follows:
+   - For `1`, the sum of digits is `1`.
+   - For `11`, the sum of digits is `1 + 1 = 2`.
+   - For `-1`, it treats the number as `1` but negates the first digit, resulting in `-1`.
+   - For `-11`, it treats the number as `11` but negates the first digit, resulting in `-1 + 1 = 0`.
+   - For `-12`, it treats the number as `12` but negates the first digit, resulting in `-1 + 2 = 1`.
+3. The list of numbers along with their calculated digit sums are:
+   - `1` with sum `1`
+   - `11` with sum `2`
+   - `-1` with sum `-1`
+   - `-11` with sum `0`
+   - `-12` with sum `1`
+4. Sorting these numbers by their digit sums results in:
+   - `-1` (sum `-1`)
+   - `-11` (sum `0`)
+   - `1` (sum `1`)
+   - `-12` (sum `1`)
+   - `11` (sum `2`)
+5. The sorted list based on the digit sums is `[-1, -11, 1, -12, 11]`.
+
+<<<Output>>>
+[-1, -11, 1, -12, 11]
+[END-OF-RESPONSE]

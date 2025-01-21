@@ -1,0 +1,14 @@
+<<<Analysis>>>
+The function `f` takes a string `text` as input. It first calculates the length of the input string and initializes an index variable to 0. The function then enters a while loop, which continues as long as `index` is less than `length` and the character at `text[index]` is a whitespace character. In each iteration of the loop, if the character is a whitespace, `index` is incremented by 1.
+
+For the input string `'-----\t\n\tth\n-----'`:
+1. The length of the string is calculated to be 17.
+2. The while loop starts checking characters:
+   - `text[0]` is '-', which is not a whitespace, so the loop terminates immediately.
+3. The function then returns the substring of `text` starting from `index` (which is 0) and spanning 5 characters.
+
+Therefore, the output will be the first five characters of the input string, which are `'-----'`.
+
+<<<Output>>>
+'-----'
+[END-OF-RESPONSE]

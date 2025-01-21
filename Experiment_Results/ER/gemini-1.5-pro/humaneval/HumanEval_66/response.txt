@@ -1,0 +1,13 @@
+<<<Analysis>>>
+The function `digitSum` takes a string `s` as input. 
+1. It first checks if the string is empty. If it is, it returns 0.
+2. If the string is not empty, it iterates through each character in the string.
+3. For each character, it checks if it is an uppercase letter using `isupper()`.
+4. If the character is uppercase, its ASCII value is added to the sum using `ord(char)`. If it is not uppercase, 0 is added.
+5. Finally, the function returns the total sum.
+
+For the input "You arE Very Smart", the function will add the ASCII values of 'Y', 'E', 'V' and 'S'.
+
+<<<Output>>>
+345
+[END-OF-RESPONSE] 

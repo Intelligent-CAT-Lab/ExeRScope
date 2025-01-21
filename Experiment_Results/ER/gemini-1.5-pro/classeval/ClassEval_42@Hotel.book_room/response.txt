@@ -1,0 +1,14 @@
+<<<Analysis>>>
+Inside the test() method, a Hotel object is created with the name 'peace hotel' and a dictionary of available rooms: {'single': 3, 'double': 2}.
+Then, the book_room method is called with the arguments 'single', 2, and 'guest 1'. This attempts to book 2 single rooms for a guest named 'guest 1'.
+Inside the book_room method:
+    - It checks if 'single' is in the available_rooms dictionary, which is True.
+    - It checks if the requested number of rooms (2) is less than or equal to the available single rooms (3), which is True.
+    - Since the room type 'single' is not yet in the booked_rooms dictionary, it creates a new entry for 'single'.
+    - It then adds the guest's name ('guest 1') and the number of rooms booked (2) to the 'single' entry in the booked_rooms dictionary.
+    - It subtracts the number of booked rooms (2) from the available_rooms['single'], updating it to 1.
+    - Finally, it returns "Success!".
+Therefore, the return value of the book_room method, which is then returned by the test() method, is "Success!". The booked_rooms dictionary will be updated to {'single': {'guest 1': 2}}, and the available_rooms dictionary will be updated to {'single': 1, 'double': 2}.
+<<<Output>>>
+('Success!', {'single': {'guest 1': 2}}, {'single': 1, 'double': 2})
+[END-OF-RESPONSE]

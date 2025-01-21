@@ -1,0 +1,15 @@
+
+<<<Analysis>>>
+The function `poly` calculates the value of a polynomial at a given point. The polynomial is represented as a list of coefficients, where the i-th coefficient corresponds to the coefficient of x^i in the polynomial.
+
+The function `find_zero` finds a zero of the polynomial represented by the list `xs`. It does this by first bracketing the zero in the interval [-1, 1]. It does this by doubling the interval until the function values at the endpoints of the interval have different signs, which means the zero is in the interval.
+
+Then, it refines the interval until the interval is small enough (i.e., the difference between the endpoints is less than 1e-10). It does this by taking the midpoint of the interval and checking the sign of the function at the midpoint. If the function has the same sign at the midpoint as at the beginning of the interval, it means the zero is in the second half of the interval, so it sets the beginning of the interval to the midpoint. Otherwise, it sets the end of the interval to the midpoint.
+
+The function `find_zero` returns the beginning of the interval when it stops, which is the approximation of the zero of the polynomial.
+
+In the case of `find_zero([-6, 11, -6, 1])`, the polynomial is -6 + 11x - 6x^2 + x^3. The zero of this polynomial is approximately 0.3601836856103516.
+
+<<<Output>>>
+0.3601836856103516
+[END-OF-RESPONSE]

@@ -1,0 +1,17 @@
+
+<<<Analysis>>>
+In the `test()` method, an instance of the `Hotel` class is created with the name 'Test Hotel' and rooms available as {'single': 3, 'double': 2}.
+Then, the `booked_rooms` attribute of the `hotel` instance is manually set to {'single': {'guest 1': 2}, 'double': {'guest 2': 1}}.
+The `check_in()` method is then called with the parameters 'double', 1, 'guest 1'.
+
+The `check_in()` method checks if the room type is in the `booked_rooms` dictionary. If it is, it checks if the name is in the dictionary of the room type. If the name is in the dictionary, it checks if the room number is less than or equal to the number of rooms booked by the name. If it is, it removes the name from the dictionary of the room type. If the room number is greater than the number of rooms booked by the name, it returns False. If the name is not in the dictionary, it returns False.
+
+In this case, the room type 'double' is in the `booked_rooms` dictionary, 'guest 1' is in the dictionary of 'double', and 1 is less than or equal to the number of rooms booked by 'guest 1'. Therefore, the method removes 'guest 1' from the dictionary of 'double'.
+
+The `check_in()` method returns 'Success!', and the `booked_rooms` attribute of the `hotel` instance is {'single': {'guest 1': 2}, 'double': {}}.
+
+Finally, the `test()` method returns the result of the `check_in()` method and the `booked_rooms` attribute of the `hotel` instance.
+
+<<<Output>>>
+('Success!', {'single': {'guest 1': 2}, 'double': {}})
+[END-OF-RESPONSE]

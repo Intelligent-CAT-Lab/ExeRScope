@@ -1,0 +1,25 @@
+
+Inside the test() method, the XMLProcessor class is instantiated with the file_name 'test.xml'.
+The file_name 'test.xml' is then opened in write mode and the following XML content is written to it:
+<root>
+    <item>apple</item>
+    <item>orange</item>
+</root>
+The XMLProcessor object is then instantiated again with the file_name 'test.xml'.
+The read_xml() method is called on the XMLProcessor object, which attempts to parse the XML file and return the root element.
+If the parsing is successful, the root element is assigned to the root attribute of the XMLProcessor object.
+The file_name 'processed.xml' is then created and the process_xml_data() method is called on the XMLProcessor object, passing in the file_name 'processed.xml' as an argument.
+Inside the process_xml_data() method, a for loop is used to iterate over all the 'item' elements in the root element.
+For each 'item' element, the text attribute is retrieved and converted to uppercase.
+The write_xml() method is then called on the XMLProcessor object, passing in the file_name 'processed.xml' as an argument.
+If the write is successful, the method returns True.
+The XMLProcessor object is then instantiated again with the file_name 'processed.xml'.
+The read_xml() method is called on the XMLProcessor object, which attempts to parse the XML file and return the root element.
+If the parsing is successful, the root element is assigned to the root attribute of the XMLProcessor object.
+The find_all() method is called on the root element, passing in the element_name 'item' as an argument.
+The method returns a list of all the 'item' elements in the root element.
+The file_name 'processed.xml' is then removed.
+The file_name 'test.xml' is then removed.
+The method returns the result, which is True, the root element of the XMLProcessor object, and the text attribute of the first and second 'item' elements in the list.
+<<<Output>>>
+(True, <Element 'root' at 0x0000022222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222

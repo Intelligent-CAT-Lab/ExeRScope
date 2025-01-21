@@ -1,0 +1,20 @@
+
+<<<Analysis>>>
+In the test() method, an instance of the SplitSentence class is created and the split_sentences() method is invoked with the string "Who is A.B.C.? He is a teacher." as the argument.
+
+The split_sentences() method uses the re.split() function to split the input string into sentences. The regular expression used in re.split() is:
+
+(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s
+
+This regular expression matches a space character that is preceded by a period, but only if the period is not part of an abbreviation (like A.B.C.) or a name (like A. Smith).
+
+The split_sentences() method returns a list of sentences.
+
+In the given string, the split_sentences() method will split the string into the following sentences:
+
+1. "Who is A.B.C.?"
+2. "He is a teacher."
+
+<<<Output>>>
+['Who is A.B.C.?', 'He is a teacher.']
+[END-OF-RESPONSE]

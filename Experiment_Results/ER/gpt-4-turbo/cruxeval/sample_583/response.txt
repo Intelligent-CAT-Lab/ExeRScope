@@ -1,0 +1,21 @@
+<<<Analysis>>>
+The function `f` takes two parameters: `text`, a string that may contain multiple lines, and `ch`, a character. It processes each line of `text` based on the following rules:
+1. Split the `text` into lines using `splitlines()`.
+2. Initialize an empty list `result`.
+3. Iterate over each line:
+   - If the line is not empty and starts with the character `ch`, convert the line to lowercase and append it to `result`.
+   - Otherwise, convert the line to uppercase and append it to `result`.
+4. Join all elements of `result` with a newline character and return the resulting string.
+
+For the input `f("t\nza\na", "t")`:
+- The `text` "t\nza\na" is split into lines: ["t", "za", "a"].
+- The first line "t" starts with "t", so it is converted to lowercase (remains "t") and added to `result`.
+- The second line "za" does not start with "t", so it is converted to uppercase ("ZA") and added to `result`.
+- The third line "a" does not start with "t", so it is converted to uppercase ("A") and added to `result`.
+- The final `result` list is ["t", "ZA", "A"], which is then joined to form the string "t\nZA\nA".
+
+<<<Output>>>
+t
+ZA
+A
+[END-OF-RESPONSE]

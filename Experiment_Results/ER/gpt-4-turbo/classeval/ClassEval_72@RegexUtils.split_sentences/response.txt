@@ -1,0 +1,14 @@
+<<<Analysis>>>
+The `Test.test()` method creates an instance of the `RegexUtils` class and then calls the `split_sentences` method with the text "Aaa. Bbbb? Ccc!".
+
+1. Inside `split_sentences`, it first calls `generate_split_sentences_pattern` to get the regex pattern for splitting sentences. The pattern returned is `r'[.!?][\s]{1,2}(?=[A-Z])'`.
+2. This pattern is used to split the input text "Aaa. Bbbb? Ccc!" using the `split` method.
+3. The regex pattern `r'[.!?][\s]{1,2}(?=[A-Z])'` looks for a period, exclamation mark, or question mark followed by one or two spaces, and then a positive lookahead for an uppercase letter.
+4. In the text "Aaa. Bbbb? Ccc!", the pattern matches after "Aaa." and "Bbbb?", where these symbols are followed by a space and the next sentence starts with an uppercase letter.
+5. The `split` method then splits the text at these matches.
+
+The expected output is a list of sentences split at the identified points.
+
+<<<Output>>>
+['Aaa', 'Bbbb', 'Ccc!']
+[END-OF-RESPONSE]

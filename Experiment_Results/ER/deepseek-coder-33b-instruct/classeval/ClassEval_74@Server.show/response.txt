@@ -1,0 +1,10 @@
+
+<<<Analysis>>>
+In the test() method, an instance of the Server class is created.
+The add_white_list() method is called with the argument 66. This adds 66 to the white_list attribute of the server instance.
+The send() method is called with the argument {"addr": 22, "content": "abc"}. This sets the send_struct attribute of the server instance to {"addr": 22, "content": "abc"}.
+The recv() method is called with the argument {"addr": 66, "content": "ABC"}. This checks if the address 66 is in the white_list. Since it is, it sets the receive_struct attribute of the server instance to {"addr": 66, "content": "ABC"}.
+Finally, the show() method is called with the argument 'send'. This returns the send_struct attribute of the server instance, which is {"addr": 22, "content": "abc"}.
+<<<Output>>>
+{'addr': 22, 'content': 'abc'}
+[END-OF-RESPONSE]

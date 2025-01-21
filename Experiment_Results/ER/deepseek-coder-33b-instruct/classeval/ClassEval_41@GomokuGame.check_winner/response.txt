@@ -1,0 +1,10 @@
+
+In the `Test.test()` method, a new instance of `GomokuGame` is created with a board size of 10. Then, the `check_winner()` method is called on this instance.
+
+The `check_winner()` method iterates over each cell on the board. For each cell, it checks in four directions (right, down, down-right, and down-left) if there are five identical symbols in a row. If it finds such a sequence, it returns the symbol of the winner. If it doesn't find any winner, it returns `None`.
+
+In this case, since the board is empty, there are no five identical symbols in a row, so the `check_winner()` method returns `None`.
+
+<<<Output>>>
+None
+[END-OF-RESPONSE]

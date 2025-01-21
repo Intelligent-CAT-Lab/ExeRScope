@@ -1,0 +1,10 @@
+
+In the `test()` method, a new `Classroom` object is created with id 1. A course is then added to the classroom with the name 'math', start time '09:00', and end time '10:00'. The `is_free_at()` method is then called with the check time '11:00'.
+
+The `is_free_at()` method checks if the classroom is free at the given time. It does this by iterating over all the courses in the classroom. For each course, it checks if the check time is within the start and end times of the course. If it is, it returns False, indicating that the classroom is not free at the given time. If it iterates over all the courses and does not find a course that conflicts with the check time, it returns True, indicating that the classroom is free at the given time.
+
+In this case, the only course in the classroom has a start time of '09:00' and an end time of '10:00'. The check time '11:00' is not within this range, so the method returns True.
+
+<<<Output>>>
+True
+[END-OF-RESPONSE]

@@ -1,0 +1,16 @@
+<<<Analysis>>>
+The `Test.test()` method initializes an instance of the `Calculator` class and then manually sets up `operand_stack` and `operator_stack` with values `[1, 2, 3]` and `['+', '*']` respectively. It then calls the `apply_operator` method of the `Calculator` class.
+
+Here's the step-by-step breakdown of what happens inside `apply_operator`:
+1. The `operator_stack` is popped, removing the last element which is `'*'`.
+2. Since the operator is `'*'`, the last two elements of `operand_stack` are popped: `3` and `2`.
+3. These two values are multiplied (`2 * 3`), resulting in `6`.
+4. The result `6` is then pushed back onto the `operand_stack`.
+5. The `operand_stack` now contains `[1, 6]`.
+6. The `operator_stack` is now empty as the only operator was popped.
+
+The method returns the modified `operand_stack` and `operator_stack`.
+
+<<<Output>>>
+([1, 6], [])
+[END-OF-RESPONSE]

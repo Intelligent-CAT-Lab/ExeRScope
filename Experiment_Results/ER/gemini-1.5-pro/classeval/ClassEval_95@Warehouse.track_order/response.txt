@@ -1,0 +1,13 @@
+<<<Analysis>>>
+1. Inside the `test()` method, a `Warehouse` object is created.
+2. `warehouse.add_product(1, 'product 5', 100)` adds a product with ID 1, name 'product 5', and a quantity of 100 to the warehouse inventory.
+3. `warehouse.create_order(1, 1, 10)` attempts to create an order for product ID 1 with a quantity of 10.
+    - Since the warehouse has enough quantity, the order is created successfully.
+    - The product quantity in the inventory is updated by decreasing it by 10.
+    - The order is added to the `orders` dictionary with the status 'Shipped'.
+4. `warehouse.track_order(1)` is called to retrieve the status of the order with ID 1.
+    - Since the order exists, the method returns the status of the order, which is 'Shipped'.
+
+<<<Output>>>
+Shipped
+[END-OF-RESPONSE]

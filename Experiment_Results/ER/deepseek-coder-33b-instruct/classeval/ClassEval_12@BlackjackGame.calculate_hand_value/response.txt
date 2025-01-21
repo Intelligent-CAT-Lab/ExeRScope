@@ -1,0 +1,16 @@
+
+In the `test()` method, a new instance of `BlackjackGame` is created. Then, a hand of cards is defined. This hand consists of the Jack of Spades, Queen of Spades, and three Aces.
+
+The `calculate_hand_value()` method is then called with this hand as an argument. This method calculates the value of the hand according to the rules of Blackjack.
+
+The value of the hand is initially set to 0. Then, for each card in the hand, the rank of the card is determined. If the rank is a digit (2-10), the value of the card is added to the total value. If the rank is a face card (J, Q, K), 10 is added to the total value. If the rank is an Ace, 11 is added to the total value and the number of Aces is incremented.
+
+After all cards have been processed, if the total value is greater than 21 and there are any Aces in the hand, 10 is subtracted from the total value for each Ace until the total value is less than or equal to 21 or there are no more Aces.
+
+The final value of the hand is then returned.
+
+In this case, the hand consists of the Jack of Spades (10), Queen of Spades (10), and three Aces (11 each). The total value of the hand is 31. Since the total value is greater than 21 and there are Aces in the hand, 10 is subtracted from the total value for each Ace until the total value is less than or equal to 21. The final value of the hand is 21.
+
+<<<Output>>>
+21
+[END-OF-RESPONSE]

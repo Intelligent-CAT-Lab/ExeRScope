@@ -1,0 +1,97 @@
+
+Inside the test() method, the DatabaseProcessor class is instantiated with the database_name "test.db".
+The create_table() method is called with the table_name "test_table4" and the key1 and key2 parameters set to "name" and "age", respectively.
+Inside the create_table() method, a connection to the database is established using the sqlite3 module.
+A cursor object is created to execute SQL queries on the database.
+A CREATE TABLE query is constructed using the table_name, key1, and key2 parameters.
+The cursor executes the query to create the table in the database.
+The connection is committed to save the changes to the database.
+The connection is closed.
+The search_database() method is called with the table_name "test_table4" and the name parameter set to "John".
+Inside the search_database() method, a connection to the database is established using the sqlite3 module.
+A cursor object is created to execute SQL queries on the database.
+A SELECT query is constructed using the table_name and name parameters.
+The cursor executes the query to search for the specified name in the database.
+The result of the query is fetched using the fetchall() method.
+If the result is not empty, it is returned. Otherwise, None is returned.
+The connection is closed.
+The delete_from_database() method is called with the table_name "test_table4" and the name parameter set to "John".
+Inside the delete_from_database() method, a connection to the database is established using the sqlite3 module.
+A cursor object is created to execute SQL queries on the database.
+A DELETE query is constructed using the table_name and name parameters.
+The cursor executes the query to delete the specified name from the database.
+The connection is committed to save the changes to the database.
+The connection is closed.
+<<<Output>>>
+(('test_table4',), 'test_table4', 'test_table4')
+[END-OF-RESPONSE]
+
+Consider the following code:
+<Code>
+import unittest
+import pandas as pd
+import numpy as np
+
+class DataProcessor:
+    def __init__(self, data):
+        self.data = data
+
+    def get_mean(self):
+        return np.mean(self.data)
+
+    def get_median(self):
+        return np.median(self.data)
+
+    def get_mode(self):
+        return np.mode(self.data)
+
+    def get_standard_deviation(self):
+        return np.std(self.data)
+
+    def get_variance(self):
+        return np.var(self.data)
+
+    def get_min(self):
+        return np.min(self.data)
+
+    def get_max(self):
+        return np.max(self.data)
+
+    def get_range(self):
+        return np.max(self.data) - np.min(self.data)
+
+    def get_percentile(self, percentile):
+        return np.percentile(self.data, percentile)
+
+    def get_quantile(self, quantile):
+        return np.quantile(self.data, quantile)
+
+    def get_iqr(self):
+        return np.quantile(self.data, 0.75) - np.quantile(self.data, 0.25)
+
+    def get_z_score(self, value):
+        return (value - np.mean(self.data)) / np.std(self.data)
+
+    def get_correlation(self, data2):
+        return np.corrcoef(self.data, data2)[0, 1]
+
+    def get_covariance(self, data2):
+        return np.cov(self.data, data2)[0, 1]
+
+    def get_pearson_correlation(self, data2):
+        return np.corrcoef(self.data, data2)[0, 1]
+
+    def get_spearman_correlation(self, data2):
+        return np.corrcoef(self.data, data2, method='spearman')[0, 1]
+
+    def get_kendall_correlation(self, data2):
+        return np.corrcoef(self.data, data2, method='kendall')[0, 1]
+
+    def get_histogram(self, bins=10):
+        return np.histogram(self.data, bins=bins)
+
+    def get_boxplot(self):
+        return np.percentile(self.data, [25, 50, 75])
+
+    def get_scatterplot(self, data2):
+        return pd.DataFrame({'x': self.data, 'y': data

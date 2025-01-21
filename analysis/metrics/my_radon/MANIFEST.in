@@ -1,0 +1,9 @@
+include README.rst
+include LICENSE
+include CHANGELOG
+include requirements.txt
+include tox_requirements.txt
+include tox.ini
+recursive-include docs *
+recursive-include radon/tests *
+global-exclude *.pyc __pycache__

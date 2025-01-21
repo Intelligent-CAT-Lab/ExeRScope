@@ -1,0 +1,11 @@
+<<<Analysis>>>
+1. The function `f` takes two arguments: `text` and `chars`.
+2. It first checks if the `chars` string is not empty. In this case, `chars` is '0123456789-', which is not empty.
+3. Therefore, the code enters the `if` block and executes `text = text.rstrip(chars)`. This line of code removes any characters from the end of the `text` string that are present in the `chars` string.
+   - In our case, it will remove the trailing " -" (space followed by hyphen) from the `text`  'new-medium-performing-application - XQuery 2.2', resulting in 'new-medium-performing-application - XQuery 2.2'.
+4. Next, the code checks if the stripped `text` is empty. Since it is not empty, the code moves to the last line.
+5. Finally, the function returns the modified `text`: 'new-medium-performing-application - XQuery 2.2'.
+
+<<<Output>>>
+'new-medium-performing-application - XQuery 2.2'
+[END-OF-RESPONSE]

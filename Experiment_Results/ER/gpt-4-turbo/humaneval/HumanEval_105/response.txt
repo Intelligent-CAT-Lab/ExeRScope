@@ -1,0 +1,12 @@
+<<<Analysis>>>
+The function `by_length` takes a list `arr` as input. The function defines a dictionary `dic` that maps integers from 1 to 9 to their corresponding English words.
+The input list `arr` is `[2, 1, 1, 4, 5, 8, 2, 3]`.
+The list is first sorted in reverse order, resulting in `sorted_arr` being `[8, 5, 4, 3, 2, 2, 1, 1]`.
+An empty list `new_arr` is initialized.
+The function then iterates over `sorted_arr`. For each element `var`, it attempts to append `dic[var]` to `new_arr`. If `var` is not a key in `dic`, it would skip appending due to the `try-except` block, but since all values are within the dictionary's keys, all are appended.
+The values appended to `new_arr` in order are: "Eight", "Five", "Four", "Three", "Two", "Two", "One", "One".
+The function returns `new_arr` which contains the English words corresponding to the numbers in `sorted_arr`.
+
+<<<Output>>>
+['Eight', 'Five', 'Four', 'Three', 'Two', 'Two', 'One', 'One']
+[END-OF-RESPONSE]

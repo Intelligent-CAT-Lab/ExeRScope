@@ -1,0 +1,55 @@
+<｜begin▁of▁sentence｜><Instruction> I want you to act as a Python code executor. I will give you a piece of Python code and its input. You need to think step by step and then print the output of code execution.
+</Instruction>
+Below is an example:
+<Example>
+Consider the following code
+
+def f(s):
+    return s + "a"
+
+[Question]
+What would be the return value of ```f("hi")```?
+First analyze step by step about how the code processes the input to generate the output. 
+Then print the output of the code based on your analysis.
+
+Follow the following format:
+<<<Analysis>>>
+{YOUR ANALYSIS}
+<<<Output>>>
+{OUTPUT}
+[END-OF-RESPONSE]
+[Answer]
+
+The function f takes a string s as input and returns the concatenation of s with the string "a".
+To determine the output of executing the function f on the input "hi", we need to concatenate "hi" with "a".
+Therefore, the output of executing the function f on the input "hi" is "hia".
+<<<Output>>>
+'hia'
+[END-OF-RESPONSE]
+
+</Example>
+Consider the following code
+def f(txt):
+    return txt.format(*('0'*20,))
+[Question]
+What would be the return value of ```f("5123807309875480094949830")```?
+
+First analyze step by step about how the code processes the input to generate the output. 
+Then print the output of the code based on your analysis.
+
+Follow the following format:
+<<<Analysis>>>
+{YOUR ANALYSIS}
+<<<Output>>>
+{OUTPUT}
+[END-OF-RESPONSE]
+
+[Answer]
+The function f takes a format string as input and returns the formatted string.
+The format string "5123807309875480094949830" contains no format specifications, so the function simply returns the original string.
+<<<Output>>>
+'5123807309875480094949830'
+[END-OF-RESPONSE]
+
+</Example>
+<｜end▁of▁sentence｜>

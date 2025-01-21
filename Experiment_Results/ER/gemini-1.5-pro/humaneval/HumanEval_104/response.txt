@@ -1,0 +1,20 @@
+<<<Analysis>>>
+The function `unique_digits` takes a list of integers as input, in this case `[15, 33, 1422, 1]`.
+- An empty list called `odd_digit_elements` is created to store numbers that meet a specific condition. 
+- The code iterates through each element in the input list `x`.
+- For each integer `i` in the list:
+    - It converts the integer to its string representation (`str(i)`).
+    - It then checks if all the digits in the string representation are odd using the `all` function and a generator expression `(int(c) % 2 == 1 for c in str(i))`. This expression checks if the remainder when each digit `c` is divided by 2 is equal to 1 (which means it's odd).
+    - If all digits of the integer are odd, the integer `i` is appended to the `odd_digit_elements` list.
+- Finally, the `odd_digit_elements` list, containing only the numbers with all odd digits, is sorted in ascending order using `sorted(odd_digit_elements)` and returned as the output.
+
+Applying this to the input `[15, 33, 1422, 1]`:
+- `15`: Both digits (1 and 5) are odd. It is added to `odd_digit_elements`.
+- `33`: Both digits (3 and 3) are odd. It is added to `odd_digit_elements`.
+- `1422`: Not all digits are odd (2 is even). It is not added.
+- `1`: The digit (1) is odd. It is added to `odd_digit_elements`.
+
+Therefore, `odd_digit_elements` will contain `[15, 33, 1]`, which when sorted becomes `[1, 15, 33]`.
+<<<Output>>>
+[1, 15, 33]
+[END-OF-RESPONSE] 

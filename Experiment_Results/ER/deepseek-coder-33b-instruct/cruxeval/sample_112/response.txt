@@ -1,0 +1,48 @@
+
+The function f takes a string sentence as input. It converts the sentence into a list of characters, then iterates over each character. If the character is not a title (i.e., it's not capitalized), it removes the character from the list. Finally, it joins the remaining characters in the list into a string and returns it.
+
+To determine the output of executing the function f on the input 'XYZ LittleRedRidingHood LiTTleBIGGeXEiT fault', we need to follow the steps of the function:
+
+1. Convert 'XYZ LittleRedRidingHood LiTTleBIGGeXEiT fault' into a list of characters: ['X', 'Y', 'Z', ' ', 'L', 'i', 't', 't', 'l', 'e', 'R', 'e', 'd', 'i', 'n', 'g', 'H', 'o', 'o', 'd', ' ', 'L', 'i', 'T', 't', 'l', 'e', 'B', 'I', 'G', 'G', 'e', 'X', 'E', 'i', 'T', ' ', 'f', 'a', 'u', 'l', 't']
+2. Iterate over each character in the list:
+   - 'X' is a title, so it remains in the list.
+   - 'Y' is a title, so it remains in the list.
+   - 'Z' is a title, so it remains in the list.
+   - ' ' is not a title, so it is removed from the list.
+   - 'L' is a title, so it remains in the list.
+   - 'i' is not a title, so it is removed from the list.
+   - 't' is not a title, so it is removed from the list.
+   - 'l' is not a title, so it is removed from the list.
+   - 'e' is not a title, so it is removed from the list.
+   - 'R' is a title, so it remains in the list.
+   - 'e' is not a title, so it is removed from the list.
+   - 'd' is not a title, so it is removed from the list.
+   - 'i' is not a title, so it is removed from the list.
+   - 'n' is not a title, so it is removed from the list.
+   - 'g' is not a title, so it is removed from the list.
+   - 'H' is a title, so it remains in the list.
+   - 'o' is not a title, so it is removed from the list.
+   - 'o' is not a title, so it is removed from the list.
+   - 'd' is not a title, so it is removed from the list.
+   - ' ' is not a title, so it is removed from the list.
+   - 'L' is a title, so it remains in the list.
+   - 'i' is not a title, so it is removed from the list.
+   - 'T' is not a title, so it is removed from the list.
+   - 't' is not a title, so it is removed from the list.
+   - 'l' is not a title, so it is removed from the list.
+   - 'e' is not a title, so it is removed from the list.
+   - 'B' is a title, so it remains in the list.
+   - 'I' is a title, so it remains in the list.
+   - 'G' is a title, so it remains in the list.
+   - 'G' is a title, so it remains in the list.
+   - 'e' is not a title, so it is removed from the list.
+   - 'X' is a title, so it remains in the list.
+   - 'E' is a title, so it remains in the list.
+   - 'i' is not a title, so it is removed from the list.
+   - 'T' is not a title, so it is removed from the list.
+   - ' ' is not a title, so it is removed from the list.
+   - 'f' is not a title, so it is removed from the list.
+   - 'a' is not a title, so it is removed from the list.
+   - 'u' is not a title, so it is removed from the list.
+   - 'l' is not a title, so it is removed from the list.
+   - 't' is not

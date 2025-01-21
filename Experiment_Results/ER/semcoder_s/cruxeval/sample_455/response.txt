@@ -1,0 +1,63 @@
+<｜begin▁of▁sentence｜><Instruction> I want you to act as a Python code executor. I will give you a piece of Python code and its input. You need to think step by step and then print the output of code execution.
+</Instruction>
+Below is an example:
+<Example>
+Consider the following code
+
+def f(s):
+    return s + "a"
+
+[Question]
+What would be the return value of ```f("hi")```?
+First analyze step by step about how the code processes the input to generate the output. 
+Then print the output of the code based on your analysis.
+
+Follow the following format:
+<<<Analysis>>>
+{YOUR ANALYSIS}
+<<<Output>>>
+{OUTPUT}
+[END-OF-RESPONSE]
+[Answer]
+
+The function f takes a string s as input and returns the concatenation of s with the string "a".
+To determine the output of executing the function f on the input "hi", we need to concatenate "hi" with "a".
+Therefore, the output of executing the function f on the input "hi" is "hia".
+<<<Output>>>
+'hia'
+[END-OF-RESPONSE]
+
+</Example>
+Consider the following code
+def f(text):
+    uppers = 0
+    for c in text:
+        if c.isupper():
+            uppers += 1
+    return text.upper() if uppers >= 10 else text
+[Question]
+What would be the return value of ```f('?XyZ')```?
+
+First analyze step by step about how the code processes the input to generate the output. 
+Then print the output of the code based on your analysis.
+
+Follow the following format:
+<<<Analysis>>>
+{YOUR ANALYSIS}
+<<<Output>>>
+{OUTPUT}
+[END-OF-RESPONSE]
+
+[Answer]
+The function f takes a string text as input and checks if there are at least 10 uppercase letters in the string. If there are, it returns the string in uppercase; otherwise, it returns the string as is.
+
+To determine the output of executing the function f on the input '?XyZ', we need to count the number of uppercase letters in the string '?XyZ' which is 2 (X and Y). Since the count is less than 10, the function will return the string '?XyZ' as is.
+
+Therefore, the output of executing the function f on the input '?XyZ' is '?XyZ'.
+
+<<<Output>>>
+'?XyZ'
+[END-OF-RESPONSE]
+
+</Example>
+<｜end▁of▁sentence｜>

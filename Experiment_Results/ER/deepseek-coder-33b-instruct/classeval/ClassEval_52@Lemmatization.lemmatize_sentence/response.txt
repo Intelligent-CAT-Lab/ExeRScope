@@ -1,0 +1,15 @@
+
+<<<Analysis>>>
+In the test() method, an instance of the Lemmatization class is created. The lemmatize_sentence() method is then called on this instance with the sentence "Until the beating, Cantanco's eyesight had been weak, but adequate.".
+
+The lemmatize_sentence() method first removes punctuation from the sentence using the remove_punctuation() method. It then tokenizes the sentence into words using the word_tokenize() function from the nltk library.
+
+The words are then tagged with their part of speech using the pos_tag() function. The lemmatizer then lemmatizes each word based on its part of speech. If the word is a verb, it is lemmatized as a verb, if it's an adjective, it's lemmatized as an adjective, and if it's an adverb, it's lemmatized as an adverb. If the word doesn't fall into any of these categories, it's lemmatized as a noun.
+
+The lemmatized words are then returned as a list.
+
+The expected output is a list of lemmatized words.
+
+<<<Output>>>
+(['Until', 'the', 'beating', 'Cantanco', 'eyesight', 'have', 'be', 'weak', 'but', 'adequate'], ['Until', 'the', 'beating', 'Cantanco', 'eyesight', 'have', 'be', 'weak', 'but', 'adequate'])
+[END-OF-RESPONSE]

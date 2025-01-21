@@ -1,0 +1,10 @@
+
+<<<Analysis>>>
+In the test() method, an instance of the Hotel class is created with the name 'Test Hotel' and the available rooms are specified as {'single': 3, 'double': 2, 'triple': 2}.
+Then, the book_room() method is called with the parameters 'single', 3, and 'guest 1'. This means that 3 single rooms are booked for 'guest 1'.
+After booking the rooms, the get_available_rooms() method is called with the parameter 'single' to get the number of available single rooms.
+In the book_room() method, the room_type is checked if it is in the available_rooms dictionary. If it is, the room_number is compared with the available rooms of that type. If the room_number is less than or equal to the available rooms, the room is booked by adding it to the booked_rooms dictionary and subtracting it from the available_rooms. If the room_number is more than the available rooms, the method returns the available rooms. If the room_type is not in the available_rooms dictionary, the method returns False.
+In the get_available_rooms() method, the available rooms of the specified room_type are returned.
+<<<Output>>>
+0
+[END-OF-RESPONSE]

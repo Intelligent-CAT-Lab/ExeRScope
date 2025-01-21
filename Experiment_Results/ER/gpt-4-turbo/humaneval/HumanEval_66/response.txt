@@ -1,0 +1,14 @@
+<<<Analysis>>>
+The function `digitSum` takes a string `s` as input and calculates the sum of the ASCII values of the uppercase letters in the string. If the string is empty, it returns 0.
+For the input "You arE Very Smart":
+1. The function iterates over each character in the string.
+2. It checks if the character is an uppercase letter using `char.isupper()`.
+3. If the character is uppercase, it adds its ASCII value to the sum using `ord(char)`.
+4. The uppercase letters in the string are 'Y', 'E', 'V', 'S', and 'M'.
+5. The ASCII values are 89 for 'Y', 69 for 'E', 86 for 'V', 83 for 'S', and 77 for 'M'.
+6. The sum of these ASCII values is 89 + 69 + 86 + 83 + 77 = 404.
+Therefore, the function returns 404.
+
+<<<Output>>>
+404
+[END-OF-RESPONSE]

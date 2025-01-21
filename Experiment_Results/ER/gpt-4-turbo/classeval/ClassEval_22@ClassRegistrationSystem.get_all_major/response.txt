@@ -1,0 +1,15 @@
+<<<Analysis>>>
+In the `test()` method of the `Test` class, an instance of `ClassRegistrationSystem` is created. The `students` attribute of this instance is then manually populated with a list of dictionaries, each representing a student with their name and major.
+
+The `get_all_major()` method of `ClassRegistrationSystem` is called next. This method initializes an empty list `major_list` and iterates over each student in the `students` list. For each student, it checks if the student's major is not already in `major_list`. If it's not, the major is appended to `major_list`.
+
+Given the input students:
+- John and Bob are from "Computer Science"
+- Alice and Tom are from "Mathematics"
+- Jerry is from "Physics"
+
+The method should collect each unique major exactly once. Therefore, the expected output should be a list of majors in the order they appear in the `students` list, which are "Computer Science", "Mathematics", and "Physics".
+
+<<<Output>>>
+['Computer Science', 'Mathematics', 'Physics']
+[END-OF-RESPONSE]

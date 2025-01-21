@@ -1,0 +1,10 @@
+
+In the `test()` method, an instance of `EmailClient` is created for both the sender and the receiver. The sender's capacity is 100 and the receiver's capacity is 50.
+
+The `fetch()` method is then called on the receiver. This method checks if the receiver's inbox is empty. If it is, it returns `None`. If it's not, it iterates over the inbox and returns the first unread email it finds. If there are no unread emails, it returns `None`.
+
+In this case, the receiver's inbox is empty, so `None` is returned.
+
+<<<Output>>>
+None
+[END-OF-RESPONSE]

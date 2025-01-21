@@ -1,0 +1,15 @@
+<<<Analysis>>>
+Inside the test() method:
+1. We initialize a list `data` with values from 1 to 10, `page_size` as 3 and create an instance of `PageUtil` class with `data` and `page_size`.
+2. We define a `keyword` as "2" and an `expected_results` dictionary containing the expected search results.
+3. We call the `search` method of the `page_util` object with the `keyword`.
+4. Inside the `search` method:
+    - It iterates through the `data` list and checks if the `keyword` is present in each item. If the keyword is found, it appends the item to the `results` list.
+    - It calculates the `num_results` and `num_pages` based on the length of the `results` and the `page_size`.
+    - It constructs a `search_info` dictionary containing the `keyword`, `total_results`, `total_pages`, and `results`.
+    - It returns the `search_info` dictionary.
+5. The `test` method returns the `actual_results` and `expected_results`.
+
+<<<Output>>>
+({'keyword': '2', 'total_results': 1, 'total_pages': 1, 'results': [2]}, {'keyword': '2', 'total_results': 1, 'total_pages': 1, 'results': [2]})
+[END-OF-RESPONSE]

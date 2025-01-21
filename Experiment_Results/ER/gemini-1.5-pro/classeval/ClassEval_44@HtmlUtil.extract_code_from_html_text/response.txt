@@ -1,0 +1,29 @@
+<<<Analysis>>>
+Inside the test() method, an instance of the HtmlUtil class is created as 'htmlutil'. Then, the extract_code_from_html_text() method of this instance is called with a multi-line string containing HTML code as input. Let's break down what happens inside this method:
+
+1. **format_line_html_text() call:**
+   - The input HTML text is first passed to the format_line_html_text() method. This method aims to clean up and format the HTML text.
+   - Inside format_line_html_text(), the HTML content is parsed using BeautifulSoup.
+   - It specifically targets 'pre' and 'blockquote' tags, replacing their content with the " -CODE- " mark.
+   - It also formats lists (ul and ol) by adding "[–]" and "." to list items.
+   - Finally, it cleans the text, decodes HTML entities, and formats line feeds.
+
+2. **Checking for Code Mark:**
+   - After processing by format_line_html_text(), the code checks if the " -CODE- " mark is present in the formatted text. If not, it means no code blocks were found and an empty list is returned.
+
+3. **Extracting Code:**
+   - If the " -CODE- " mark exists, the code proceeds to extract the actual code snippets.
+   - It finds all 'pre' and 'blockquote' tags within the original HTML.
+   - It iterates through these tags and retrieves the text content of each tag, which now represents the extracted code.
+   - These code snippets are appended to the 'code_list'.
+
+4. **Returning the Code List:**
+   - Finally, the 'code_list', containing the extracted code snippets, is returned.
+
+Therefore, the 'res' variable in test() will hold a list of code snippets extracted from the provided HTML.
+
+<<<Output>>>
+```python
+["print('Hello, world!')", '<code>for i in range(2):\n                    print(i)</code>']
+```
+[END-OF-RESPONSE] 

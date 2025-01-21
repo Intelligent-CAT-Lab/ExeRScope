@@ -1,0 +1,14 @@
+
+In the `test()` method, the `get_all_major()` method is invoked. This method is designed to return a list of all the unique majors in the `students` list.
+
+The `get_all_major()` method iterates over each student in the `students` list. For each student, it checks if the student's major is already in the `major_list`. If it is not, it adds the major to the `major_list`.
+
+In this case, the `students` list contains five students, each with a different major. The majors are "Computer Science", "Mathematics", and "Physics".
+
+So, the `major_list` will be ["Computer Science", "Mathematics", "Physics"].
+
+Finally, the `get_all_major()` method returns the `major_list`, which is ["Computer Science", "Mathematics", "Physics"].
+
+<<<Output>>>
+["Computer Science", "Mathematics", "Physics"]
+[END-OF-RESPONSE]

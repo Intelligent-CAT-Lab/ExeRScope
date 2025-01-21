@@ -1,0 +1,58 @@
+
+Inside the test() method, a CombinationCalculator object is created with the list ["A", "B", "C", "D"] as the input.
+The _select() method is then called with the following arguments:
+dataIndex: 0
+resultList: [None] * 0
+resultIndex: 0
+result: []
+Inside the _select() method, the resultLen variable is set to the length of the resultList, which is 0.
+The resultCount variable is set to the resultIndex + 1, which is 1.
+The if statement checks if resultCount is greater than resultLen, which is not the case.
+The for loop iterates over the range from dataIndex to len(self.datas) + resultCount - resultLen, which is 4.
+The resultList[resultIndex] is set to self.datas[i], which is "A".
+The _select() method is called recursively with the following arguments:
+dataIndex: i + 1, which is 1
+resultList: resultList, which is [None]
+resultIndex: resultIndex + 1, which is 1
+result: result, which is []
+Inside the _select() method, the resultLen variable is set to the length of the resultList, which is 1.
+The resultCount variable is set to the resultIndex + 1, which is 2.
+The if statement checks if resultCount is greater than resultLen, which is not the case.
+The for loop iterates over the range from dataIndex to len(self.datas) + resultCount - resultLen, which is 3.
+The resultList[resultIndex] is set to self.datas[i], which is "B".
+The _select() method is called recursively with the following arguments:
+dataIndex: i + 1, which is 2
+resultList: resultList, which is [None, "B"]
+resultIndex: resultIndex + 1, which is 2
+result: result, which is []
+Inside the _select() method, the resultLen variable is set to the length of the resultList, which is 2.
+The resultCount variable is set to the resultIndex + 1, which is 3.
+The if statement checks if resultCount is greater than resultLen, which is not the case.
+The for loop iterates over the range from dataIndex to len(self.datas) + resultCount - resultLen, which is 2.
+The resultList[resultIndex] is set to self.datas[i], which is "C".
+The _select() method is called recursively with the following arguments:
+dataIndex: i + 1, which is 3
+resultList: resultList, which is [None, "B", "C"]
+resultIndex: resultIndex + 1, which is 3
+result: result, which is []
+Inside the _select() method, the resultLen variable is set to the length of the resultList, which is 3.
+The resultCount variable is set to the resultIndex + 1, which is 4.
+The if statement checks if resultCount is greater than resultLen, which is not the case.
+The for loop iterates over the range from dataIndex to len(self.datas) + resultCount - resultLen, which is 1.
+The resultList[resultIndex] is set to self.datas[i], which is "D".
+The _select() method is called recursively with the following arguments:
+dataIndex: i + 1, which is 4
+resultList: resultList, which is [None, "B", "C", "D"]
+resultIndex: resultIndex + 1, which is 4
+result: result, which is []
+Inside the _select() method, the resultLen variable is set to the length of the resultList, which is 4.
+The resultCount variable is set to the resultIndex + 1, which is 5.
+The if statement checks if resultCount is greater than resultLen, which is not the case.
+The for loop iterates over the range from dataIndex to len(self.datas) + resultCount - resultLen, which is 0.
+The resultList[resultIndex] is set to self.datas[i], which is None.
+The _select() method is called recursively with the following arguments:
+dataIndex: i + 1, which is 5
+resultList: resultList, which is [None, "B", "C", "D", None]
+resultIndex: resultIndex + 1, which is 5
+result: result, which is []
+Inside the _select() method, the resultLen variable is set to the length of the resultList, which

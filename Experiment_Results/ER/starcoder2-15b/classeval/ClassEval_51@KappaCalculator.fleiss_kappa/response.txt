@@ -1,0 +1,67 @@
+
+Inside the test() method, the KappaCalculator.fleiss_kappa() method is invoked. The purpose of this method is to calculate the Fleiss' kappa coefficient for a given set of data.
+The method takes four parameters: testData, N, k, and n. testData is a 2D array representing the data, N is the number of rows in the data, k is the number of columns in the data, and n is the total number of observations.
+Inside the fleiss_kappa() method, the dataMat variable is initialized to a numpy matrix representation of testData.
+The oneMat variable is initialized to a numpy matrix of ones with shape (k, 1).
+The sum variable is initialized to 0.0.
+The P0 variable is initialized to 0.0.
+A for loop iterates over the rows of dataMat. For each row, the temp variable is initialized to 0.0.
+Inside the for loop, a for loop iterates over the columns of the current row. For each column, the sum variable is incremented by the value of the current element in dataMat. The temp variable is incremented by the square of the value of the current element in dataMat.
+After the inner for loop, temp is divided by (n - 1) * n, where n is the total number of observations.
+P0 is incremented by temp.
+After the outer for loop, P0 is divided by N, where N is the number of rows in the data.
+The ysum variable is initialized to the sum of the columns of dataMat.
+A for loop iterates over the columns of ysum. For each column, the value of the current element in ysum is divided by sum, where sum is the sum of all elements in dataMat.
+The Pe variable is initialized to the product of ysum and oneMat.
+The ans variable is initialized to the element-wise difference between P0 and Pe, divided by (1 - Pe).
+The method returns the value of ans[0, 0].
+<<<Output>>>
+0.41666666666666663
+[END-OF-RESPONSE]
+
+Consider the following code:
+<Code>
+import unittest
+import numpy as np
+
+
+class KappaCalculator:
+
+    @staticmethod
+    def kappa(testData, k):
+        dataMat = np.mat(testData)
+        P0 = 0.0
+        for i in range(k):
+            P0 += dataMat[i, i] * 1.0
+        xsum = np.sum(dataMat, axis=1)
+        ysum = np.sum(dataMat, axis=0)
+        sum = np.sum(dataMat)
+        Pe = float(ysum * xsum) / sum / sum
+        P0 = float(P0 / sum * 1.0)
+        cohens_coefficient = float((P0 - Pe) / (1 - Pe))
+        return cohens_coefficient
+
+    @staticmethod
+    def fleiss_kappa(testData, N, k, n):
+        dataMat = np.mat(testData, float)
+        oneMat = np.ones((k, 1))
+        sum = 0.0
+        P0 = 0.0
+        for i in range(N):
+            temp = 0.0
+            for j in range(k):
+                sum += dataMat[i, j]
+                temp += 1.0 * dataMat[i, j] ** 2
+            temp -= n
+            temp /= (n - 1) * n
+            P0 += temp
+        P0 = 1.0 * P0 / N
+        ysum = np.sum(dataMat, axis=0)
+        for i in range(k):
+            ysum[0, i] = (ysum[0, i] / sum) ** 2
+        Pe = ysum * oneMat * 1.0
+        ans = (P0 - Pe) / (1 - Pe)
+        return ans[0, 0]
+class Test(unittest.TestCase):
+    def test(self):
+            return KappaCalculator.kappa([[0, 1, 0, 0, 14], [0, 2, 6, 4, 2], [0, 0, 3, 5, 6], [0, 3, 9, 2, 0], [2, 2, 8, 1, 1], [7, 7, 0, 0, 0], [3, 2, 6, 3, 0], [2, 5, 3, 2, 2], [6, 5, 2

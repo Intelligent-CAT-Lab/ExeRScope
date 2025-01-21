@@ -1,0 +1,12 @@
+<<<Analysis>>>
+1. Inside the `Test.test()` method, a `URLHandler` object is created with the URL "https://www.baidu.com/s?wd=aaa&rsv_spt=1#bbb".
+2. The `get_fragment()` method of the `urlhandler` object is called.
+3. Inside the `get_fragment()` method:
+    - It first tries to find the index of '#' in the URL. In this case it's 29.
+    - If '#' is found, it returns the substring of the URL starting from the next character of '#' to the end.
+    - In this case, the substring from index 30 till the end is "bbb".
+4. So the `get_fragment()` method will return "bbb".
+5. The `test()` method returns the value returned by `get_fragment()`, which is "bbb".
+<<<Output>>>
+bbb
+[END-OF-RESPONSE]

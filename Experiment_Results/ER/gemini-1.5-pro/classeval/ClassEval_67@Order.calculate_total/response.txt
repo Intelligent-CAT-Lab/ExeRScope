@@ -1,0 +1,15 @@
+<<<Analysis>>>
+Inside the test() method, an instance of the Order class is created and its menu is populated with three dishes. The sales dictionary is also defined, specifying discounts for each dish.
+Two dishes are added to the order using the add_dish() method: 2 counts of "dish1" and 2 counts of "dish3".
+The calculate_total() method is then called to determine the total cost of the order.
+Inside calculate_total(), the code iterates through each dish in the selected_dishes list.
+For each dish, it retrieves the price, count, and applies the corresponding sales discount from the self.sales dictionary.
+The total cost for each dish is calculated by multiplying the price, count, and discount, and then added to the total variable.
+Finally, the total calculated cost is returned.
+Therefore, the calculation is as follows:
+Total cost for dish1: 10 (price) * 2 (count) * 0.9 (discount) = 18
+Total cost for dish3: 20 (price) * 2 (count) * 0.8 (discount) = 32
+Total cost of the order: 18 + 32 = 50
+<<<Output>>>
+50
+[END-OF-RESPONSE]

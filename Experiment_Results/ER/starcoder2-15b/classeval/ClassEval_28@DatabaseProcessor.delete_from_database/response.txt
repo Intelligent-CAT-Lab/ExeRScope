@@ -1,0 +1,96 @@
+
+Inside the test() method, the DatabaseProcessor class is instantiated with the database_name "test.db".
+The create_table() method is called with the table_name "test_table", key1 "name", and key2 "age".
+The insert_into_database() method is called with the table_name "test_table" and the data list containing two dictionaries.
+The delete_from_database() method is called with the table_name "test_table" and the name "bbb".
+The search_database() method is called with the table_name "test_table" and the name "Alice".
+The result of the search_database() method is returned.
+Inside the create_table() method, a connection is established to the database using the sqlite3 module.
+A cursor is created to execute SQL queries on the database.
+A CREATE TABLE query is constructed using the table_name, key1, and key2 parameters.
+The query is executed using the cursor.execute() method.
+The connection is committed to save the changes to the database.
+The connection is closed using conn.close().
+Inside the insert_into_database() method, a connection is established to the database using the sqlite3 module.
+A cursor is created to execute SQL queries on the database.
+A loop iterates over the data list, inserting each item into the database using an INSERT query.
+The connection is committed to save the changes to the database.
+The connection is closed using conn.close().
+Inside the search_database() method, a connection is established to the database using the sqlite3 module.
+A cursor is created to execute SQL queries on the database.
+A SELECT query is constructed using the table_name and name parameters.
+The query is executed using the cursor.execute() method.
+The result of the query is fetched using cursor.fetchall().
+If the result is not empty, it is returned. Otherwise, None is returned.
+Inside the delete_from_database() method, a connection is established to the database using the sqlite3 module.
+A cursor is created to execute SQL queries on the database.
+A DELETE query is constructed using the table_name and name parameters.
+The query is executed using the cursor.execute() method.
+The connection is committed to save the changes to the database.
+The connection is closed using conn.close().
+<<<Output>>>
+(1, 'Alice')
+[END-OF-RESPONSE]
+
+Consider the following code:
+<Code>
+import unittest
+import pandas as pd
+import numpy as np
+
+class DataProcessor:
+    def __init__(self, data):
+        self.data = data
+
+    def get_mean(self):
+        return np.mean(self.data)
+
+    def get_median(self):
+        return np.median(self.data)
+
+    def get_mode(self):
+        return np.mode(self.data)
+
+    def get_standard_deviation(self):
+        return np.std(self.data)
+
+    def get_variance(self):
+        return np.var(self.data)
+
+    def get_min(self):
+        return np.min(self.data)
+
+    def get_max(self):
+        return np.max(self.data)
+
+    def get_range(self):
+        return np.max(self.data) - np.min(self.data)
+
+    def get_percentile(self, percentile):
+        return np.percentile(self.data, percentile)
+
+    def get_quantile(self, quantile):
+        return np.quantile(self.data, quantile)
+
+    def get_iqr(self):
+        return np.quantile(self.data, 0.75) - np.quantile(self.data, 0.25)
+
+    def get_z_score(self, value):
+        return (value - np.mean(self.data)) / np.std(self.data)
+
+    def get_correlation(self, data2):
+        return np.corrcoef(self.data, data2)[0, 1]
+
+    def get_covariance(self, data2):
+        return np.cov(self.data, data2)[0, 1]
+
+    def get_pearson_correlation(self, data2):
+        return np.corrcoef(self.data, data2)[0, 1]
+
+    def get_spearman_correlation(self, data2):
+        return np.corrcoef(self.data, data2, method='spearman')[0, 1]
+
+    def get_kendall_correlation(self, data2):
+        return np.corrcoef(self.data, data2, method='kendall')[0, 1]
+
+    def get

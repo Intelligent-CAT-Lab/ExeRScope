@@ -1,0 +1,86 @@
+
+Inside the test() method, an instance of the AccessGatewayFilter class is created.
+A request dictionary is created with the following keys and values:
+'path': '/abc'
+'method': 'POST'
+'headers': {
+'Authorization': {'user': {'name': 'user1', 'level': 5, 'address': 'address1'},
+'jwt': 'user1' + str(datetime.date.today())}
+}
+The filter() method is called on the AccessGatewayFilter instance with the request dictionary as an argument.
+Inside the filter() method, the request_uri variable is set to the value of the 'path' key in the request dictionary.
+The method is_start_with() is called with the request_uri as an argument.
+Inside the is_start_with() method, the start_with list is iterated over.
+For each element in the start_with list, the startswith() method is called on the request_uri with the element as an argument.
+If the request_uri starts with the element, True is returned.
+If the request_uri does not start with any element in the start_with list, False is returned.
+The method get_jwt_user() is called with the request dictionary as an argument.
+Inside the get_jwt_user() method, the token variable is set to the value of the 'Authorization' key in the request dictionary.
+The user variable is set to the value of the 'user' key in the token dictionary.
+If the 'jwt' key in the token dictionary starts with the 'name' key in the user dictionary, the jwt_str_date variable is set to the value of the 'jwt' key in the token dictionary, split by the 'name' key in the user dictionary.
+The jwt_date variable is set to the result of calling the strptime() method on the datetime module with jwt_str_date and "%Y-%m-%d" as arguments.
+If the result of subtracting the current date from jwt_date is greater than or equal to 3 days, None is returned.
+If the result of subtracting the current date from jwt_date is less than 3 days, the token dictionary is returned.
+The method set_current_user_info_and_log() is called with the user dictionary as an argument.
+Inside the set_current_user_info_and_log() method, the host variable is set to the value of the 'address' key in the user dictionary.
+The log() method is called on the logging module with the following arguments:
+msg: The value of the 'name' key in the user dictionary concatenated with the host variable and the current date and time.
+level: 1
+The method returns True.
+<<<Output>>>
+True
+[END-OF-RESPONSE]
+
+Consider the following code:
+<Code>
+import unittest
+import datetime
+
+class AccessGatewayFilter:
+
+    def __init__(self):
+        pass
+
+    def filter(self, request):
+        request_uri = request['path']
+        method = request['method']
+
+        if self.is_start_with(request_uri):
+            return True
+
+        try:
+            token = self.get_jwt_user(request)
+            user = token['user']
+            if user['level'] > 2:
+                self.set_current_user_info_and_log(user)
+                return True
+        except:
+            return False
+
+    def is_start_with(self, request_uri):
+        start_with = ["/api", '/login']
+        for s in start_with:
+            if request_uri.startswith(s):
+                return True
+        return False
+
+    def get_jwt_user(self, request):
+        token = request['headers']['Authorization']
+        user = token['user']
+        if token['jwt'].startswith(user['name']):
+            jwt_str_date = token['jwt'].split(user['name'])[1]
+            jwt_date = datetime.datetime.strptime(jwt_str_date, "%Y-%m-%d")
+            if datetime.datetime.today() - jwt_date >= datetime.timedelta(days=3):
+                return None
+        return token
+
+    def set_current_user_info_and_log(self, user):
+        host = user['address']
+        logging.log(msg=user['name'] + host + str(datetime.datetime.now()), level=1)
+class Test(unittest.TestCase):
+    def test(self):
+            agf = AccessGatewayFilter()
+            request = {'path': '/abc', 'method': 'POST',
+                       'headers': {
+                           'Authorization': {'user': {'name': 'user1', 'level': 5, 'address': 'address1'},
+                                             'jwt':

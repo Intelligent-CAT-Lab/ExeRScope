@@ -1,0 +1,109 @@
+
+Inside the test() method, the DocFileHandler class is instantiated with the file_path "test_example.docx".
+The file_path is then used to create a new Document object and add a paragraph with the text "Initial content".
+The document is then saved to the file_path.
+The add_heading() method is called with the heading "Test Heading 3".
+The document is then loaded from the file_path and the headings are extracted from the document.
+The heading and headings are then returned.
+<<<Output>>>
+('Test Heading 3', ['Test Heading 3'])
+[END-OF-RESPONSE]
+
+Consider the following code:
+<Code>
+import unittest
+import re
+
+class TextHandler:
+    def __init__(self, text):
+        self.text = text
+
+    def count_words(self):
+        words = re.findall(r'\w+', self.text)
+        return len(words)
+
+    def count_sentences(self):
+        sentences = re.split(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s', self.text)
+        return len(sentences)
+
+    def count_paragraphs(self):
+        paragraphs = re.split(r'\n\s*\n', self.text)
+        return len(paragraphs)
+
+    def count_characters(self):
+        return len(self.text)
+
+    def count_characters_without_spaces(self):
+        return len(self.text.replace(' ', ''))
+
+    def count_digits(self):
+        return len(re.findall(r'\d', self.text))
+
+    def count_letters(self):
+        return len(re.findall(r'[a-zA-Z]', self.text))
+
+    def count_punctuations(self):
+        return len(re.findall(r'[^\w\s]', self.text))
+
+    def count_uppercase_letters(self):
+        return len(re.findall(r'[A-Z]', self.text))
+
+    def count_lowercase_letters(self):
+        return len(re.findall(r'[a-z]', self.text))
+
+    def count_vowels(self):
+        return len(re.findall(r'[aeiouAEIOU]', self.text))
+
+    def count_consonants(self):
+        return len(re.findall(r'[^aeiouAEIOU\s]', self.text))
+
+    def count_spaces(self):
+        return len(re.findall(r'\s', self.text))
+
+    def count_tabs(self):
+        return len(re.findall(r'\t', self.text))
+
+    def count_newlines(self):
+        return len(re.findall(r'\n', self.text))
+
+    def count_line_breaks(self):
+        return len(re.findall(r'\r', self.text))
+
+    def count_non_printable_characters(self):
+        return len(re.findall(r'[^\x20-\x7E]', self.text))
+
+    def count_printable_characters(self):
+        return len(re.findall(r'[\x20-\x7E]', self.text))
+
+    def count_hexadecimal_digits(self):
+        return len(re.findall(r'[0-9a-fA-F]', self.text))
+
+    def count_octal_digits(self):
+        return len(re.findall(r'[0-7]', self.text))
+
+    def count_binary_digits(self):
+        return len(re.findall(r'[01]', self.text))
+
+    def count_alphanumeric_characters(self):
+        return len(re.findall(r'[a-zA-Z0-9]', self.text))
+
+    def count_non_alphanumeric_characters(self):
+        return len(re.findall(r'[^a-zA-Z0-9]', self.text))
+
+    def count_hexadecimal_characters(self):
+        return len(re.findall(r'[0-9a-fA-F]', self.text))
+
+    def count_octal_characters(self):
+        return len(re.findall(r'[0-7]', self.text))
+
+    def count_binary_characters(self):
+        return len(re.findall(r'[01]', self.text))
+
+    def count_whitespace_characters(self):
+        return len(re.findall(r'\s', self.text))
+
+    def count_non_whitespace_characters(self):
+        return len(re.findall(r'[^\s]', self.text))
+
+    def count_control_characters(self):
+       

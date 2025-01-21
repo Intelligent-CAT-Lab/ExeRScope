@@ -1,0 +1,14 @@
+
+In the `test()` method, we are initializing a `ClassRegistrationSystem` object and populating it with some students and their registration classes. Then we are calling the `get_most_popular_class_in_major()` method for both "Computer Science" and "Mathematics" majors.
+
+The `get_most_popular_class_in_major()` method first creates a list of all classes for the given major by iterating over all students and their registration classes. It then uses the `max()` function with the `key=` parameter set to `class_list.count` to find the class that appears most frequently in the list.
+
+In this case, for "Computer Science", the classes are ["Algorithms", "Data Structures", "Data Structures", "Algorithms", "Operating Systems", "Data Structures", "Operating Systems", "Calculus"], and "Data Structures" appears most frequently.
+
+For "Mathematics", the classes are ["Calculus", "Linear Algebra", "Linear Algebra", "Statistics"], and "Linear Algebra" appears most frequently.
+
+So, the return value of `Test.test()` would be `("Data Structures", "Linear Algebra")`.
+
+<<<Output>>>
+("Data Structures", "Linear Algebra")
+[END-OF-RESPONSE]

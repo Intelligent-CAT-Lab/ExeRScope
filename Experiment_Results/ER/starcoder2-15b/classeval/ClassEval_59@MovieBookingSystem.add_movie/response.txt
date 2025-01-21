@@ -1,0 +1,91 @@
+
+Inside the test() method, the MovieBookingSystem class is instantiated and assigned to the self.system variable.
+The add_movie() method is called on the self.system object, passing in the following arguments:
+'Batman' as the name of the movie
+29.9 as the price of the movie
+'17:05' as the start time of the movie
+'19:25' as the end time of the movie
+3 as the number of rows and columns of the seats in the movie
+Inside the add_movie() method, a new movie dictionary is created with the following keys and values:
+'name': name, which is 'Batman'
+'price': price, which is 29.9
+'start_time': datetime.strptime(start_time, '%H:%M'), which is datetime.strptime('17:05', '%H:%M')
+'end_time': datetime.strptime(end_time, '%H:%M'), which is datetime.strptime('19:25', '%H:%M')
+'seats': np.zeros((n, n)), which is np.zeros((3, 3))
+The movie dictionary is appended to the self.movies list.
+After the add_movie() method is called, the return statement returns the length of the self.movies list and the name of the first movie in the list.
+<<<Output>>>
+1,Batman,29.9,datetime.datetime(1900, 1, 1, 17, 5),datetime.datetime(1900, 1, 1, 17, 5),datetime.datetime(1900, 1, 1, 19, 25),datetime.datetime(1900, 1, 1, 19, 25),(3, 3)
+[END-OF-RESPONSE]
+
+Consider the following code:
+<Code>
+import unittest
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next is not None:
+                current = current.next
+            current.next = new_node
+
+    def reverse(self):
+        prev = None
+        current = self.head
+        while current is not None:
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+        self.head = prev
+
+    def print_list(self):
+        current = self.head
+        while current is not None:
+            print(current.data, end=' ')
+            current = current.next
+        print()
+
+class Test(unittest.TestCase):
+    def test(self):
+            self.llist = LinkedList()
+            self.llist.insert(1)
+            self.llist.insert(2)
+            self.llist.insert(3)
+            self.llist.insert(4)
+            self.llist.insert(5)
+            self.llist.print_list()
+            self.llist.reverse()
+            self.llist.print_list()
+</Code>
+<<<Question>>>
+What would be the output of ```Test.test()```?
+First analyze step by step about how the code processes the input.
+Then print the output of the code based on your analysis.
+<<<Analysis>>>
+Inside the test() method, a LinkedList object is instantiated and assigned to the self.llist variable.
+The insert() method is called on the self.llist object, passing in the following arguments:
+1
+2
+3
+4
+5
+Inside the insert() method, a new Node object is created with the data argument as the data value.
+If the self.head attribute of the LinkedList object is None, the self.head attribute is set to the new Node object.
+Otherwise, a while loop is entered, where the current attribute of the LinkedList object is set to the self.head attribute.
+Inside the while loop, if the next attribute of the current Node object is not None, the current attribute is set to the next attribute of the current Node object.
+If the next attribute of the current Node object is None, the next attribute of the current Node object is set to the new Node object.
+After the while loop, the print_list() method is called on the self.llist object.
+Inside the print_list() method, a while loop is entered, where the current attribute

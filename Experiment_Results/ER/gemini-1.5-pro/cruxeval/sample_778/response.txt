@@ -1,0 +1,12 @@
+<<<Analysis>>>
+The function `f` takes two strings as input: `prefix` and `text`. It then checks if `text` starts with `prefix`. 
+
+1. **Input:** `prefix = 'mjs'`,  `text = 'mjqwmjsqjwisojqwiso'`
+2. **Check `text.startswith(prefix)`:**  The `text` ('mjqwmjsqjwisojqwiso') does not start with `prefix` ('mjs'). 
+3. **`else` branch:** Since the condition is false, the code executes the `else` block which concatenates `prefix` and `text`.
+4. **Concatenation:** 'mjs' + 'mjqwmjsqjwisojqwiso' results in 'mjsmjqwmjsqjwisojqwiso'.
+5. **Return:** The function returns the concatenated string 'mjsmjqwmjsqjwisojqwiso'.
+
+<<<Output>>>
+'mjsmjqwmjsqjwisojqwiso'
+[END-OF-RESPONSE] 

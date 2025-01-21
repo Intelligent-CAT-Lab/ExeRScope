@@ -1,0 +1,13 @@
+<<<Analysis>>>
+1. Inside the `test()` method, a `RegexUtils` object is created and assigned to the variable `ru`.
+2. The `ru.split_sentences("Aaa. Bbbb? Ccc!")` method is called with the string "Aaa. Bbbb? Ccc!" as input.
+3. Inside the `split_sentences()` method:
+    - It calls `self.generate_split_sentences_pattern()` to get the regex pattern for splitting sentences. This pattern is `'[.!?][\s]{1,2}(?=[A-Z])'`.
+    - Then it calls `self.split(pattern, text)` with the obtained pattern and the input text.
+4. Inside the `split()` method:
+    - It uses the `re.split()` function with the provided pattern and text to split the text into sentences based on the pattern.
+5. The `re.split()` function identifies the delimiters ('. ', '? ', '! ') based on the pattern and splits the string into a list of sentences.
+6. The resulting list of sentences is returned.
+<<<Output>>>
+['Aaa.', 'Bbb?', 'Ccc!']
+[END-OF-RESPONSE]

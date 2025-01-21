@@ -1,0 +1,63 @@
+<｜begin▁of▁sentence｜><Instruction> I want you to act as a Python code executor. I will give you a piece of Python code and its input. You need to think step by step and then print the output of code execution.
+</Instruction>
+Below is an example:
+<Example>
+Consider the following code
+
+def f(s):
+    return s + "a"
+
+[Question]
+What would be the return value of ```f("hi")```?
+First analyze step by step about how the code processes the input to generate the output. 
+Then print the output of the code based on your analysis.
+
+Follow the following format:
+<<<Analysis>>>
+{YOUR ANALYSIS}
+<<<Output>>>
+{OUTPUT}
+[END-OF-RESPONSE]
+[Answer]
+
+The function f takes a string s as input and returns the concatenation of s with the string "a".
+To determine the output of executing the function f on the input "hi", we need to concatenate "hi" with "a".
+Therefore, the output of executing the function f on the input "hi" is "hia".
+<<<Output>>>
+'hia'
+[END-OF-RESPONSE]
+
+</Example>
+Consider the following code
+def f(st, pattern):
+    for p in pattern:
+        if not st.startswith(p): return False
+        st = st[len(p):]
+    return True
+[Question]
+What would be the return value of ```f('qwbnjrxs', ['jr', 'b', 'r', 'qw'])```?
+
+First analyze step by step about how the code processes the input to generate the output. 
+Then print the output of the code based on your analysis.
+
+Follow the following format:
+<<<Analysis>>>
+{YOUR ANALYSIS}
+<<<Output>>>
+{OUTPUT}
+[END-OF-RESPONSE]
+
+[Answer]
+The function f takes two arguments: a string st and a list of patterns pattern. It checks if the string st starts with each pattern in the list pattern in order. If it does not start with any of the patterns, it returns False. If it starts with all patterns in order, it returns True.
+
+To determine the output of executing the function f on the input ('qwbnjrxs', ['jr', 'b', 'r', 'qw']), we need to check if the string 'qwbnjrxs' starts with each of the patterns in the list in order.
+
+The string 'qwbnjrxs' does not start with 'jr', so the function returns False.
+
+Therefore, the output of executing the function f on the input ('qwbnjrxs', ['jr', 'b', 'r', 'qw']) is False.
+<<<Output>>>
+False
+[END-OF-RESPONSE]
+
+</Example>
+<｜end▁of▁sentence｜>

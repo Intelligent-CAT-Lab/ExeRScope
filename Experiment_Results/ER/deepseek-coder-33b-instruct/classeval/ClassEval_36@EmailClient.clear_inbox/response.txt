@@ -1,0 +1,20 @@
+
+In the `test()` method, an instance of `EmailClient` is created for both the sender and receiver. The receiver's inbox is populated with three emails, each with a different size. The `clear_inbox()` method is then called on the receiver with a size of 50.
+
+The `clear_inbox()` method starts by initializing a variable `freed_space` to 0. It then enters a while loop that continues until `freed_space` is greater than or equal to the size parameter or the inbox is empty. Inside the loop, it removes the first email from the inbox and adds its size to `freed_space`.
+
+In this case, the size parameter is 50. The while loop will continue until `freed_space` is greater than or equal to 50 or the inbox is empty.
+
+The first iteration of the loop removes the first email from the inbox (with a size of 10), adds its size to `freed_space`, and then checks the condition. Since `freed_space` is now 10 and is less than 50, the loop continues to the next iteration.
+
+The second iteration of the loop removes the next email from the inbox (with a size of 20), adds its size to `freed_space`, and then checks the condition. Since `freed_space` is now 30 and is less than 50, the loop continues to the next iteration.
+
+The third iteration of the loop removes the next email from the inbox (with a size of 15), adds its size to `freed_space`, and then checks the condition. Since `freed_space` is now 45 and is less than 50, the loop continues to the next iteration.
+
+The fourth iteration of the loop removes the next email from the inbox (with a size of 10), adds its size to `freed_space`, and then checks the condition. Since `freed_space` is now 55 and is greater than 50, the loop does not continue to the next iteration.
+
+After the loop completes, the method returns None.
+
+<<<Output>>>
+None
+[END-OF-RESPONSE]

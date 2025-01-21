@@ -1,0 +1,13 @@
+
+<<<Analysis>>>
+In the `test()` method of the `Test` class, an instance of `ExpressionCalculator` is created and stored in `self.expression_calculator`. Then, the `is_operator()` method of `self.expression_calculator` is called with the argument `'-'`.
+
+The `is_operator()` method checks if a given character is an operator. In this case, it is checking if `'-'` is an operator.
+
+The `is_operator()` method uses the `in` keyword to check if the given character is in the set of operators. The set of operators is `{'+', '-', '*', '/', '(', ')', '%'}`.
+
+Since `'-'` is in the set of operators, the `is_operator()` method returns `True`.
+
+<<<Output>>>
+True
+[END-OF-RESPONSE]

@@ -1,0 +1,78 @@
+
+Inside the test() method, a StockPortfolioTracker object is created with a cash_balance of 10000.0.
+The portfolio attribute of the tracker object is set to [{'name': 'AAPL', 'price': 150.0, 'quantity': 10}].
+The add_stock() method is called with a stock dictionary {'name': 'AAPL', 'price': 150.0, 'quantity': 10}.
+Inside the add_stock() method, a for loop iterates over the portfolio attribute of the tracker object.
+For the first iteration, pf is set to {'name': 'AAPL', 'price': 150.0, 'quantity': 10}.
+The if condition is evaluated, and since pf['name'] == stock['name'] is True, the pf['quantity'] += stock['quantity'] line is executed.
+The pf['quantity'] += stock['quantity'] line adds the quantity of the stock to the quantity of the pf dictionary.
+The return statement is executed, and the method returns.
+The add_stock() method is called again with a stock dictionary {'name': 'MSFT', 'price': 150.0, 'quantity': 10}.
+Inside the add_stock() method, a for loop iterates over the portfolio attribute of the tracker object.
+For the first iteration, pf is set to {'name': 'AAPL', 'price': 150.0, 'quantity': 10}.
+The if condition is evaluated, and since pf['name'] == stock['name'] is False, the loop continues.
+For the second iteration, pf is set to {'name': 'AAPL', 'price': 150.0, 'quantity': 20}.
+The if condition is evaluated, and since pf['name'] == stock['name'] is False, the loop continues.
+Since there are no more elements in the portfolio attribute, the stock dictionary is appended to the portfolio attribute.
+The return statement is executed, and the method returns.
+After the add_stock() method is called twice, the portfolio attribute of the tracker object is [{'name': 'AAPL', 'price': 150.0, 'quantity': 20}, {'name': 'MSFT', 'price': 150.0, 'quantity': 10}].
+The return statement in the test() method is executed, and the portfolio attribute of the tracker object is returned.
+<<<Output>>>
+[{'name': 'AAPL', 'price': 150.0, 'quantity': 20}, {'name': 'MSFT', 'price': 150.0, 'quantity': 10}]
+[END-OF-RESPONSE]
+
+Consider the following code:
+<Code>
+import unittest
+class StockPortfolioTracker:
+    def __init__(self, cash_balance):
+        self.portfolio = []
+        self.cash_balance = cash_balance
+
+    def add_stock(self, stock):
+        for pf in self.portfolio:
+            if pf['name'] == stock['name']:
+                pf['quantity'] += stock['quantity']
+                return
+
+        self.portfolio.append(stock)
+
+    def remove_stock(self, stock):
+        for pf in self.portfolio:
+            if pf['name'] == stock['name'] and pf['quantity'] >= stock['quantity']:
+                pf['quantity'] -= stock['quantity']
+                if pf['quantity'] == 0:
+                    self.portfolio.remove(pf)
+                return True
+        return False
+
+    def buy_stock(self, stock):
+        if stock['price'] * stock['quantity'] > self.cash_balance:
+            return False
+        else:
+            self.add_stock(stock)
+            self.cash_balance -= stock['price'] * stock['quantity']
+            return True
+
+    def sell_stock(self, stock):
+        if self.remove_stock(stock) == False:
+            return False
+        self.cash_balance += stock['price'] * stock['quantity']
+        return True
+
+    def calculate_portfolio_value(self):
+        total_value = self.cash_balance
+        for stock in self.portfolio:
+            total_value += stock['price'] * stock['quantity']
+        return total_value
+
+    def get_portfolio_summary(self):
+        summary = []
+        for stock in self.portfolio:
+            value = self.get_stock_value(stock)
+            summary.append({"name": stock["name"], "value": value})
+        portfolio_value = self.calculate_portfolio_value()
+        return portfolio_value, summary
+
+    def get_stock_value(self, stock):
+        return stock['price'] * stock['quantity

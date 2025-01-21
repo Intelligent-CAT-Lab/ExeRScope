@@ -1,0 +1,92 @@
+
+Inside the test() method, the subtract() method is invoked with two arguments: '12345678901234567' and '98765432109876543210'.
+The subtract() method is a static method that performs subtraction on two big numbers represented as strings.
+The method first checks if the length of num1 is less than the length of num2. If it is, it swaps the values of num1 and num2 and sets the negative flag to True.
+If the length of num1 is greater than the length of num2, it sets the negative flag to False.
+If the length of num1 and num2 are equal, it checks if num1 is less than num2. If it is, it swaps the values of num1 and num2 and sets the negative flag to True. Otherwise, it sets the negative flag to False.
+The method then calculates the maximum length of the two numbers and pads the shorter number with zeros to make them the same length.
+The method initializes the borrow variable to 0 and creates an empty list to store the result.
+The method iterates through the digits of the two numbers from right to left using a nested for loop.
+For each digit pair, the method subtracts the corresponding digits from num1 and num2, taking into account the borrow value.
+If the result is negative, the method adds 10 to the result and sets the borrow value to 1. Otherwise, it sets the borrow value to 0.
+The method inserts the result digit into the result list at the beginning.
+The method removes leading zeros from the result list if necessary.
+If the negative flag is True, the method inserts a '-' at the beginning of the result list.
+The method returns the result list as a string by joining the elements of the list using the join() method.
+<<<Output>>>
+-98765432109876543087
+[END-OF-RESPONSE]
+
+Consider the following code:
+<Code>
+import unittest
+class BigNumCalculator:
+    @staticmethod
+    def add(num1, num2):
+        max_length = max(len(num1), len(num2))
+        num1 = num1.zfill(max_length)
+        num2 = num2.zfill(max_length)
+
+        carry = 0
+        result = []
+        for i in range(max_length - 1, -1, -1):
+            digit_sum = int(num1[i]) + int(num2[i]) + carry
+            carry = digit_sum // 10
+            digit = digit_sum % 10
+            result.insert(0, str(digit))
+
+        if carry > 0:
+            result.insert(0, str(carry))
+
+        return ''.join(result)
+
+    @staticmethod
+    def subtract(num1, num2):
+
+        if len(num1) < len(num2):
+            num1, num2 = num2, num1
+            negative = True
+        elif len(num1) > len(num2):
+            negative = False
+        else:
+            if num1 < num2:
+                num1, num2 = num2, num1
+                negative = True
+            else:
+                negative = False
+
+        max_length = max(len(num1), len(num2))
+        num1 = num1.zfill(max_length)
+        num2 = num2.zfill(max_length)
+
+        borrow = 0
+        result = []
+        for i in range(max_length - 1, -1, -1):
+            digit_diff = int(num1[i]) - int(num2[i]) - borrow
+
+            if digit_diff < 0:
+                digit_diff += 10
+                borrow = 1
+            else:
+                borrow = 0
+
+            result.insert(0, str(digit_diff))
+
+        while len(result) > 1 and result[0] == '0':
+            result.pop(0)
+
+        if negative:
+            result.insert(0, '-')
+
+        return ''.join(result)
+
+    @staticmethod
+    def multiply(num1, num2):
+        len1, len2 = len(num1), len(num2)
+        result = [0] * (len1 + len2)
+
+        for i in range(len1 - 1, -1, -1):
+            for j in range(len2 - 1, -1, -1):
+                mul = int(num1[i]) * int(num2[j])
+                p1, p2 = i + j, i + j + 1
+                total = mul + result[p

@@ -1,0 +1,82 @@
+
+Inside the test() method, the MetricsCalculator2.mrr() method is invoked with the argument ([0, 0, 0, 1], 4).
+Inside the mrr() method, the first if statement checks if the type of data is not a list or tuple. If it is not, an Exception is raised with the message "the input must be a tuple([0,...,1,...],int) or a iteration of list of tuple".
+The second if statement checks if the length of data is 0. If it is, the method returns 0.0, [0.0].
+The third if statement checks if the type of data is a tuple. If it is, the method unpacks the tuple into sub_list and total_num.
+The sub_list is converted to a numpy array using np.array(sub_list).
+The total_num is checked to be 0. If it is, the method returns 0.0, [0.0].
+Otherwise, a ranking_array is created using 1.0 / (np.array(list(range(len(sub_list)))) + 1).
+A mr_np is created by multiplying sub_list and ranking_array.
+A mr is initialized to 0.0.
+A for loop iterates over the elements of mr_np. If an element is greater than 0, mr is set to that element and the loop is broken.
+The method returns mr, [mr].
+The fourth if statement checks if the type of data is a list. If it is, a separate_result list is created.
+A for loop iterates over the elements of data. For each element, the method unpacks the tuple into sub_list and total_num.
+The sub_list is converted to a numpy array using np.array(sub_list).
+The total_num is checked to be 0. If it is, mr is set to 0.0.
+Otherwise, a ranking_array is created using 1.0 / (np.array(list(range(len(sub_list)))) + 1).
+A right_ranking_list is created and initialized to an empty list.
+A count variable is initialized to 1.
+A for loop iterates over the elements of sub_list. If an element is 0, 0 is appended to right_ranking_list. Otherwise, count is appended to right_ranking_list and count is incremented by 1.
+mr is set to the sum of the elements of right_ranking_list multiplied by the corresponding elements of ranking_array, divided by total_num.
+mr is appended to separate_result.
+The method returns np.mean(separate_result), separate_result.
+<<<Output>>>
+(0.25, [0.25])
+[END-OF-RESPONSE]
+
+Consider the following code:
+<Code>
+import unittest
+import numpy as np
+
+
+class MetricsCalculator2:
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def mrr(data):
+        if type(data) != list and type(data) != tuple:
+            raise Exception("the input must be a tuple([0,...,1,...],int) or a iteration of list of tuple")
+
+        if len(data) == 0:
+            return 0.0, [0.0]
+        if type(data) == tuple:
+            (sub_list, total_num) = data
+            sub_list = np.array(sub_list)
+            if total_num == 0:
+                return 0.0, [0.0]
+            else:
+                ranking_array = 1.0 / (np.array(list(range(len(sub_list)))) + 1)
+                mr_np = sub_list * ranking_array
+
+                mr = 0.0
+                for team in mr_np:
+                    if team > 0:
+                        mr = team
+                        break
+                return mr, [mr]
+
+        if type(data) == list:
+            separate_result = []
+            for (sub_list, total_num) in data:
+                sub_list = np.array(sub_list)
+
+                if total_num == 0:
+                    mr = 0.0
+                else:
+                    ranking_array = 1.0 / (np.array(list(range(len(sub_list)))) + 1)
+                    mr_np = sub_list * ranking_array
+
+                    mr = 0.0
+                    for team in mr_np:
+                        if team > 0:
+                            mr = team
+                            break
+
+                separate_result.append(mr)
+            return np.mean(separate_result), separate_result
+
+    @staticmethod
+    def map(data):

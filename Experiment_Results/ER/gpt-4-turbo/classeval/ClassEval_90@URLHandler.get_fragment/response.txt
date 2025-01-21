@@ -1,0 +1,17 @@
+<<<Analysis>>>
+The `Test.test()` method creates an instance of the `URLHandler` class with the URL "https://www.baidu.com/s?wd=aaa&rsv_spt=1#bbb". It then calls the `get_fragment()` method on this instance.
+
+The `get_fragment()` method is designed to extract the fragment part of the URL, which is the part after the "#" character. Here's how it works:
+1. The method finds the position of the "#" character in the URL using `self.url.find("#")`.
+2. If the "#" character is found (i.e., `fragment_start` is not -1), it slices the URL string from the character immediately following "#" to the end of the string.
+3. If the "#" character is not found, it returns `None`.
+
+In the given URL "https://www.baidu.com/s?wd=aaa&rsv_spt=1#bbb":
+- The `fragment_start` is found at position 39.
+- The method then slices the URL from position 40 to the end, resulting in the string "bbb".
+
+Thus, the `get_fragment()` method should return "bbb".
+
+<<<Output>>>
+bbb
+[END-OF-RESPONSE]

@@ -1,0 +1,10 @@
+
+<<<Analysis>>>
+The variable n and variable m are initialized to 59 and 96, respectively.
+The code then checks if n is less than 1. If it is, it checks if m is less than 1. If both conditions are true, it prints the values of n and m and then quits the program. If only the first condition is true, it prints "Impossible" and quits the program.
+If n is not less than 1, the code checks if m is greater than n. If it is, it calculates the minimum and maximum values as min = m and max = n + m - 1. It then prints these values.
+If m is not greater than n, it calculates the minimum and maximum values as min = n and max = n + m - 1. If m is 0, it sets max to n. It then prints these values.
+In this case, since n is not less than 1 and m is not greater than n, it goes to the else part of the code. Here, min is set to n and max is set to n + m - 1. Since m is not 0, max remains n + m - 1.
+<<<Output>>>
+105 154
+[END-OF-RESPONSE]

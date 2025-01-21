@@ -1,0 +1,78 @@
+
+<<<Analysis>>>
+The input is given as 1000 1000 0 0.
+The code first imports the sys module, which provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter.
+The function solve is defined, which takes four parameters: H, W, A, and B.
+The function solve initializes a 2D list answer with dimensions H x W, filled with "0".
+The function then iterates over each element in the 2D list.
+For each element, it checks if the row index i is less than B and the column index j is less than A. If it is, it sets the element to "0". If it is not, it sets the element to "1".
+If the row index i is greater than or equal to B and the column index j is less than A, it sets the element to "1". If it is not, it sets the element to "0".
+Finally, it prints each row of the 2D list as a string, with no spaces between the elements.
+The main function reads the input from the standard input, converts it to integers, and calls the solve function with these values.
+Given the input 1000 1000 0 0, the function solve will set all elements of the 2D list to "0", because B is 0 and A is 0.
+<<<Output>>>
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0

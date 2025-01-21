@@ -1,0 +1,39 @@
+<<<Analysis>>>
+The `test()` method first creates an instance of the `Words2Numbers` class. Then, it calls the `text2int()` method of this instance with the input string 'one million and eleven'. Let's analyze how `text2int()` processes this input step-by-step:
+
+1. **Initialization:**
+   - `textnum` is set to 'one million and eleven'.
+   - `current`, `result` are initialized to 0.
+   - `curstring` is set to an empty string.
+   - `onnumber` is set to `False` indicating we haven't encountered a number yet.
+
+2. **Word-by-Word Processing:**
+   - **"one":**
+     - Found in `self.numwords` with `scale = 1` and `increment = 1`.
+     - `current` becomes `1 * 1 + 1 = 1`.
+     - `onnumber` is set to `True`.
+   - **"million":**
+     - Found in `self.numwords` with `scale = 1000000` and `increment = 0`.
+     - `current` becomes `1 * 1000000 + 0 = 1000000`.
+     - Since `scale` is greater than 100, `result` is updated: `result += current`, so `result = 1000000`.
+     - `current` is reset to `0`.
+     - `onnumber` remains `True`.
+   - **"and":**
+     - Found in `self.numwords` with `scale = 1` and `increment = 0`.
+     - `current` remains `0`.
+     - `onnumber` remains `True`.
+   - **"eleven":**
+     - Found in `self.numwords` with `scale = 1` and `increment = 11`.
+     - `current` becomes `0 * 1 + 11 = 11`.
+     - `onnumber` remains `True`.
+
+3. **Final Steps:**
+   - Since `onnumber` is `True`, the code appends the sum of `result` and `current` to `curstring`.
+   - `curstring` becomes '1000000 11'.
+
+4. **Return Value:**
+   - The function returns `curstring`, which is '1000000 11'.
+
+<<<Output>>>
+1000000 11
+[END-OF-RESPONSE] 

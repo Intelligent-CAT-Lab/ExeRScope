@@ -1,0 +1,10 @@
+<<<Analysis>>>
+1. We create an instance of `StockPortfolioTracker` with an initial cash balance of 10000.0.
+2. We manually set the portfolio to contain 10 shares of AAPL at a price of 150.0.
+3. `add_stock` is called with 10 shares of AAPL. Since AAPL already exists in the portfolio, the existing quantity is incremented by 10.
+4. `add_stock` is called with 10 shares of MSFT. Since MSFT doesn't exist in the portfolio, it's appended as a new entry.
+5. Finally, the function returns the portfolio, which now contains 20 shares of AAPL and 10 shares of MSFT.
+
+<<<Output>>>
+[{'name': 'AAPL', 'price': 150.0, 'quantity': 20}, {'name': 'MSFT', 'price': 150.0, 'quantity': 10}]
+[END-OF-RESPONSE]

@@ -1,0 +1,15 @@
+<<<Analysis>>>
+The function `compare` takes two lists, `game` and `guess`, as input. It returns a new list that contains the absolute differences between corresponding elements of the `game` and `guess` lists.
+The input lists are `[1,2,3,4,5,1]` and `[1,2,3,4,2,-2]`.
+The function uses the `zip` function to pair elements from both lists and iterates over these pairs:
+1. Pair (1,1) results in an absolute difference of 0.
+2. Pair (2,2) results in an absolute difference of 0.
+3. Pair (3,3) results in an absolute difference of 0.
+4. Pair (4,4) results in an absolute difference of 0.
+5. Pair (5,2) results in an absolute difference of 3.
+6. Pair (1,-2) results in an absolute difference of 3.
+
+The function then returns the list of these differences: `[0, 0, 0, 0, 3, 3]`.
+<<<Output>>>
+[0, 0, 0, 0, 3, 3]
+[END-OF-RESPONSE]

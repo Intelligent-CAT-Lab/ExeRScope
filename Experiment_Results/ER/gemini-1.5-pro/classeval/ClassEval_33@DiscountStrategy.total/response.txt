@@ -1,0 +1,12 @@
+<<<Analysis>>>
+Inside the test() method:
+1. It initializes a 'customer' dictionary with name and fidelity points.
+2. It initializes a 'cart' list containing dictionaries, each representing a product with its quantity and price.
+3. It creates an 'order' object using the DiscountStrategy class, passing the 'customer' and 'cart'.
+4. It sets an 'expected_total' variable to 150.0 (which is the sum of prices * quantities in the cart).
+5. It calls the 'total()' method on the 'order' object and stores the result in 'actual_total'.
+6. The 'total()' method calculates the total price by iterating through each item in the cart, multiplying the item's price by its quantity, and summing up these values.
+7. Finally, the 'test()' method returns a tuple containing 'actual_total' and 'expected_total'.
+<<<Output>>>
+(150.0, 150.0)
+[END-OF-RESPONSE]

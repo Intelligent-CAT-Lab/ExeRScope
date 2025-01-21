@@ -1,0 +1,10 @@
+<<<Analysis>>>
+The function `rounded_avg` takes two parameters, `n` and `m`. It first checks if `m` is less than `n`, and if so, returns -1. In this case, `n` is 1 and `m` is 5, so the function proceeds.
+The function initializes a variable `summation` to 0, which will be used to accumulate the sum of integers from `n` to `m` inclusive.
+The loop iterates from `n` (1) to `m` (5), adding each integer to `summation`. The numbers added are 1, 2, 3, 4, and 5, resulting in a `summation` of 15.
+The average is then calculated as `summation` divided by `(m - n + 1)`, which is `15 / (5 - 1 + 1) = 15 / 5 = 3`.
+The average is rounded using the `round` function, which results in 3 since it's already an integer.
+Finally, the function returns the binary representation of this rounded average using the `bin` function. The binary representation of 3 is '0b11'.
+<<<Output>>>
+'0b11'
+[END-OF-RESPONSE]

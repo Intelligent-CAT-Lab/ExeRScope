@@ -1,0 +1,14 @@
+
+In the test() method, a VendingMachine object is created. The inventory of the vending machine is set to have 0 Coke and 10 Pizza.
+Then, the display_items() method is called on the vending machine.
+
+The display_items() method checks if the inventory is empty. If it is, it returns False. If it's not, it iterates over each item in the inventory. For each item, it creates a string in the format "{item_name} - ${item_price} [{item_quantity}]" and appends it to a list.
+
+In this case, the inventory has 0 Coke and 10 Pizza. So, the list will contain two strings: "Coke - $1.25 [0]" and "Pizza - $1.25 [10]".
+
+Finally, the method joins the list of strings with newline characters and returns the resulting string.
+
+<<<Output>>>
+Coke - $1.25 [0]
+Pizza - $1.25 [10]
+[END-OF-RESPONSE]

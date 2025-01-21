@@ -1,0 +1,17 @@
+<<<Analysis>>>
+The `text2int` method of the `Words2Numbers` class is designed to convert a textual representation of numbers into their numerical form as a string. Here's a breakdown of how the method processes the input "one million and eleven":
+
+1. The input string "one million and eleven" is split into words: ['one', 'million', 'and', 'eleven'].
+2. The method initializes `current` and `result` to 0, and `curstring` to an empty string. The flag `onnumber` is set to False initially.
+3. The method iterates over each word:
+   - For "one": It finds the tuple (1, 1) in `numwords`. `current` becomes 1. `onnumber` is set to True.
+   - For "million": It finds the tuple (1000000, 0) in `numwords`. `current` is updated to 1 * 1000000 = 1000000. `result` is updated to 1000000 and `current` is reset to 0.
+   - For "and": It finds the tuple (1, 0) in `numwords`. This does not change `current` or `result`.
+   - For "eleven": It finds the tuple (1, 11) in `numwords`. `current` becomes 11.
+4. After the loop, since `onnumber` is True, `curstring` is updated with `repr(result + current)`, which is `repr(1000000 + 11) = '1000011'`.
+
+The method returns the string '1000011'.
+
+<<<Output>>>
+'1000011'
+[END-OF-RESPONSE]

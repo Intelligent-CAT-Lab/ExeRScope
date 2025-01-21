@@ -1,0 +1,14 @@
+<<<Analysis>>>
+Inside the test() method:
+1. We define a customer with name 'John Doe' and fidelity 1800.
+2. We define a cart with two products and their quantities and prices.
+3. We create an order object of the DiscountStrategy class and pass the customer, cart and the FidelityPromo as promotion strategy.
+4. We set the expected discount to 12.5.
+5. We call the promotion method of the order object and store it in actual_discount. This will in turn invoke the FidelityPromo static method.
+6. Inside FidelityPromo, we check if customer's fidelity is greater than or equal to 1000. If yes, we return 5% of the total order value as discount, otherwise 0.
+7. The total order value is calculated as the sum of product of quantity and price of each item in the cart, which is (10 * 20.0) + (5 * 10.0) = 250.0
+8. Since the customer's fidelity is 1800 (greater than 1000), a discount of 5% of 250.0 is calculated which is 12.5.
+9. Finally the test() method returns a tuple containing the actual discount (12.5) and the expected discount (12.5).
+<<<Output>>>
+(12.5, 12.5)
+[END-OF-RESPONSE]

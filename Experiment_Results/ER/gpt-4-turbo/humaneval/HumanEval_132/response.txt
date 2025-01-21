@@ -1,0 +1,26 @@
+<<<Analysis>>>
+The function `is_nested` is designed to check if a string contains nested brackets. The input string is `'[[]]'`.
+
+1. Two lists, `opening_bracket_index` and `closing_bracket_index`, are initialized to keep track of the indices of opening and closing brackets respectively.
+
+2. The function iterates over the string. For each character:
+   - If it's an opening bracket `[`, its index is added to `opening_bracket_index`.
+   - If it's a closing bracket `]`, its index is added to `closing_bracket_index`.
+
+3. After processing the string `'[[]]'`, the `opening_bracket_index` contains `[0, 1]` and `closing_bracket_index` contains `[3, 2]`.
+
+4. The `closing_bracket_index` list is reversed to make it easier to check for nesting, resulting in `[2, 3]`.
+
+5. The function initializes `cnt` to 0 and `i` to 0, and `l` is set to the length of `closing_bracket_index`, which is 2.
+
+6. The function then iterates over each index in `opening_bracket_index`:
+   - For the first index `0`, it checks if there is a corresponding closing bracket index `2` such that `0 < 2`. This condition is true, so `cnt` is incremented to 1 and `i` is incremented to 1.
+   - For the second index `1`, it checks if there is a corresponding closing bracket index `3` such that `1 < 3`. This condition is also true, so `cnt` is incremented to 2.
+
+7. Finally, the function checks if `cnt` is greater than or equal to 2, which it is.
+
+The function returns `True` indicating that the string contains nested brackets.
+
+<<<Output>>>
+True
+[END-OF-RESPONSE]

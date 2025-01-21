@@ -1,0 +1,24 @@
+<<<Analysis>>>
+The function `select_words` takes a string `s` and an integer `n` as input. It aims to find words in the string that have exactly `n` consonants. 
+
+1. **Initialization:**
+   - `result = []`: An empty list called `result` is created to store the words that meet the criteria.
+   - The string `"Mary had a little lamb"` is split into a list of words: `["Mary", "had", "a", "little", "lamb"]`.
+2. **Iterating through words:**
+   - The code iterates over each word in the list.
+     - **For "Mary":** 
+       - It counts the consonants. "M", "r", and "y" are consonants, totaling 3. Since 3 is not equal to `n` (which is 4), "Mary" is not appended to `result`.
+     - **For "had":**
+       - It counts the consonants. "h" and "d" are consonants, totaling 2.  Again, this doesn't match `n`, so "had" is not added to `result`.
+     - **For "a":**
+       -  It counts the consonants. There are none, so the count remains 0. This doesn't match `n`, so "a" is not added to `result`.
+     - **For "little":**
+       - It counts the consonants. "l", "t", "t", and "l" are consonants, totaling 4. This matches `n`, so "little" is appended to `result`.
+     - **For "lamb":**
+       - It counts the consonants. "l", "m", and "b" are consonants, totaling 3. This doesn't match `n`, so "lamb" is not added to `result`.
+3. **Returning the result:**
+   - After processing all words, the function returns the `result` list.
+
+<<<Output>>>
+['little']
+[END-OF-RESPONSE] 

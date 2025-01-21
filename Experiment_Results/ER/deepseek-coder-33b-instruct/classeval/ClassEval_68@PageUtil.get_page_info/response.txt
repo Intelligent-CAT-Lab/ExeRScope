@@ -1,0 +1,22 @@
+
+<<<Analysis>>>
+In the test() method, a PageUtil object is created with data and page_size. The data is a list of integers from 1 to 10, and the page_size is 3.
+
+The get_page_info() method is then called with page_number as 3. This method calculates the start and end indices of the items on the page, retrieves the items from the data list using these indices, and then creates a dictionary with information about the page.
+
+The dictionary contains the following keys:
+- "current_page": The current page number.
+- "per_page": The number of items per page.
+- "total_pages": The total number of pages.
+- "total_items": The total number of items.
+- "has_previous": A boolean indicating whether there is a previous page.
+- "has_next": A boolean indicating whether there is a next page.
+- "data": The items on the page.
+
+The expected_info dictionary is the expected output of the get_page_info() method. It is compared with the actual_info dictionary, which is the actual output of the method.
+
+The actual_info dictionary is then returned by the test() method.
+
+<<<Output>>>
+({'current_page': 3, 'per_page': 3, 'total_pages': 4, 'total_items': 10, 'has_previous': True, 'has_next': True, 'data': [7, 8, 9]}, {'current_page': 3, 'per_page': 3, 'total_pages': 4, 'total_items': 10, 'has_previous': True, 'has_next': True, 'data': [7, 8, 9]})
+[END-OF-RESPONSE]

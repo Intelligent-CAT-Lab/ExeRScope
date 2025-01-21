@@ -1,0 +1,12 @@
+
+<<<Analysis>>>
+The function `fix_spaces` takes a string `text` as input. It initializes two variables `start` and `end` to 0, and an empty string `new_text`.
+The function then enters a while loop that iterates over each character in the input string `text`.
+For each character, it checks if it is a space. If it is, it increments the `end` variable.
+If the character is not a space, it checks if the number of spaces between the current character and the previous character is greater than 2. If it is, it appends a "-" to `new_text`. If the number of spaces is greater than 0 but not greater than 2, it appends "_" for each space to `new_text`. It then appends the current character to `new_text`. It then updates `start` and `end` to the index of the current character plus one.
+After the loop finishes, it checks if the number of spaces at the end of the string is greater than 2. If it is, it appends a "-" to `new_text`. If the number of spaces is greater than 0 but not greater than 2, it appends "_" for each space to `new_text`.
+Finally, it returns `new_text`.
+
+<<<Output>>>
+"Example"
+[END-OF-RESPONSE]

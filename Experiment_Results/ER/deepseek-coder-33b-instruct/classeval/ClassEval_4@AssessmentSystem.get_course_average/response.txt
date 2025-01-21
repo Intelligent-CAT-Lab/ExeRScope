@@ -1,0 +1,16 @@
+
+In the `test()` method, an instance of the `AssessmentSystem` class is created. Then, the `students` attribute of the `AssessmentSystem` instance is populated with some data.
+
+The `get_course_average('Physics')` method is then called on the `AssessmentSystem` instance. This method calculates the average score of a given course across all students.
+
+In the `get_course_average()` method, a variable `total` is initialized to 0 and a variable `count` is initialized to 0. Then, for each student in the `students` attribute of the `AssessmentSystem` instance, if the student has taken the given course, the score for that course is added to `total` and 1 is added to `count`.
+
+After all students have been processed, the method returns `total / count` if `count` is greater than 0, otherwise it returns `None`.
+
+In this case, the given course is 'Physics'. The scores for 'Physics' across all students are 85 (from Bob) and None (from Charlie). The `total` is 85 and the `count` is 1.
+
+So, the return value of `assessment_system.get_course_average('Physics')` is 85.
+
+<<<Output>>>
+85
+[END-OF-RESPONSE]

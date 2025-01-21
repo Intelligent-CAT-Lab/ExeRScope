@@ -1,0 +1,33 @@
+<<<Analysis>>>
+The `Test.test()` function utilizes the `Lemmatization` class to lemmatize a sentence. Here's a breakdown:
+
+1. **Initialization:**
+   - A `Lemmatization` object is created and assigned to the variable `lemmatization`.
+
+2. **Sentence Processing:**
+   - The sentence "Until the beating, Cantanco's eyesight had been weak, but adequate." is passed to the `lemmatize_sentence` method of the `lemmatization` object.
+
+3. **Lemmatization:**
+   - Inside `lemmatize_sentence`:
+     - Punctuation is removed from the sentence.
+     - The sentence is tokenized into words: "Until", "the", "beating", "Cantancos", "eyesight", "had", "been", "weak", "but", "adequate".
+     - Part-of-speech (POS) tags are assigned to each word using `pos_tag`.
+     - The code iterates through the tagged words and lemmatizes each word based on its POS tag:
+       - Verbs (VB, VBD, VBG, VBN, VBP, VBZ) are lemmatized using the 'v' POS.
+       - Adjectives (JJ, JJR, JJS) are lemmatized using the 'a' POS.
+       - Adverbs (RB, RBR, RBS) are lemmatized using the 'r' POS.
+       - Other words are lemmatized without specifying a POS.
+     - The lemmatized words are collected in a list.
+
+4. **Result:**
+   - The `lemmatize_sentence` method returns the list of lemmatized words: `['Until', 'the', 'beating', 'Cantancos', 'eyesight', 'have', 'be', 'weak', 'but', 'adequate']`.
+
+5. **Comparison:**
+   - The `test` method compares the returned list with the `expected` list.
+
+6. **Return:**
+   - The `test` method returns both the `result` and `expected` lists.
+
+<<<Output>>>
+(['Until', 'the', 'beating', 'Cantancos', 'eyesight', 'have', 'be', 'weak', 'but', 'adequate'], ['Until', 'the', 'beating', 'Cantancos', 'eyesight', 'have', 'be', 'weak', 'but', 'adequate'])
+[END-OF-RESPONSE] 

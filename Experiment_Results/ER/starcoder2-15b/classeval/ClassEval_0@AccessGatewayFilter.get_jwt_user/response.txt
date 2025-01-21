@@ -1,0 +1,50 @@
+
+Inside the test() method, an instance of the AccessGatewayFilter class is created.
+A request dictionary is created with a 'headers' key and a 'Authorization' key.
+The 'Authorization' key has a 'user' key and a 'jwt' key.
+The 'user' key has a 'name' key with the value 'user1'.
+The 'jwt' key has a value that is the concatenation of 'user1' and the string representation of the current date minus 5 days.
+The get_jwt_user() method is called with the request dictionary as an argument.
+Inside the get_jwt_user() method, the token variable is set to the value of request['headers']['Authorization'].
+The user variable is set to the value of token['user'].
+The jwt_str_date variable is set to the value of token['jwt'].split(user['name'])[1].
+The jwt_date variable is set to the value of datetime.datetime.strptime(jwt_str_date, "%Y-%m-%d").
+The datetime.datetime.today() - jwt_date >= datetime.timedelta(days=3) expression is evaluated.
+The datetime.datetime.today() function is called to get the current date and time.
+The datetime.timedelta(days=3) function is called to create a timedelta object representing 3 days.
+The - operator is used to subtract the jwt_date from the current date and time.
+The >= operator is used to compare the result to the timedelta object.
+If the result is True, the method returns None.
+If the result is False, the method returns token.
+In this case, the jwt_str_date variable is set to the value of token['jwt'].split(user['name'])[1].
+The jwt_str_date variable is set to the value of token['jwt'].split(user['name'])[1].
+The jwt_date variable is set to the value of datetime.datetime.strptime(jwt_str_date, "%Y-%m-%d").
+The datetime.datetime.today() - jwt_date >= datetime.timedelta(days=3) expression is evaluated.
+The datetime.datetime.today() function is called to get the current date and time.
+The datetime.timedelta(days=3) function is called to create a timedelta object representing 3 days.
+The - operator is used to subtract the jwt_date from the current date and time.
+The >= operator is used to compare the result to the timedelta object.
+If the result is True, the method returns None.
+If the result is False, the method returns token.
+In this case, the jwt_str_date variable is set to the value of token['jwt'].split(user['name'])[1].
+The jwt_str_date variable is set to the value of token['jwt'].split(user['name'])[1].
+The jwt_date variable is set to the value of datetime.datetime.strptime(jwt_str_date, "%Y-%m-%d").
+The datetime.datetime.today() - jwt_date >= datetime.timedelta(days=3) expression is evaluated.
+The datetime.datetime.today() function is called to get the current date and time.
+The datetime.timedelta(days=3) function is called to create a timedelta object representing 3 days.
+The - operator is used to subtract the jwt_date from the current date and time.
+The >= operator is used to compare the result to the timedelta object.
+If the result is True, the method returns None.
+If the result is False, the method returns token.
+In this case, the jwt_str_date variable is set to the value of token['jwt'].split(user['name'])[1].
+The jwt_str_date variable is set to the value of token['jwt'].split(user['name'])[1].
+The jwt_date variable is set to the value of datetime.datetime.strptime(jwt_str_date, "%Y-%m-%d").
+The datetime.datetime.today() - jwt_date >= datetime.timedelta(days=3) expression is evaluated.
+The datetime.datetime.today() function is called to get the current date and time.
+The datetime.timedelta(days=3) function is called to create a timedelta object representing 3 days.
+The - operator is used to subtract the jwt_date from the current date and time.
+The >= operator is used to compare the result to the timedelta object.
+If the result is True, the method returns None.
+If the result is False, the method returns token.
+In this case, the jwt_str_date variable is set to the value of token['jwt'].split(user['name'])[1].
+The

@@ -1,0 +1,12 @@
+
+In the `test()` method, an instance of the `Order` class is created. The `menu` attribute of the `Order` instance is populated with three dishes, each with a name, price, and count. The `sales` attribute of the `Order` instance is populated with the sales for each dish.
+
+The `checkout()` method is then called on the `Order` instance. This method checks if there are any selected dishes. If there are none, it returns `False`. If there are selected dishes, it calculates the total cost of the order by calling the `calculate_total()` method. The `calculate_total()` method iterates over each selected dish, multiplies the price of the dish by the count of the dish and the sales for the dish, and adds this to the total.
+
+The `checkout()` method then clears the `selected_dishes` attribute and returns the total cost.
+
+In this case, there are no selected dishes, so the `checkout()` method returns `False`.
+
+<<<Output>>>
+False
+[END-OF-RESPONSE]

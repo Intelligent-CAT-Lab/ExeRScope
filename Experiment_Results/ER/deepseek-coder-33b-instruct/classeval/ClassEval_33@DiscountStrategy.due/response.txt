@@ -1,0 +1,13 @@
+
+<<<Analysis>>>
+In the `test()` method, a customer dictionary and a cart list are defined. The customer has a fidelity of 900, which is less than 1000, so the FidelityPromo will not apply.
+
+The DiscountStrategy class is then instantiated with the customer, cart, and FidelityPromo as arguments. The total method is called to calculate the total cost of the items in the cart.
+
+The due method is then called to calculate the amount due after applying the discount. Since the customer's fidelity is less than 1000, the FidelityPromo does not apply, so the discount is 0. The total cost is then subtracted from the total cost to get the amount due.
+
+The expected due is 250.0, which is the sum of the quantities of the items in the cart multiplied by their prices.
+
+<<<Output>>>
+(250.0, 250.0)
+[END-OF-RESPONSE]

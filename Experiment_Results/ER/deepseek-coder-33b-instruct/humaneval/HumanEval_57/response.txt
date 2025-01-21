@@ -1,0 +1,12 @@
+
+<<<Analysis>>>
+The function `monotonic` takes a list `l` as input.
+The function checks if the list `l` is sorted in ascending or descending order.
+In the given list `[1, 2, 4, 10]`, the list is sorted in ascending order.
+So, the function `sorted(l)` returns `[1, 2, 4, 10]`, which is equal to `l`.
+Therefore, `l == sorted(l)` is `True`.
+Also, `l == sorted(l, reverse=True)` is `False` because `[1, 2, 4, 10]` is not sorted in descending order.
+Since `l == sorted(l)` is `True`, the function returns `True`.
+<<<Output>>>
+True
+[END-OF-RESPONSE]

@@ -1,0 +1,18 @@
+<<<Analysis>>>
+The function `f` takes three parameters: `text`, `substr`, and `occ`. It is designed to find the `occ`-th occurrence (from the end) of the substring `substr` in the string `text`.
+
+1. Initialize `n` to 0, which will count the occurrences of `substr` found from the end of `text`.
+2. Enter a `while` loop that continues indefinitely until explicitly broken.
+3. Inside the loop, use `text.rfind(substr)` to find the last index of `substr` in `text`. If `substr` is not found (`i == -1`), break the loop and return -1.
+4. If `substr` is found, check if the count `n` equals `occ`. If true, return the index `i`.
+5. If not, increment `n` by 1 and update `text` to be the substring from the start up to index `i` (excluding `i`), then continue the loop.
+
+For the input `f('zjegiymjc', 'j', 2)`:
+- The first call to `text.rfind('j')` returns 6 (the index of 'j' in 'zjegiymjc').
+- Since `n` (0) is not equal to `occ` (2), increment `n` to 1 and update `text` to 'zjegiy'.
+- The next call to `text.rfind('j')` returns 1.
+- Now `n` (1) equals `occ` (2) - 1, so the next increment of `n` would make `n` equal to `occ`. Return index 1.
+
+<<<Output>>>
+1
+[END-OF-RESPONSE]

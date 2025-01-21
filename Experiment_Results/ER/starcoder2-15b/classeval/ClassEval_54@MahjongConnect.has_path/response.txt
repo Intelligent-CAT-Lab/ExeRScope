@@ -1,0 +1,93 @@
+
+Inside the test() method, a MahjongConnect object is created with a board size of [4, 4] and a list of icons ['a', 'b', 'c']. The board is then set to a specific configuration using the board attribute.
+The has_path() method is then called with the positions (0, 0) and (1, 1) as arguments.
+Inside the has_path() method, a set called visited is initialized to keep track of visited positions. A stack is created and the starting position (0, 0) is pushed onto it.
+The while loop iterates while the stack is not empty. Inside the loop, the current position is popped from the stack and checked if it is equal to the target position (1, 1). If it is, the method returns True.
+If the current position is already in the visited set, it is skipped. Otherwise, it is added to the visited set and the x and y coordinates are extracted.
+The for loop iterates over the adjacent positions (up, down, left, right) and checks if the new position is within the board boundaries and not already visited. If it is, and the icon at that position is the same as the current position, it is added to the stack.
+After the loop completes, the method returns False, indicating that there is no valid path between the two positions.
+<<<Output>>>
+True
+[END-OF-RESPONSE]
+
+Consider the following code:
+<Code>
+import unittest
+import random
+
+
+class MahjongConnect:
+    def __init__(self, BOARD_SIZE, ICONS):
+        self.BOARD_SIZE = BOARD_SIZE
+        self.ICONS = ICONS
+        self.board = self.create_board()
+
+    def create_board(self):
+        board = [[random.choice(self.ICONS) for _ in range(self.BOARD_SIZE[1])] for _ in range(self.BOARD_SIZE[0])]
+        return board
+
+    def is_valid_move(self, pos1, pos2):
+        x1, y1 = pos1
+        x2, y2 = pos2
+
+        # Check if positions are within the game board range
+        if not (0 <= x1 < self.BOARD_SIZE[0] and 0 <= y1 < self.BOARD_SIZE[1] and 0 <= x2 < self.BOARD_SIZE[
+            0] and 0 <= y2 <
+                self.BOARD_SIZE[1]):
+            return False
+
+        # Check if the two positions are the same
+        if pos1 == pos2:
+            return False
+
+        # Check if the two positions have the same icon
+        if self.board[x1][y1] != self.board[x2][y2]:
+            return False
+
+        # Check if there is a valid path between the two positions
+        if not self.has_path(pos1, pos2):
+            return False
+
+        return True
+
+    def has_path(self, pos1, pos2):
+        visited = set()
+        stack = [pos1]
+
+        while stack:
+            current_pos = stack.pop()
+            if current_pos == pos2:
+                return True
+
+            if current_pos in visited:
+                continue
+
+            visited.add(current_pos)
+            x, y = current_pos
+
+            # Check adjacent positions (up, down, left, right)
+            for dx, dy in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
+                new_x, new_y = x + dx, y + dy
+                if 0 <= new_x < self.BOARD_SIZE[0] and 0 <= new_y < self.BOARD_SIZE[1]:
+                    if (new_x, new_y) not in visited and self.board[new_x][new_y] == self.board[x][y]:
+                        stack.append((new_x, new_y))
+
+        return False
+
+    def remove_icons(self, pos1, pos2):
+        x1, y1 = pos1
+        x2, y2 = pos2
+        self.board[x1][y1] = ' '
+        self.board[x2][y2] = ' '
+
+    def is_game_over(self):
+        for row in self.board:
+            if any(icon != ' ' for icon in row):
+                return False
+        return True
+class Test(unittest.TestCase):
+    def test(self):
+            mc = MahjongConnect([4, 4], ['a', 'b', 'c'])
+            mc.board = [['a', 'b', 'c', 'a'],
+                        ['a', 'b', 'c', 'a'],
+                        ['a

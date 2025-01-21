@@ -1,0 +1,15 @@
+<<<Analysis>>>
+The `test()` method in the `Test` class creates an instance of `RegexUtils` and then calls the `extract_email` method with the string "abcdefg@.com ygusyfysy@126.com wljduyuv@qq.com".
+
+1. Inside `extract_email`, the method `generate_email_pattern` is called to get the regex pattern for matching email addresses. The pattern used is `r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'`.
+2. This pattern is then used in the `findall` method to find all occurrences of this pattern in the provided text.
+3. The regex pattern checks for word boundaries followed by one or more characters that can be alphanumeric, dots, underscores, percent signs, plus signs, or hyphens, followed by an '@' symbol, then more alphanumeric characters or dots, and finally a dot followed by two or more alphabetic characters.
+4. Analyzing the input string:
+   - "abcdefg@.com" does not match because there's no valid domain name after '@'.
+   - "ygusyfysy@126.com" matches the pattern.
+   - "wljduyuv@qq.com" matches the pattern.
+5. The `findall` method will return a list of strings that match the email pattern from the input text.
+
+<<<Output>>>
+['ygusyfysy@126.com', 'wljduyuv@qq.com']
+[END-OF-RESPONSE]

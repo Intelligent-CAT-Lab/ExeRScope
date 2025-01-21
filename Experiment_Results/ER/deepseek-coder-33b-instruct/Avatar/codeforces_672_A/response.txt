@@ -1,0 +1,15 @@
+
+<<<Analysis>>>
+The variable li is initialized as an empty list, which will be used to store the numbers.
+The variable ind is initialized to 0, which is not used in the code.
+The code then enters a loop that iterates from 1 to 370 (inclusive).
+For each number i in this range, it calculates the number of digits in i and stores it in count.
+If count is 1, it appends i to the list li.
+If count is 2 or 3, it creates a temporary list temp, and appends the digits of i in reverse order to temp. It then extends li with temp.
+After the loop finishes, the code removes the last two elements from li.
+The code then reads an integer n from the input.
+Finally, it prints the n-th element of li (0-indexed).
+
+<<<Output>>>
+9
+[END-OF-RESPONSE]

@@ -1,0 +1,19 @@
+<<<Analysis>>>
+The function `f` takes two parameters: `text` and `chars`. It processes the input text by stripping characters from the end of the string based on the `chars` string provided. If `chars` is not empty, it strips the characters specified in `chars` from the end of `text`. If `chars` is empty, it defaults to stripping whitespace from the end.
+
+In this specific call `f('new-medium-performing-application - XQuery 2.2', '0123456789-')`, the `chars` string is '0123456789-', which means the function will strip any of these characters from the end of the `text`.
+
+Breaking down the input text 'new-medium-performing-application - XQuery 2.2':
+- The last part of the string '2.2' contains '2' which is in the `chars` string.
+- The function will strip '2.2' from the end because '2' and '.' (though '.' is not in `chars`, it is between the '2's which are in `chars`).
+- The next character from the end after '2.2' is a space, which is not in `chars`, so the stripping stops there.
+
+After stripping, the remaining text is 'new-medium-performing-application - XQuery '.
+
+The function then checks if the resulting text is empty. If it were empty, it would return '-', but in this case, it is not.
+
+Therefore, the function returns the stripped text.
+
+<<<Output>>>
+'new-medium-performing-application - XQuery '
+[END-OF-RESPONSE]

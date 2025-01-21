@@ -1,0 +1,17 @@
+<<<Analysis>>>
+The function `get_row` aims to find the coordinates of a given value `x` within a list of lists and return them sorted by row then column in descending order.
+
+1. **Initialization:** 
+    - `lst` is initialized as an empty list `[]`, and `x` is initialized as `1`.
+2. **List Comprehension:**
+    - The code then uses a list comprehension to iterate through the `lst`, which is empty in this case. 
+    - Since there are no elements in the list, the condition `lst[i][j] == x` is never evaluated, and the list comprehension returns an empty list.
+3. **Sorting:**
+    -  The `sorted` function is applied twice to `coords`. 
+    - However, since `coords` is an empty list, the sorting operations have no effect.
+4. **Return Value:**
+    - The function returns the sorted `coords`, which remains an empty list. 
+
+<<<Output>>>
+[]
+[END-OF-RESPONSE]

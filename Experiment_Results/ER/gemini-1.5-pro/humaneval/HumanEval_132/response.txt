@@ -1,0 +1,37 @@
+<<<Analysis>>>
+The function `is_nested` takes a string as input, which is expected to contain only square brackets. It aims to determine if there are at least two nested levels of brackets.
+
+1. **Initialization:**
+   - `opening_bracket_index`: An empty list to store the indices of opening brackets '['.
+   - `closing_bracket_index`: An empty list to store the indices of closing brackets ']'.
+
+2. **Iterating through the string:**
+   - The code iterates through each character of the input string.
+   - If the character is a '[': its index is appended to `opening_bracket_index`.
+   - If the character is a ']', its index is appended to `closing_bracket_index`.
+     - For the input "[[]]", `opening_bracket_index` will be [0, 1] and `closing_bracket_index` will be [3, 2].
+
+3. **Reversing closing bracket indices:**
+   - The `closing_bracket_index` list is reversed in-place using `reverse()`. 
+     - Now, `closing_bracket_index` becomes [2, 3].
+
+4. **Checking for Nested Brackets:**
+   - `cnt`: Initialized to 0, this variable will count the number of nested bracket pairs.
+   - `i`: Initialized to 0, this is a counter to iterate through `closing_bracket_index`.
+   - `l`: Stores the length of `closing_bracket_index`.
+   - The code iterates through each index in `opening_bracket_index`. 
+     - For each opening bracket index (`idx`), it checks if:
+       - `i` is within the bounds of `closing_bracket_index` (`i < l`).
+       - The current opening bracket index is less than the corresponding closing bracket index (`idx < closing_bracket_index[i]`).
+       - If both conditions are true, it means we've found a nested pair:
+         - `cnt` is incremented.
+         - `i` is incremented to move to the next closing bracket index.
+  - In our case, both opening brackets (at index 0 and 1) will satisfy the conditions and cnt will become 2.
+
+5. **Return Value:**
+   - Finally, the function returns `True` if `cnt` is greater than or equal to 2 (meaning at least two nested pairs were found), otherwise it returns `False`.
+   - As cnt is 2 the function returns True.
+
+<<<Output>>>
+True
+[END-OF-RESPONSE]

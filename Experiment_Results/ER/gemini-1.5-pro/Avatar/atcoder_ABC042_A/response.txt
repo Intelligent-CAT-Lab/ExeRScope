@@ -1,0 +1,16 @@
+<<<Analysis>>>
+1. **Input and Tuple Creation:**
+   - `ABC = tuple(map(int, input().split()))`: This line takes input from the user, splits it into individual strings based on spaces, converts each string to an integer, and then packs these integers into a tuple named `ABC`. For the input `5 5 7`, the tuple `ABC` becomes `(5, 5, 7)`.
+
+2. **Checking for Two '5's:**
+   - `if ABC.count(5) == 2:`: This line uses the `.count()` method to check if the number `5` appears exactly twice within the tuple `ABC`. In this case, the condition is True because there are two '5's.
+
+3. **Summation and Final Check:**
+   - `print('YES' if sum(ABC) == 17 else 'NO')`: Since the previous condition is True, the code enters this block. It calculates the sum of elements in the tuple `ABC` (`5 + 5 + 7 = 17`).  If the sum equals 17, it prints 'YES'; otherwise, it prints 'NO'. Here, the sum is indeed 17, so 'YES' is printed.
+
+4. **Else Block (Not Executed):**
+   - The `else` block is not executed in this scenario because the condition in the `if` statement (`ABC.count(5) == 2`) is True.
+
+<<<Output>>>
+YES
+[END-OF-RESPONSE]

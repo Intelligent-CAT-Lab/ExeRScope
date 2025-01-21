@@ -1,0 +1,21 @@
+
+Inside the test() method, the XMLProcessor class is instantiated with the file_name 'test.xml'.
+The file_name 'test.xml' is then opened in write mode and the following XML content is written to it:
+<root>
+    <item>apple</item>
+    <item>orange</item>
+</root>
+The XMLProcessor object is then instantiated again with the file_name 'test.xml'.
+The read_xml() method is called on the XMLProcessor object, which attempts to parse the XML file and return the root element.
+If the parsing is successful, the root element is assigned to the root attribute of the XMLProcessor object.
+The file_name 'output.xml' is then passed to the write_xml() method, which attempts to write the XML content to the file.
+If the writing is successful, the method returns True.
+The XMLProcessor object is then instantiated again with the file_name 'output.xml'.
+The read_xml() method is called on the XMLProcessor object, which attempts to parse the XML file and return the root element.
+If the parsing is successful, the root element is assigned to the root attribute of the XMLProcessor object.
+The findall() method is called on the root element with the element_name 'item', which returns a list of all elements with the tag 'item'.
+The first element in the list is then accessed and its text attribute is returned.
+The second element in the list is then accessed and its text attribute is returned.
+The 'test.xml' and 'output.xml' files are then deleted using the os.remove() function.
+<<<Output>>>
+(True, <Element 'root' at 0x000002222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222

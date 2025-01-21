@@ -1,0 +1,20 @@
+<<<Analysis>>>
+The `Test.test()` method creates an instance of the `SplitSentence` class and then calls the `split_sentences` method with the string "Who is A.B.C.? He is a teacher." as an argument.
+
+The `split_sentences` method uses a regular expression to split the input string into sentences. The regular expression `r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s'` is designed to split the string at points where there is a period or a question mark followed by a whitespace, but it avoids splitting at points where the period is part of an abbreviation or an initialism.
+
+Here's how the regular expression works on the input string:
+- `(?<!\w\.\w.)` ensures that the split does not occur if there is a single character followed by a period and another character (common in abbreviations).
+- `(?<![A-Z][a-z]\.)` ensures that the split does not occur if there is an uppercase letter followed by a lowercase letter and a period (common in initials).
+- `(?<=\.|\?)` asserts that there is a period or a question mark just before the split point.
+- `\s` matches the whitespace character following the period or question mark.
+
+Given the input string "Who is A.B.C.? He is a teacher.", the regex will:
+- Not split at "A.B.C." because it matches the pattern of an abbreviation.
+- Split after the "?" because it is followed by a space and does not match any of the negative lookbehind conditions.
+
+Thus, the string will be split into two sentences: ["Who is A.B.C.?", "He is a teacher."].
+
+<<<Output>>>
+["Who is A.B.C.?", "He is a teacher."]
+[END-OF-RESPONSE]

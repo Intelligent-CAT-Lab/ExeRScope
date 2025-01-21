@@ -1,0 +1,15 @@
+
+<<<Analysis>>>
+The function fibfib takes an integer n as input.
+When n is 0, the function returns 0.
+When n is 1, the function returns 0.
+When n is 2, the function returns 1.
+For any other value of n, the function calls itself recursively with n-1, n-2 and n-3 as arguments and returns the sum of these three recursive calls.
+
+In the case of fibfib(2), the function will return the sum of fibfib(1), fibfib(0) and fibfib(-1).
+fibfib(1) will return 0 (as n is 1), fibfib(0) will return 0 (as n is 0), and fibfib(-1) will return 1 (as n is 2).
+So, the sum of these three values is 1.
+
+<<<Output>>>
+1
+[END-OF-RESPONSE]

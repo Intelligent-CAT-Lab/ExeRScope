@@ -1,0 +1,24 @@
+
+<<<Analysis>>>
+The function int_to_mini_roman(number) takes an integer as input and converts it into a Roman numeral.
+The function starts by defining two lists: num, which contains the values of the Roman numerals, and sym, which contains the Roman numerals themselves.
+The variable i is initialized to 12, which is the index of the largest Roman numeral in the num list.
+The variable res is initialized to an empty string, which will be used to store the final Roman numeral.
+The function then enters a while loop that continues until number is 0.
+In each iteration of the loop, the function calculates the number of times the current Roman numeral can be subtracted from number (div), and updates number to be the remainder of the division.
+The function then enters another while loop that adds the current Roman numeral to res for each time it can be subtracted.
+The function then decrements i to move to the next largest Roman numeral.
+After the loop finishes, the function returns res in lowercase.
+
+The function int_to_mini_roman(19) is called.
+The function starts by dividing 19 by 1000, which gives 0 with a remainder of 19.
+The function then moves to the next largest Roman numeral, XC, and calculates that it can be subtracted 0 times.
+The function then moves to the next largest Roman numeral, L, and calculates that it can be subtracted 1 time.
+The function then moves to the next largest Roman numeral, X, and calculates that it can be subtracted 1 time.
+The function then moves to the next largest Roman numeral, IV, and calculates that it can be subtracted 1 time.
+The function then moves to the next largest Roman numeral, I, and calculates that it can be subtracted 4 times.
+The function then returns 'xciiiv', which is the Roman numeral equivalent of 19.
+
+<<<Output>>>
+'xxiii'
+[END-OF-RESPONSE]

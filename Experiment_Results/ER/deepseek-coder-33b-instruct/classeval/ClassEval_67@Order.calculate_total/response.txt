@@ -1,0 +1,20 @@
+
+In the `test()` method, an instance of the `Order` class is created. The menu is populated with three dishes, each with a name, price, and count. The sales dictionary is also populated with the sales for each dish.
+
+The `add_dish()` method is then called twice, adding two dishes to the order. The first dish is "dish1" with a count of 2, and the second dish is "dish3" with a count of 2.
+
+The `calculate_total()` method is then called, which iterates over the selected dishes, calculates the total price for each dish (price * count * sales), and sums these totals to get the total price for the order.
+
+The `checkout()` method is not called in this test, so the selected dishes are not cleared.
+
+<<<Analysis>>>
+The `calculate_total()` method iterates over the selected dishes, calculates the total price for each dish (price * count * sales), and sums these totals to get the total price for the order.
+
+For the first dish, "dish1", the total price is calculated as 10 * 2 * 0.9 = 18.
+For the second dish, "dish3", the total price is calculated as 20 * 2 * 0.8 = 32.
+
+The total price for the order is the sum of these two totals, which is 18 + 32 = 50.
+
+<<<Output>>>
+50
+[END-OF-RESPONSE]

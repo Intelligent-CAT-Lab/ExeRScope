@@ -1,0 +1,15 @@
+<<<Analysis>>>
+The function f takes a string called text as input. The function performs the following steps:
+1. It strips any leading or trailing whitespace from the input string and then splits the string by spaces into a list of words, stored in variable 'a'.
+2. It then iterates over each element in the list 'a'. For each element, it checks if the element is a digit using the isdigit() method.
+3. If any element in the list 'a' is not a digit (i.e., contains non-numeric characters), the function immediately returns '-'.
+4. If all elements in the list are digits, it joins the elements of the list 'a' with a space and returns the resulting string.
+
+For the input "d khqw whi fwi bbn 41":
+- The input string is split into the list ['d', 'khqw', 'whi', 'fwi', 'bbn', '41'].
+- The first element 'd' is checked and found not to be a digit.
+- Therefore, the function returns '-' without checking the rest of the elements.
+
+<<<Output>>>
+'-'
+[END-OF-RESPONSE]

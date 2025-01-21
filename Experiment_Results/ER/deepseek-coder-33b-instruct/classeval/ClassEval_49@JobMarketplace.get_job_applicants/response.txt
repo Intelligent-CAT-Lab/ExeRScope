@@ -1,0 +1,13 @@
+
+<<<Analysis>>>
+In the `test()` method, an instance of the `JobMarketplace` class is created. Two resumes are added to the `resumes` list and one job listing is added to the `job_listings` list.
+
+Then, the `get_job_applicants()` method is called with the first job listing as an argument. This method iterates over all the resumes in the `resumes` list and checks if they match the requirements of the job listing.
+
+In the `matches_requirements()` method, it checks if each skill in the resume is in the job listing's requirements. If a skill is not in the requirements, it returns False. If all skills are in the requirements, it returns True.
+
+In this case, the first resume matches the job listing's requirements, but the second resume does not. Therefore, the `get_job_applicants()` method returns a list with the first resume.
+
+<<<Output>>>
+[{'name': 'Tom', 'skills': ['skill1', 'skill2'], 'experience': 'experience'}]
+[END-OF-RESPONSE]

@@ -1,0 +1,18 @@
+<<<Analysis>>>
+The `Test.test()` method initializes an instance of `HtmlUtil` and then calls the `extract_code_from_html_text` method with a sample HTML string as input. The HTML contains two code blocks within `<pre>` tags, one of which is nested inside a `<code>` tag.
+
+1. The `extract_code_from_html_text` method first calls `format_line_html_text` with the HTML input.
+2. Inside `format_line_html_text`, a BeautifulSoup object (`soup`) is created to parse the HTML.
+3. The method finds all `<pre>` and `<blockquote>` tags and replaces their content with the string '-CODE-'. In this case, two `<pre>` tags are found and their contents are replaced.
+4. The method then processes `<ul>`, `<ol>`, and `<p>` tags, but these are not relevant to the code extraction.
+5. The text of the entire HTML (now with '-CODE-' in place of actual code) is extracted and decoded of HTML entities, and line feeds are formatted.
+6. Back in `extract_code_from_html_text`, the method checks if '-CODE-' is present in the formatted text, which it is.
+7. The method then re-parses the original HTML to find the actual code within the `<pre>` and `<blockquote>` tags.
+8. It extracts the text from these tags. The first `<pre>` tag contains `print('Hello, world!')` and the second `<pre>` tag (nested with `<code>`) contains the loop code.
+9. These code snippets are collected into a list and returned.
+
+The expected output is a list of strings, each string being the code extracted from the respective code blocks in the HTML.
+
+<<<Output>>>
+["print('Hello, world!')", "for i in range(2):\n                    print(i)"]
+[END-OF-RESPONSE]

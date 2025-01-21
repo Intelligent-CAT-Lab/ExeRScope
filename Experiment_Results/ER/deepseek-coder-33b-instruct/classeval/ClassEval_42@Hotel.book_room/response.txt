@@ -1,0 +1,13 @@
+
+<<<Analysis>>>
+In the `test()` method, an instance of the `Hotel` class is created with the name 'peace hotel' and rooms available as {'single': 3, 'double': 2}.
+
+The `book_room()` method is then called with the parameters 'single', 2, 'guest 1'. This method checks if the room type is available in the hotel. If it is, it checks if the number of rooms requested is less than or equal to the available rooms. If it is, it books the rooms by adding them to the `booked_rooms` dictionary and subtracting them from the `available_rooms` dictionary. If the number of rooms requested is more than the available rooms, it returns the number of available rooms. If the room type is not available, it returns False.
+
+In this case, the room type 'single' is available and the number of rooms requested (2) is less than or equal to the available rooms (3). So, the rooms are booked and the `booked_rooms` dictionary is updated with the guest name and the number of rooms booked. The `available_rooms` dictionary is also updated by subtracting the number of rooms booked.
+
+The method returns 'Success!', the updated `booked_rooms` dictionary, and the updated `available_rooms` dictionary.
+
+<<<Output>>>
+('Success!', {'single': {'guest 1': 2}}, {'single': 1, 'double': 2})
+[END-OF-RESPONSE]

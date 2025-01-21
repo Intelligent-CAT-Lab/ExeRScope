@@ -1,0 +1,13 @@
+
+<<<Analysis>>>
+The function `find_closest_elements` takes a list of float numbers as input.
+The function initializes two variables `closest_pair` and `distance` to None.
+The function then enters a nested loop, where it iterates over each pair of numbers in the list.
+For each pair, it calculates the absolute difference between the two numbers and stores it in `new_distance`.
+If `distance` is None (which is the case for the first pair), it sets `distance` to `new_distance` and `closest_pair` to the sorted pair of numbers.
+If `new_distance` is less than `distance`, it updates `distance` to `new_distance` and `closest_pair` to the sorted pair of numbers.
+After the loop finishes, the function returns `closest_pair`, which is the pair of numbers with the smallest difference.
+In the given list [1.0, 2.0, 3.9, 4.0, 5.0, 2.2], the closest pair is [2.0, 2.2] as the difference between 2.0 and 2.2 is the smallest.
+<<<Output>>>
+(2.0, 2.2)
+[END-OF-RESPONSE]

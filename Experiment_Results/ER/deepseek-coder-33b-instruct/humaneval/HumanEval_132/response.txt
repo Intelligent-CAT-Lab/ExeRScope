@@ -1,0 +1,16 @@
+
+<<<Analysis>>>
+The function `is_nested` takes a string as input. It initializes two empty lists `opening_bracket_index` and `closing_bracket_index`.
+Then it iterates over the input string. If it encounters an opening bracket '[', it appends the index of this bracket to `opening_bracket_index`. If it encounters a closing bracket ']', it appends the index of this bracket to `closing_bracket_index`.
+After the loop, it reverses `closing_bracket_index`.
+Then it initializes two variables `cnt` and `i` to 0. `cnt` is used to count the number of nested brackets, and `i` is used as an index to iterate over `closing_bracket_index`.
+The function then iterates over `opening_bracket_index`. For each index `idx` in `opening_bracket_index`, if `i` is less than the length of `closing_bracket_index` and `idx` is less than `closing_bracket_index[i]`, it increments `cnt` and `i`.
+Finally, it returns `True` if `cnt` is greater than or equal to 2, and `False` otherwise.
+
+In the case of `is_nested('[[]]')`, the function iterates over the string and finds two opening brackets at indices 0 and 3, and two closing brackets at indices 4 and 1. It then reverses the closing bracket indices to [1, 4].
+The function then iterates over the opening brackets. For the first opening bracket at index 0, `i` is 0 and `idx` is 0, so it increments `cnt` and `i`. For the second opening bracket at index 3, `i` is 1 and `idx` is 1, so it increments `cnt` and `i` again.
+Finally, `cnt` is 2, so the function returns `True`.
+
+<<<Output>>>
+True
+[END-OF-RESPONSE]

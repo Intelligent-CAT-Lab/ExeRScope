@@ -1,0 +1,18 @@
+<<<Analysis>>>
+The function `select_words` takes two parameters: a string `s` and an integer `n`. The string `s` is "Mary had a little lamb" and `n` is 4.
+The function initializes an empty list `result` to store words that meet the criteria of having exactly `n` consonants.
+The function splits the string `s` into words and iterates over each word.
+For each word, it initializes `n_consonants` to 0 and iterates over each character in the word. If the character is not a vowel (a, e, i, o, u), it increments `n_consonants`.
+After counting the consonants in a word, it checks if `n_consonants` equals `n` (which is 4 in this case). If true, the word is added to the `result` list.
+The words in the string are "Mary", "had", "a", "little", "lamb".
+- "Mary" has 3 consonants ('M', 'r', 'y').
+- "had" has 2 consonants ('h', 'd').
+- "a" has 0 consonants.
+- "little" has 4 consonants ('l', 't', 't', 'l').
+- "lamb" has 3 consonants ('l', 'm', 'b').
+Only "little" meets the criterion of having exactly 4 consonants.
+The function returns the list containing the word ["little"].
+
+<<<Output>>>
+['little']
+[END-OF-RESPONSE]

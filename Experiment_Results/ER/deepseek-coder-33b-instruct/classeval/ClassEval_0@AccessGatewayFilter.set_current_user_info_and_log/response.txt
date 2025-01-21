@@ -1,0 +1,16 @@
+
+In the `test()` method, an instance of `AccessGatewayFilter` is created and assigned to `agf`. Then, three requests are made to the `filter()`, `is_start_with()`, and `get_jwt_user()` methods respectively.
+
+The `filter()` method checks if the request URI starts with '/api' or '/login'. If it does, it returns True. Otherwise, it tries to get the JWT user from the request and checks if the user's level is greater than 2. If it is, it sets the current user info and log and returns True. If it encounters an error, it returns False.
+
+The `is_start_with()` method checks if the request URI starts with '/api' or '/login'. If it does, it returns True. Otherwise, it returns False.
+
+The `get_jwt_user()` method gets the JWT user from the request. It checks if the JWT starts with the user's name and if the JWT date is older than 3 days. If it is, it returns None. Otherwise, it returns the token.
+
+The `set_current_user_info_and_log()` method sets the current user info and log. It gets the host from the user's address, logs the user's name, host, and the current date and time, and sets the log level to 1.
+
+The `test()` method returns the result of the `get_jwt_user()` method three times.
+
+<<<Output>>>
+(None, None, None)
+[END-OF-RESPONSE]

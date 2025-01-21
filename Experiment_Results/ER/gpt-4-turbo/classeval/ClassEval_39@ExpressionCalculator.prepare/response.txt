@@ -1,0 +1,19 @@
+<<<Analysis>>>
+The `test()` method in the `Test` class initializes an instance of `ExpressionCalculator` and then calls the `prepare()` method with the expression "2-3*4". The `prepare()` method is responsible for converting the infix expression to postfix notation using a stack-based approach.
+
+1. The `prepare()` method initializes `op_stack` with a comma (',') to act as a base for the stack operations.
+2. The expression "2-3*4" is processed character by character:
+   - '2' is a number, so it's added directly to `postfix_stack`.
+   - '-' is an operator. Since the stack top (',') has lower precedence, '-' is pushed onto `op_stack`.
+   - '3' is a number, so it's added directly to `postfix_stack`.
+   - '*' is an operator. It has higher precedence than '-', so it's pushed onto `op_stack`.
+   - '4' is a number, so it's added directly to `postfix_stack`.
+3. After processing all characters, the remaining operators in `op_stack` are popped to `postfix_stack`. '*' is popped first followed by '-'.
+
+The final `postfix_stack` should be `deque(['2', '3', '4', '*', '-'])`.
+
+The method returns this `postfix_stack` and compares it with another deque `deque(['2', '3', '4', '*', '-'])` to check if they are the same.
+
+<<<Output>>>
+(deque(['2', '3', '4', '*', '-']), deque(['2', '3', '4', '*', '-']))
+[END-OF-RESPONSE]

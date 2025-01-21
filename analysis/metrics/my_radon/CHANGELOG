@@ -1,0 +1,297 @@
+6.0.1 (Mar 26, 2023)
+--------------------
+
+- Prevent tomllib error when the `toml` module is not available
+
+6.0.0 (Mar 26, 2023)
+--------------------
+
+- Fix typo in changelog, by @cclauss: #229
+- Add support for `match` pattern in Python 3.10+, by @DolajoCZ: #227
+- Fix typo in Markdown export, reported by @huornlmj: #231
+- Remove unnecessary "future" dependency, by @mgorny: #234
+- Add `pyproject.toml` support, by @ajslater: #236
+- Allow Mando v0.7.1, by @ajslater: #237
+- Fix HCHarvester JSON results format, by @benabel: #240
+
+5.1.0 (Aug 08, 2021)
+--------------------
+
+- Allow forcing colored output on/off, thanks @msabramo: #218
+- Synchronize trove classifiers with tested versions, thanks @D3X: #222
+
+5.0.1 (Jun 08, 2021)
+--------------------
+
+- Drop support for flake8 < 3.x (removes `flake8-polyfill` dependency), by
+  @joxl: #219
+
+4.5.2 (May 23, 2021)
+--------------------
+
+- Add back `flake8-polyfill` dependency because conditional extra does not work
+  as intended, reported by @joxl: #217
+
+4.5.1 (May 09, 2021)
+--------------------
+
+- Fix CC calculation for try-except-else blocks with multiple statements,
+  thanks @justWerns: #212
+- Fix CC type field in Markdown output, thanks @4l1fe: #213
+
+4.5.0 (Mar 09, 2021)
+--------------------
+
+- Add ``--md`` option to ``cc`` command to export results as Markdown (thanks
+  to @kanekotic): #205
+- Add async function support to Halstead visitor (thanks to @rharish101): #208
+
+4.4.0 (Mar 07, 2021)
+--------------------
+
+- Use utf-8 as the default encoding on Python 3.0+: #203
+- Allow custom config file path through the RADONCFG env var: #207
+
+4.3.2 (Sep 18, 2020)
+--------------------
+
+- Move `Flake8Checker` to separate, isolated module (thanks to @tribals): #200
+
+4.3.1 (Sep 12, 2020)
+--------------------
+
+- Separate `flake8-polyfill` to extra requirements (thanks to @tribals): #189
+
+4.2.0 (Jan 28, 2020)
+--------------------
+
+- Fix for Python 2.7 (thanks to @edwinelisia): #191
+- Pin Colorama to different versions depending on the Python version (thanks to
+  @douardda): #193
+
+4.1.0 (Jan 28, 2020)
+--------------------
+
+- Support Python 3.8 (thanks to @brnsnt): #185
+
+4.0.0 (Sep 19, 2019)
+--------------------
+
+- Support file configuration overrides, thanks @tonybaloney: #179
+- Add support for analyzing Jupyter notebooks, thanks @tonybaloney: #181
+
+3.0.1 (Feb 03, 2019)
+--------------------
+
+- Automatically exclude binary files, instead of producing an error: #166
+
+3.0.0 (Jan 26, 2019)
+--------------------
+
+- Include files with no extension but a Python shebang (thanks @hawkeyej): #155
+- Fix calculation of total complexity for classes: #156
+- Update Colorama dependency to avoid conflicts with pytest: #164
+- Fix raw metrics, which were completely broken
+
+2.4.0 (Oct 11, 2018)
+--------------------
+
+- Add a `__main__` module (thanks @douardda): #153
+- Add --output-file option (thanks @douardda): #154
+
+2.3.1 (Oct 02, 2018)
+--------------------
+
+- Quickfix for Python 2.7
+- Add official Python 3.7 support
+
+2.3.0 (Oct 02, 2018)
+--------------------
+
+- Add Halstead command and harvester (thanks @rwbogl): #136
+- Add --json, --exclude, --ignore to `radon hal` (thanks @rwbogl): #138
+- Add --functions to `radon hal` (thanks @rwbogl): #147
+- Add documentation for the `radon hal` subcommand (thanks @rwbogl): #150
+
+2.2.0 (Jan 11, 2018)
+--------------------
+
+- Add an option to show closures when Radon is used from flake8: #135
+
+2.1.1 (Sep 07, 2017)
+--------------------
+
+- Fix critical bug in Python 2 that prevented analysis of files with no
+  comments at the start of the module: #133
+
+2.0.3 (Aug 30, 2017)
+--------------------
+
+- Fix encoding issues for all commands: #115 and #127
+
+2.0.2 (Jun 04, 2017)
+--------------------
+
+- Update mando dependency: #120
+
+2.0.1 (Jun 02, 2017)
+--------------------
+
+- Fix bug in the error message of Flake8's plugin: #121
+
+2.0.0 (May 30, 2017)
+--------------------
+
+- Add ``--sort`` option to ``mi`` command: #100
+- Add comment stats summary when using the ``-s, --summary`` option of the
+  ``raw`` command: #110
+- Fix encoding bug: #114
+- Fix raw metrics (ensure that LOC = SLOC + Multi + Single Comments + Blank):
+  #118
+- Python 2.6 is not supported anymore
+
+
+1.5.0 (Mar 14, 2017)
+--------------------
+
+- Use UTF-8 or RADONFILESENCODING to open files: #86
+- Fix raw analysis bug on docstrings: #106
+
+1.4.2 (Jul 26, 2016)
+--------------------
+
+- Use flake8-polyfill in order to keep compatibility with Flake8 2.x and 3.x:
+  #92
+
+1.4.0 (Jun 03, 2016)
+--------------------
+
+- Add fingerprint to Code Climate issues: #88.
+- Ensure the Code Climate issues have integer location values: #89.
+- Count ``async def``, ``async for`` and ``async with`` towards CC: #90.
+
+1.3.0 (Mar 02, 2016)
+--------------------
+
+- Modify behaviour of ``--show-closures``. Now inner classes are added to the
+  output as well: #79.
+- Fix bug in ``is_multiline_string``: #81.
+
+1.2.2 (Jul 09, 2015)
+--------------------
+
+- Add plugin for flake8 tool: #76.
+
+1.2.1 (May 07, 2015)
+--------------------
+
+- The XML output now contains the line numbers: #75.
+
+1.2 (Jan 16, 2015)
+------------------
+
+- **Backwards incompatible** change regarding to CC of lambda functions and
+  nested functions: #68.
+- Fix the bug that caused classes with only one method have a CC of 2: #70.
+
+1.1 (Sep 6, 2014)
+-----------------
+
+- Make `-n, --min` and `-x, --max` effective everywhere (in JSON and XML
+  exporting too): #62.
+- Fix the bug that prevented JSON/XML export when one file had errors during
+  the analysis: #63.
+- Add an explanations and various examples to the docs so that programmatical
+  use of Radon is easier: #64.
+
+1.0 (Aug 15, 2014)
+------------------
+
+- Add ``--xml`` option to `cc` command: #49.
+- Officially support Python 3.4.
+- Remove pathfinder: #59.
+- Reduce drastically unit-testing time: #56.
+- Update documentation (http://radon.readthedocs.org/en/latest/): #60.
+
+0.5.3 (Aug 1, 2014)
+-------------------
+
+- Encode the source code to bytes if that's possible (Python 3).
+- Show help if no command is given.
+- Add support to read code from stdin (thanks @io41): #55.
+- Move the tests inside the radon directory: #58.
+
+0.5.2 (Jul 24, 2014)
+--------------------
+
+- Fix `while ... else` bug: #53.
+
+0.5.1 (Mar 4, 2014)
+-------------------
+
+- Fix `--total-average` behavior.
+
+0.5 (Feb 17, 2014)
+------------------
+
+- Add `-i, --ignore` option to ignore directories: #39.
+- Add `--no-assert` option to `cc` command to avoid `assert` statements: #42.
+- Add `-j, --json` option to `raw` command (thanks @cjav): #45.
+- Add `--total-average` option to `cc` command: #44.
+- Add `--version` global option: #47.
+
+0.4.5 (Dec 16, 2013)
+--------------------
+
+- Baker is replaced with mando: https://github.com/rubik/mando.
+
+0.4.4 (Nov 20, 2013)
+--------------------
+
+- Add `-j` option to `cc` command: #33.
+- Use pathfinder and improve `iter_filenames`: #31.
+- Complete the documentation: #18.
+- Add `-s, --summarize` option to `raw` command (thanks @jsargiot): #36.
+
+0.4.2 (Jun 25, 2013)
+--------------------
+
+- `raw` command failed on almost-empty files: #29.
+
+0.4.1 (Jun 16, 2013)
+--------------------
+
+- Turn off colors when not printing to a tty (thanks @kennknowles): #26.
+- Fixed #27 (`endline` could be `float('-inf')` sometimes).
+
+
+0.4 (Apr 26, 2013)
+------------------
+
+- Added `-s` option to `mi` command: #19.
+- Added `-o` option to `cc` command to sort output: #20.
+- Added `endline` attribute to `Function` and `Class` objects: #25.
+
+
+
+0.3 (Nov 2, 2012)
+-----------------
+
+- Code coverage to 100%, runs from Python 2.6 up to 3.3 and on PyPy as well.
+- Created a documentation at https://radon.readthedocs.org\: #5.
+- Made the codebase compatible with PyPy: #9.
+- Ported cli.py to Python 3: #14.
+- More tests: #15.
+- Minor fixes: #11, #12, #13, #17.
+
+
+0.2 (Oct 11, 2012)
+------------------
+
+Initial version.
+
+
+0.1 (Never)
+-----------
+
+There was no 0.1.
