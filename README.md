@@ -1,5 +1,5 @@
 ## Video Demo
-We have provided a recorded demo of ExeRScope in the following link: https://go.illinois.edu/ExeRScope
+We have provided a recorded demo of ExeRScope in the following link: https://youtu.be/Kp6UXGRpT10
 
 ## ExeRScope Framework
 ExeRScope currently assesses the impact of different (1) program constructs, (2) program complexities, (3) programming properties such as loop length, and (4) variable types on code execution reasoning. 
